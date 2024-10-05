@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">NOME MAIOR</div>
+            <ul class="navbar-items">
+                <li><a href="#">Item 1</a></li>
+                <li><a href="#">Item 2</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    {% block parte_central %}
+
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Hemoconnect. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Geraldo Júnior e Alana Keury </p>
+        </div>
+    </footer>
+</body>
+</html>

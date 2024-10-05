@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemoConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
+    <link href="{% static 'css/telalogin1.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="image-section">
+            <img src="{% static 'image/Foto_tela_inicial.png' %}" alt="Heart with blood drop" class="heart-image">
+        </div>
+        <div class="form-section">
+            <div class="form-container">
+                <h1 class="logo">HEMO<span>❤️</span>CONNECT</h1>
+                <form action="#" method="POST" class="signup-form">
+                    <input type="text" name="nome" placeholder="nome" required>
+                    <input type="email" name="email" placeholder="email" required>
+                    <input type="password" name="senha" placeholder="senha" required>
+                    <input type="password" name="confirmar_senha" placeholder="confirmar senha" required>
+                    <button type="submit" class="submit-btn">Cadastrar-se</button>
+                </form>
+                <p class="login-link">Já possui uma conta? <a href="#">Entrar</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -7,7 +7,7 @@
     <title>HemoConnect</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
-    <link href="{% static 'css/telalogin1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/telalogin2.css' %}" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -20,23 +20,17 @@
                 <form  method="post" class="signup-form">
                     {% csrf_token %} 
                     <div>
-                        {{form.nome }}
-                    </div>
-                    <div>
-                        {{form.email}}
+                        {{ form.nome }}
                     </div>
                     <div>
                         {{form.senha}}
-                    </div>
-                    <div>
-                        {{form.confir}}
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Cadastrar-se</button>
+                    </div>   
+                    <button type="submit" class="submit-btn"> Entrar </button>
                 </form>
-                <p class="login-link">Já possui uma conta? <a href="{% url 'tela_login2' %}">Entrar</a></p>
-            </div>
-        </div>
+                <p class="login-link">Não possui uma conta? <a href="{% url 'tela_login1' %}">Clique aqui</a>
+            </div> 
+           
+
     </div>
 </body>
 </html>

@@ -20,10 +20,4 @@
 <h1 class="titulo">Seja bem vindo ao meu blog profissional</h1>
 <h1 class="titulo">Seja bem vindo ao meu blog profissional</h1>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}  <!-- Renderiza o formulário com os campos necessários -->
-    <button type="submit" class="submit-btn">Cadastrar-se</button>
-</form>
-
 {% endblock %}

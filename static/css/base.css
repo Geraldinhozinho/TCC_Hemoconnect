@@ -1,0 +1,67 @@
+/*Barra de navegação*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar-items {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar-items li {
+    margin-left: 20px;
+}
+
+.navbar-items li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-items li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/*Rodapé*/
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #aaa;
+}

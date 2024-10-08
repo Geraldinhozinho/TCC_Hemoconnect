@@ -33,14 +33,15 @@ def login(request):
 
 #QUESTIONARIO 2 
 def questionario(request):
-     form = QuestionarioForm()
-     if request.method == 'POST':
-          form = QuestionarioForm(request.POST)
-          if form.is_valid():
-               form.save()  # Salva o usuário no banco de dados
-               return redirect('tela_inicial')  # Redireciona para uma página de sucesso ou outra URL
-     contexto = {
-          'forms': form  # O nome correto seria 'form' e não 'forms'
-     }
+    form = QuestionarioForm()
+    if request.method == 'POST':
+        form = QuestionarioForm(request.POST)
+        if form.is_valid():
+            print("Formulário é válido!")  # Verifica se a validação está correta
+            form.save()  # Salva no banco de dados
+            return redirect('tela_inicial')  # Redireciona após salvar
+    contexto = {
+        'form': form  # Certifique-se de que é 'form' e não 'forms'
+    }
+    return render(request, 'hospital/tela_form.html', contexto)
 
-     return render(request, 'hospital/tela_form.html', contexto)

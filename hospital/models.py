@@ -1,5 +1,5 @@
 from django.db import models
-
+from multiselectfield import MultiSelectField
 # Create your models here.
 
 
@@ -80,10 +80,12 @@ class Questionario(models.Model):
         choices=CHOICES,
         default=True)
     
-    dias = models.CharField(
+    dias = MultiSelectField(
         max_length=15,
         choices=DIAS_SEMANA,
-        default=True)
+        default=True,
+        null=False
+        )
 
     def __str__(self):
         return self.nome

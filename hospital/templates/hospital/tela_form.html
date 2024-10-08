@@ -41,68 +41,72 @@
             <div class="quer1"> 
                 <div class= "quer">
                     <label>Deseja tornar-se um doador?</label>
-                    {{ forms.querer }}
+                    {{ form.querer }}
                 </div>
             </div>
 
             
             <div class= "nome">
                 <label>Digite seu nome completo</label>
-                {{ forms.nome }}
+                {{ form.nome }}
             </div>
-            
-
-
-            
+                       
             <div class= "email">
                 <label>Digite seu email</label>
-                {{ forms.email }}
+                {{ form.email }}
             </div>
 
             <div class="quer1">
                 <div class= "sangue">
                     <label>Seu tipo sanguíneo?</label>
-                {{ forms.tipo_sangue }}
+                {{ form.tipo_sangue }}
                  </div>
             </div>
 
             <div class="quer1">
                 <div class= "fuma">
                     <label>Você fuma?</label>
-                    {{ forms.fuma }}
+                    {{ form.fuma }}
                 </div>
             </div>
 
             <div class="quer1">
                 <div class= "sexo">
                     <label>Sua vida sexual ativa?</label>
-                    {{ forms.sexo }}
+                    {{ form.sexo }}
                 </div>
             </div>
 
             <div class="quer1">
                 <div class= "doenca">
                     <label>Tem alguma doença crônica</label>
-                    {{ forms.doenca }}
+                    {{ form.doenca }}
                 </div>
             </div>
             
-            <div class= "doenca2">
-                <label>Se sim, qual?</label>
-                {{ forms.doenca_det }}
-            </div>
+             <div class="doenca2">
+            <label>Se sim, qual?</label>
+            {{ form.doenca_det }}
+            {% if form.doenca_det.errors %}
+                <div class="error-message">
+                    {% for error in form.doenca_det.errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
 
             <div class="quer1">
                 <div class= "dispo">
                     <label>Você possui disponibilidade para vir ao hemocentro?</label>
-                    {{ forms.disponibilidade }}
+                    {{ form.disponibilidade }}
                 </div>
             </div>
 
             <div class="quer1">
                 <div class= "dias">
                     <label>Se sim, quais dias?</label>
-                    {{ forms.dias }}
+                    {{ form.dias }}
                 </div>
             </div>
             <div class="botao">
@@ -111,6 +115,7 @@
             </div>
         </form>
         
+        <script src="{% static 'js/telaformu.js' %}"></script>
     
 </body>
 </html>

@@ -58,3 +58,17 @@ class QuestionarioForm(forms.ModelForm):
            'dias': forms.CheckboxSelectMultiple(attrs=({'class':'dias'})),
            
         }
+        
+    def clean(self):
+        cleaned_data = super().clean()
+        doenca = cleaned_data.get('doenca')
+        doenca_det = cleaned_data.get('doenca_det')
+
+        # Se a resposta de 'doenca' for 'Sim', o campo 'doenca_det' deve ser obrigatório
+        if doenca == 'sim' and not doenca_det:
+            self.add_error('doenca_det', 'Por favor, informe a doença se você marcou "Sim".')
+        
+        return cleaned_data
+        
+        
+        

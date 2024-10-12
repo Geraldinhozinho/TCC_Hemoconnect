@@ -1,0 +1,61 @@
+.tela-detalhe {
+    position: relative;
+    padding: 20px;
+    background-color: #f9f9f9; /* Cor de fundo suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 900px; /* Largura máxima da tela */
+    margin: 80px auto; /* Centraliza a tela */
+    display: flex;
+}
+body{
+    background-color: #b5acac;
+}
+.x {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px; /* Tamanho do "X" */
+    color: #b5acac; /* Cor do "X" */
+    text-decoration: none; /* Remove sublinhado */
+    background-color: #d52424;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.detalhar {
+    display: flex; /* Utiliza flexbox para alinhamento */
+    align-items: flex-start; /* Alinha a imagem e o texto no início */
+    margin-top: 20px; /* Espaço acima da imagem */
+}
+
+.campanha-imagem {
+    max-width: 350px; /* Largura máxima da imagem */
+    width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+    margin-right: 20px; /* Espaço entre a imagem e as informações */
+}
+
+.infor {
+    max-width: 600px; /* Largura máxima para o bloco de informações */
+}
+
+.title {
+    font-size: 28px; /* Tamanho do título */
+    color: #333; /* Cor do título */
+    margin: 0 0 10px; /* Margem abaixo do título */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.descr {
+    font-size: 16px; /* Tamanho da descrição */
+    color: #666; /* Cor da descrição */
+    line-height: 1.5; /* Altura da linha para melhor legibilidade */
+    margin: 0; /* Remove margens da descrição */
+    text-align: justify; /* Justifica o texto */
+    max-width: 500px; /* Limita a largura para evitar linhas muito longas */
+    width: 100%; /* Largura total do container para melhor distribuição */
+    overflow-wrap: break-word; /* Quebra palavras longas para a próxima linha */
+    word-break: break-word; /* Quebra palavras longas para a próxima linha */
+}

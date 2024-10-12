@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospital.views import inicio, cadastro, login, questionario,perfil
+from hospital.views import inicio, cadastro, login, questionario,perfil, campanhas, detalhe
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,9 +27,12 @@ urlpatterns = [
     path('logar/', login, name='tela_login2'),
     path('quest/', questionario, name='tela_form'),
     path('perfil/', perfil, name='perfil'),
+    path('campanhas/', campanhas, name='campanhas'),
+    path('campanhas/<int:id>/',detalhe, name='tela_detalhe_camp'),
+
 ]
 
 
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

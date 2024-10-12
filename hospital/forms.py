@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuario, Questionario 
+from .models import Usuario, Questionario, Campanhas
 
 class UsuarioForm(forms.ModelForm):
     class Meta:
@@ -17,12 +17,12 @@ class UsuarioForm(forms.ModelForm):
                 'placeholder': 'Email',
                 'required': 'true'
             }),
-            'senha': forms.PasswordInput(attrs={
+            'senha': forms.TextInput(attrs={
                 'class': 'form-input', 
                 'placeholder': 'Senha',
                 'required': 'true'
             }),
-            'confir': forms.PasswordInput(attrs={
+            'confir': forms.TextInput(attrs={
                 'class': 'form-input', 
                 'placeholder': 'Confirmar Senha',
                 'required': 'true'
@@ -70,5 +70,11 @@ class QuestionarioForm(forms.ModelForm):
         
         return cleaned_data
         
+
+        
+class CampanhasForm(forms.ModelForm):
+    class Meta:
+        model = Campanhas
+        fields = ['titulo','descricao','image']
         
         

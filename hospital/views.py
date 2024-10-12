@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .forms import UsuarioForm, QuestionarioForm
-from .models import Usuario
-
+from .models import Usuario, Campanhas
+from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def inicio(request):
@@ -53,6 +53,23 @@ def questionario(request):
         'form': form  # Certifique-se de que é 'form' e não 'forms'
     }
     return render(request, 'hospital/tela_form.html', contexto)
+
+
+
+def campanhas(request):
+    dados = Campanhas.objects.all()
+    contexto = {
+        'camp': dados
+    }
+    return render(request, 'hospital/campanhas.html', contexto)
+
+def detalhe(request, id):
+    campanha = get_object_or_404(Campanhas, id=id)  # Busca a campanha pelo ID ou retorna 404
+    contexto = {
+        'camp': campanha
+    }
+    return render(request, 'hospital/tela_detalhe_camp.html', contexto)
+
 
 def perfil(request):
           

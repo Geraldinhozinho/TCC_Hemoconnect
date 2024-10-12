@@ -1,0 +1,24 @@
+{% extends 'hospital/base.html' %}
+
+{% load static %}
+{% block parte_central %}
+
+    <img src="{% static 'image/Slogan.png' %}" alt="Heart with blood drop" class="image">
+    <h1 class="titulo">Campanhas</h1>
+    <div class="carousel-container">
+        <button class="prev" onclick="moveCarousel(-1)">&#8249;</button> <!-- Seta anterior -->
+        <div class="carousel">
+            {% for campa in camp %}
+            <div class="posi">
+                <div class="img_camp">
+                    <img src="{{ campa.image.url }}" alt="Imagem da campanha">
+                </div>
+                <a href="{% url 'tela_detalhe_camp' campa.id %}">
+                    <button type="button" class="detalhe">Detalhar</button>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="next" onclick="moveCarousel(1)">&#8250;</button> <!-- Seta próxima -->
+    </div>
+{% endblock %}

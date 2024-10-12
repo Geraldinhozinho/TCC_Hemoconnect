@@ -4,10 +4,10 @@ from multiselectfield import MultiSelectField
 
 
 class Usuario(models.Model):
-    nome = models.CharField(max_length=150)
+    nome = models.CharField(max_length=150, null=True)
     email = models.EmailField()
-    senha = models.CharField(max_length=10)
-    confir = models.CharField(max_length=10)
+    senha = models.CharField(max_length=10, null=True)
+    confir = models.CharField(max_length=10, null=True)
     
     def __str__ (self):
         return self.nome
@@ -89,3 +89,12 @@ class Questionario(models.Model):
 
     def __str__(self):
         return self.nome
+    
+
+class Campanhas(models.Model):
+    titulo = models.CharField(max_length=20, null=True, blank=True)
+    descricao = models.TextField(null=True)
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
+  
+    def __str__(self):
+        return self.titulo

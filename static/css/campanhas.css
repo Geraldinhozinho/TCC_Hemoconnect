@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #F5D1D1;
+}
+
+.image{
+    margin: 0;
+    width: 100%;
+}
+
+.titulo {
+    color: rgb(0, 0, 0); /* Cor preta */
+    font-size: 260px; /* Deixa o título bem grande, ajuste conforme o necessário */
+    opacity: 0.2; /* Controla a transparência, 1 é totalmente opaco e 0 é totalmente transparente */
+    font-weight: bold; /* Torna o texto mais grosso (opcional) */
+}
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden; /* Oculta os itens que não cabem na tela */
+    width: 100%; /* Define o espaço total do carrossel */
+}
+
+.posi {
+    flex: 0 0 calc(25% - 20px); /* Cada campanha ocupa 25% do carrossel menos o espaço das margens */
+    text-align: center;
+    padding: 10px;
+    margin: 0 10px; /* Espaçamento horizontal entre as campanhas */
+    box-sizing: border-box; /* Inclui padding e margin no tamanho do item */
+}
+
+.img_camp img {
+    width: 100%; /* Imagem ocupa toda a largura do container */
+    height: auto;
+    border-radius: 10px; /* Suave arredondamento nas bordas, se desejar */
+}
+
+.detalhe {
+    background-color: #6A0303;
+    color: #ffffff;
+    padding: 10px 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.detalhe:hover {
+    background-color: #5a5555;
+}
+
+/* Setas de navegação */
+.prev, .next {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}

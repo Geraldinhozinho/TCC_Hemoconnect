@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospital.views import inicio, cadastro, login, questionario
+from hospital.views import inicio, cadastro, login, questionario,perfil
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,6 +26,7 @@ urlpatterns = [
     path('cadastrar/', cadastro, name='tela_login1'),
     path('logar/', login, name='tela_login2'),
     path('quest/', questionario, name='tela_form'),
+    path('perfil/', perfil, name='perfil'),
 ]
 
 

@@ -17,12 +17,12 @@ class UsuarioForm(forms.ModelForm):
                 'placeholder': 'Email',
                 'required': 'true'
             }),
-            'senha': forms.TextInput(attrs={
+            'senha': forms.PasswordInput(attrs={
                 'class': 'form-input', 
                 'placeholder': 'Senha',
                 'required': 'true'
             }),
-            'confir': forms.TextInput(attrs={
+            'confir': forms.PasswordInput(attrs={
                 'class': 'form-input', 
                 'placeholder': 'Confirmar Senha',
                 'required': 'true'

@@ -70,6 +70,13 @@ def detalhe(request, id):
     }
     return render(request, 'hospital/tela_detalhe_camp.html', contexto)
 
+def doador(request):
+          
+     return render(request, 'hospital/tela_doador.html')
+
+def contatos(request):
+          
+     return render(request, 'hospital/tela_contatos.html')
 
 def perfil(request):
           

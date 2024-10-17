@@ -1,0 +1,150 @@
+{% extends 'hospital/base.html' %}
+
+{% load static %}
+{% block parte_central %}
+
+    <div class="banner">
+        <div class="texto-central">
+            <h1 class='h1-banner1'>SALVE <span class='spa'>VIDAS</span></h1>
+            <h1 class='h1-banner'>TORNE-SE UM DOADOR DE SANGUE</p>
+        </div>
+    </div>
+   
+    <div class="texto-doador1">
+        <h1>A doação de <span class="span-doador1">sangue</span> é um ato altruísta e de solidariedade, que ajuda a <span class="span-doador2">salvar muitas vidas.</span></h1>
+    </div>
+    <p class="p-doador1">É um gesto de amor ao próximo que pode gerar muitos sorrisos.</p>
+    <p class="p-doador2">É importante destacar que não há um substituto para o sangue e sua disponibilidade é essencial em diversas situações.</p>
+
+    <div class="criterios-doador">
+        <img src="{% static 'image/doador.png' %}" alt="Heart with blood drop" class="img-doador">
+        
+        <div class="cricor-doador">
+            <h1>CRITÉRIOS BÁSICOS PARA DOAR SANGUE</h1>
+            <div class='fundo'>
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Estar em boas condições de saúde;</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Ter entre 16 e 69 anos (É necessário autorização de um responsável para menores de 18 anos);</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Pesar no mínimo 50kg;</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Estar descansado (dormir ao menos 6 horas nas últimas 24 horas);</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Estar alimentado (evitar alimentos gordurosos nas 4 horas anteriores à doação);</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Apresentar documento original com foto recente, como RG ou CNH, física ou digital;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="criterios-doador1">       
+        <div class="cricor-doador1">
+            <h1>IMPEDIMENTOS DEFINITIVOS</h1>
+            <div class='fundo1'>
+                <div class="criterio1">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota1">
+                    <p>Aguardar após doenças/sintomas: Resfriado (7 dias após desaparecimento), dengue (4 semanas ou 6 meses), Covid-19 (7 dias após cura), herpes (após lesões desaparecerem), febre amarela (30 dias após viagem a áreas de surto);</p>
+                </div>
+        
+                <div class="criterio1">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota1">
+                    <p>Prazos após procedimentos: Endoscopia e procedimentos similares (6 meses), extração dentária ou canal (7 dias), cirurgia odontológica com anestesia geral (4 semanas), tatuagem/piercing (6-12 meses), acupuntura (24h a 6 meses, depende do método);</p>
+                </div>
+        
+                <div class="criterio1">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota1">
+                    <p>Pós-parto: 90 dias após parto normal, 180 dias após cesariana, amamentação (12 meses);</p>
+                </div>
+        
+                <div class="criterio1">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota1">
+                    <p>Vacinas: Gripe (48h), Covid-19 (7 dias), dengue (4 semanas);</p>
+                </div>
+        
+                <div class="criterio1">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota1">
+                    <p>Viagens: Alta prevalência de malária (12 meses) e Febre Amarela (30 dias);</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="criterios-doador">
+        <img src="{% static 'image/medico.png' %}" alt="Heart with blood drop" class="img-doador">
+        
+        <div class="cricor-doador">
+            <h1>IMPEDIMENTOS DEFINITIVOS</h1>
+            <div class='fundo'>
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Evidência clínica ou laboratorial de Hepatite B ou C (em qualquer idade);
+                    </p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Hepatite após 11 anos;</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Uso de drogas;</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>AIDS (HIV);</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>HTLV I/II (leucemia/linfoma de células T, mielopatia, condições neurológicas leves)</p>
+                </div>
+        
+                <div class="criterio">
+                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img-gota">
+                    <p>Doença de Parkinson;</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="texto-doador2">
+        <h1>Ao doar, você oferece <span class="span-doador1">esperança</span> e uma segunda chance para aqueles que mais precisam. Cada gota conta, cada gesto de <span class="span-doador1">solidariedade</span> faz a diferença. 
+    </div>
+
+    <div class= "barra-doador"> 
+        <p class="p-doador3">Seja o herói que alguém está esperando! Doe sangue e ajude a transformar vidas, porque a sua solidariedade pode ser o presente mais precioso de todos.</p>
+    </div>
+
+    <div class="texto-doador1">
+        <h1> Junte-se a essa corrente de vida e faça parte dessa transformação!</h1>
+    </div>
+
+
+    <div class="bloco-doador">
+        <div class="triangulo-esquerda"></div>
+        <button class="botao-doador" onclick="window.location.href='/quest/';">Quero ser um doador</button>
+        <div class="triangulo-direita"></div>
+    </div>
+    
+    
+{% endblock %}

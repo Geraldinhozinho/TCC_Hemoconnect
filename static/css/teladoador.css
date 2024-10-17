@@ -1,0 +1,243 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5D1D1;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, red, black);
+    padding: 20px;
+    text-align: center;
+}
+.texto-central {
+    color: #fdfdfd;
+}
+.h1-banner1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.h1-banner {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+.spa {
+    color: #e62a2a;
+}
+
+
+
+
+
+
+
+
+
+
+
+.slogan-doador{
+    margin: 0;
+    width: 100%;
+    margin-bottom: 24px;
+}
+.texto-doador1{
+    text-align: center;
+    max-width: 60%;
+    margin: 20px auto;
+    display: flex;
+    font-size: 16px;
+}
+.p-doador1{
+    text-align: center;
+    max-width: 60%;
+    margin: auto;
+    display: flex;
+    font-size: 30px;
+}
+
+.p-doador2{
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    font-size: 30px;
+}
+
+.criterios-doador {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    margin: 100px auto;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.img-doador {
+    max-width: 400px; /* Tamanho da imagem maior */
+    height: auto;
+}
+
+.fundo {
+    background-color: #a00000;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.cricor-doador {
+    padding: 20px;
+    max-width: 800px;
+    width: 100%; /* Garante que a div ocupe toda a largura disponível */
+}
+
+.cricor-doador h1 {
+    background-color: transparent; /* Remove o fundo do h1 */
+    color: #e83f3f; /* Cor do texto do título */
+    text-align: center;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.criterio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #f2d3d3;
+}
+
+.img-gota {
+    width: 34px;
+    height: auto;
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.criterios-doador1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px; /* Espaço entre a imagem e o texto */
+    margin: 100px auto;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+.fundo1 {
+    background-color: #a00000;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.cricor-doador1 {
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%; /* Garante que a div ocupe toda a largura disponível */
+}
+
+.cricor-doador1 h1 {
+    background-color: transparent; /* Remove o fundo do h1 */
+    color: #e83f3f; /* Cor do texto do título */
+    text-align: center;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+.criterio1 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #f2d3d3;
+}
+
+.img-gota1 {
+    width: 34px;
+    height: auto;
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+}
+
+.p-doador3{
+    text-align: center;
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    font-size: 20px;
+}
+.span-doador1{
+    color: #6A0303;
+}
+
+.span-doador2{
+    color: #6A0303;
+}
+
+
+.texto-doador2{
+    text-align: center;
+    max-width: 60%;
+    margin: 50px auto;
+    display: flex;
+    font-size: 10px;
+}
+
+.barra-doador{
+    font-size: 10px;
+    padding: 20px;
+    color: #d7f5d1;
+    background-color: #a60000d0;
+}
+
+.bloco-doador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2d3d3; /* Cor de fundo semelhante à imagem */
+    padding: 40px;
+    position: relative;
+    border-radius: 15px;
+    
+}
+
+.botao-doador {
+    background: linear-gradient(145deg, #a00000, #800000);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.botao-doador:hover {
+    background: linear-gradient(145deg, #800000, #a00000);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.botao-doador:active {
+    background: #5e0000;
+    transform: translateY(2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Triângulos maiores e alongados */
+.triangulo-esquerda, .triangulo-direita {
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.triangulo-esquerda {
+    border-width: 20px 300px 20px 30px; /* Altura: 30px, largura: 50px */
+    border-color: transparent #800000 transparent transparent;
+    margin-right: 20px; /* Espaço entre o triângulo e o botão */
+}
+
+.triangulo-direita {
+    border-width: 20px 30px 20px 300px; /* Altura: 30px, largura: 50px */
+    border-color: transparent transparent transparent #800000;
+    margin-left: 20px; /* Espaço entre o triângulo e o botão */
+}

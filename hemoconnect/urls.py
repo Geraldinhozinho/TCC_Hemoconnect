@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospital.views import inicio, cadastro, login, questionario,perfil, campanhas, detalhe
+from hospital.views import inicio, cadastro, login, questionario,perfil, campanhas, detalhe, doador, contatos
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,6 +29,8 @@ urlpatterns = [
     path('perfil/', perfil, name='perfil'),
     path('campanhas/', campanhas, name='campanhas'),
     path('campanhas/<int:id>/',detalhe, name='tela_detalhe_camp'),
+    path('doador/',doador, name='tela_doador'),
+    path('contatos/',contatos, name='tela_contatos'),
 
 ]
 

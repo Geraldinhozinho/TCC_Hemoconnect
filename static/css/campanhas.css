@@ -14,9 +14,10 @@ body{
 
 .titulo {
     color: rgb(0, 0, 0); /* Cor preta */
-    font-size: 260px; /* Deixa o título bem grande, ajuste conforme o necessário */
+    font-size: 180px; /* Deixa o título bem grande, ajuste conforme o necessário */
     opacity: 0.2; /* Controla a transparência, 1 é totalmente opaco e 0 é totalmente transparente */
     font-weight: bold; /* Torna o texto mais grosso (opcional) */
+    text-align: center;
 }
 .carousel-container {
     display: flex;

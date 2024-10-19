@@ -3,51 +3,76 @@
     padding: 0;
 }
 
-body{
-    background-color: #F5D1D1;
-}
-
-.image{
-    margin: 0;
-    width: 100%;
-}
-
-.titulo {
-    color: rgb(0, 0, 0); /* Cor preta */
-    font-size: 180px; /* Deixa o título bem grande, ajuste conforme o necessário */
-    opacity: 0.2; /* Controla a transparência, 1 é totalmente opaco e 0 é totalmente transparente */
-    font-weight: bold; /* Torna o texto mais grosso (opcional) */
+/*banner*/
+.banner-campanhas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, red, black);
+    padding: 20px;
     text-align: center;
+    border-bottom: 1px solid #000;
 }
-.carousel-container {
+.texto_central-campanhas {
+    color: #fdfdfd;
+}
+.h1_banner1-campanhas {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.h1_banner-campanhas {
+    font-size: 36px; 
+    margin-bottom: 20px;
+}
+.spa {
+    color: #e62a2a;
+}
+
+
+/*bloco unico*/
+
+
+
+.titulo-campanhas {
+    color: rgb(0, 0, 0);
+    font-size: 100px;
+    opacity: 0.2;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+
+
+}
+.carrossel1-campanhas {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     position: relative;
 }
-
-.carousel {
+.carrossel2-campanhas {
     display: flex;
-    overflow: hidden; /* Oculta os itens que não cabem na tela */
-    width: 100%; /* Define o espaço total do carrossel */
+    overflow: hidden; 
+    width: 100%; 
 }
 
-.posi {
-    flex: 0 0 calc(25% - 20px); /* Cada campanha ocupa 25% do carrossel menos o espaço das margens */
+.campanhas {
+    flex: 0 0 calc(25% - 20px); 
     text-align: center;
     padding: 10px;
-    margin: 0 10px; /* Espaçamento horizontal entre as campanhas */
-    box-sizing: border-box; /* Inclui padding e margin no tamanho do item */
+    margin: 0 10px; 
+    box-sizing: border-box;
+
 }
 
-.img_camp img {
-    width: 100%; /* Imagem ocupa toda a largura do container */
+.img_camp-campanhas img {
+    width: 100%; 
     height: auto;
-    border-radius: 10px; /* Suave arredondamento nas bordas, se desejar */
+    border-radius: 10px; 
 }
 
-.detalhe {
+.detalhar {
     background-color: #6A0303;
     color: #ffffff;
     padding: 10px 60px;

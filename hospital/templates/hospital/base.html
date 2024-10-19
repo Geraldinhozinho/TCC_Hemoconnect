@@ -11,13 +11,18 @@
     <link href="{% static 'css/campanhas.css' %}" rel="stylesheet">
     <link href="{% static 'css/teladoador.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_contatos.css' %}" rel="stylesheet">
+
+    <!--fonte rammeto one-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- BARRA DE NAVEGAÇÃO -->
     <header>
-        <nav class="navbar">
-            <div class="navbar-brand">HEM<span>❤️</span>CONNECT</div>
-            <ul class="navbar-items">
+        <nav class="bloco-base">
+            <div class="logo-base">HEM<span>❤️</span>CONNECT</div>
+            <ul class="itens-base">
                 <li><a href="{% url 'tela_inicial' %}">Menu</a></li>
                 <li><a href="{% url 'tela_doador' %}">Seja um doador</a></li>
                 <li><a href="{% url 'campanhas' %}">Campanhas</a></li>
@@ -33,13 +38,20 @@
     {% endblock %}
 
     <footer class="footer">
-        <div class="footer-content">
+        <img src="{% static 'image/logo_if.png' %}" alt="Logo do IFRN" class="logoif-base">
+        <div class="footer-base">
             <p>&copy; 2024 Hemoconnect. Todos os direitos reservados.</p>
             <p>Desenvolvido por Geraldo Júnior e Alana Keury </p>
         </div>
+        <div class="footer2-base">
+            <div class="logo2-base">HEM<span>❤️</span>CONNECT</div>
+            <p>Orientadora: Mary Holanda</p>
+            <p>Coorientador: Kaio Fontes </p>
+        </div>
+        
     </footer>
 
     <script src="{% static 'js/teladeta.js' %}"></script> <!-- Inclui o arquivo JS -->
-
+    <script src="{% static 'js/campanhas.js' %}"></script>
 </body>
 </html>

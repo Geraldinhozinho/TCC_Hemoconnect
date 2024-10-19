@@ -2,30 +2,20 @@
 
 {% load static %}
 {% block parte_central %}
-
-    <div class="banner">
-        <div class="texto-central">
-            <h1 class='h1-banner1'>SUA DOAÇÃO É UM ATO DE <span class='spa'>AMOR E SOLIDARIEDADE</span></h1>
-            <h1 class='h1-banner'>FAÇA PARTE DESSA CORRENTE DE VIDA!</p>
-        </div>
-    </div>
+    <h1 class="titulo-cont">Contatos</h1>
+    <h2 class="titulo2-cont">Como  você prefere falar com a gente?</h2>
+    
+    <div>
+    <img src="{% static 'image/Email.png' %}" alt="Heart with blood drop" class="img-cont">
 
 
-    <h1 class="titulo">Campanhas</h1>
-    <div class="carousel-container">
-        <button class="prev" onclick="moveCarousel(-1)">&#8249;</button> <!-- Seta anterior -->
-        <div class="carousel">
-            {% for campa in camp %}
-            <div class="posi">
-                <div class="img_camp">
-                    <img src="{{ campa.image.url }}" alt="Imagem da campanha">
-                </div>
-                <a href="{% url 'tela_detalhe_camp' campa.id %}">
-                    <button type="button" class="detalhe">Detalhar</button>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
-        <button class="next" onclick="moveCarousel(1)">&#8250;</button> <!-- Seta próxima -->
-    </div>
+    <img src="{% static 'image/telefone.png' %}" alt="Heart with blood drop" class="img-cont">
+
+    <img src="{% static 'image/chat.png' %}" alt="Heart with blood drop" class="img-cont">
+
+
+
+
+
+    <h1 class="titulo-cont">Localização</h1>
 {% endblock %}

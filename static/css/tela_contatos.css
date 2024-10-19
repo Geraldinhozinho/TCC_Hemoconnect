@@ -1,0 +1,22 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.titulo-cont {
+    color: rgb(0, 0, 0); /* Cor preta */
+    font-size: 100px; /* Deixa o título bem grande, ajuste conforme o necessário */
+    opacity: 0.2; /* Controla a transparência, 1 é totalmente opaco e 0 é totalmente transparente */
+    font-weight: bold; /* Torna o texto mais grosso (opcional) */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.titulo2-cont {
+    color: rgb(0, 0, 0); /* Cor preta */
+    font-size: 50px; /* Deixa o título bem grande, ajuste conforme o necessário */
+    font-weight: bold; /* Torna o texto mais grosso (opcional) */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}

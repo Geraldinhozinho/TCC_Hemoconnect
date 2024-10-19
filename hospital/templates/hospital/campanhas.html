@@ -3,29 +3,32 @@
 {% load static %}
 {% block parte_central %}
 
-    <div class="banner">
-        <div class="texto-central">
-            <h1 class='h1-banner1'>SUA DOAÇÃO É UM ATO DE <span class='spa'>AMOR E SOLIDARIEDADE</span></h1>
-            <h1 class='h1-banner'>FAÇA PARTE DESSA CORRENTE DE VIDA!</p>
+    <div class="banner-campanhas">
+        <div class="texto_central-campanhas">
+            <h1 class='h1_banner1-campanhas'>SUA DOAÇÃO É UM ATO DE <span class='spa'>AMOR E SOLIDARIEDADE</span></h1>
+            <h1 class='h1_banner-campanhas'>FAÇA PARTE DESSA CORRENTE DE VIDA!</p>
         </div>
-    </div>
+    </div> 
 
 
-    <h1 class="titulo">Campanhas</h1>
-    <div class="carousel-container">
-        <button class="prev" onclick="moveCarousel(-1)">&#8249;</button> <!-- Seta anterior -->
-        <div class="carousel">
+    <h1 class="titulo-campanhas">Campanhas</h1>
+    <div class="carrossel1-campanhas">
+        <button class="prev" onclick="moveCarousel(-2)">&#8249;</button> <!-- Seta anterior -->
+        <div class="carrossel2-campanhas">
             {% for campa in camp %}
-            <div class="posi">
-                <div class="img_camp">
+            <div class="campanhas">
+                <div class="img_camp-campanhas">
                     <img src="{{ campa.image.url }}" alt="Imagem da campanha">
                 </div>
                 <a href="{% url 'tela_detalhe_camp' campa.id %}">
-                    <button type="button" class="detalhe">Detalhar</button>
+                    <button type="button" class="detalhar">Detalhar</button>
                 </a>
             </div>
             {% endfor %}
         </div>
         <button class="next" onclick="moveCarousel(1)">&#8250;</button> <!-- Seta próxima -->
     </div>
+
+
+    <script src="{% static 'js/campanhas.js' %}"></script>
 {% endblock %}

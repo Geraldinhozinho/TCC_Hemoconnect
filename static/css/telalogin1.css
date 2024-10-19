@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -48,9 +50,17 @@ body {
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 30px;
     color: white;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: "Rammetto One", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    
+    
+    
+      
 }
 
 .logo span {
@@ -65,6 +75,7 @@ body {
     border-radius: 5px;
     background-color: #f2f2f2;
     font-size: 14px;
+    border: 0.9px solid #000;
 }
 
 .submit-btn {
@@ -77,6 +88,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
+    border: 0.5px solid #000;
 }
 
 .submit-btn:hover {
@@ -96,3 +108,4 @@ body {
 .login-link a:hover {
     text-decoration: none;
 }
+

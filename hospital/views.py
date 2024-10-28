@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import UsuarioForm, QuestionarioForm
 from .models import Usuario, Campanhas
 from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
 # Create your views here.
 
 def inicio(request):
@@ -58,8 +59,11 @@ def questionario(request):
 
 def campanhas(request):
     dados = Campanhas.objects.all()
+    dados_pag = Paginator(dados, 3)
+    page_num = request.GET.get('page')
+    page = dados_pag.get_page(page_num) 
     contexto = {
-        'camp': dados
+        'page': page
     }
     return render(request, 'hospital/campanhas.html', contexto)
 

@@ -13,9 +13,13 @@
 
     <h1 class="titulo-campanhas">Campanhas</h1>
     <div class="carrossel1-campanhas">
-        <button class="prev" onclick="moveCarousel(-2)">&#8249;</button> <!-- Seta anterior -->
+        <div class = "botoes1-campanhas">
+            {% if page.has_previous%}
+                <a class="ant" href="{% url 'campanhas'%}?page={{page.previous_page_number}}">⇦ </a>
+            {% endif %}
+        </div>
         <div class="carrossel2-campanhas">
-            {% for campa in camp %}
+            {% for campa in page.object_list %}
             <div class="campanhas">
                 <div class="img_camp-campanhas">
                     <img src="{{ campa.image.url }}" alt="Imagem da campanha">
@@ -26,9 +30,11 @@
             </div>
             {% endfor %}
         </div>
-        <button class="next" onclick="moveCarousel(1)">&#8250;</button> <!-- Seta próxima -->
+        <div class = "botoes2-campanhas"> 
+            {% if page.has_next %}
+                <a class="prox" href="{% url 'campanhas'%}?page={{page.next_page_number}}">⇨ </a>
+            {% endif %}
+        </div>
     </div>
 
-
-    <script src="{% static 'js/campanhas.js' %}"></script>
 {% endblock %}

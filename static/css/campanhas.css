@@ -31,13 +31,10 @@
 
 
 /*bloco unico*/
-
-
-
 .titulo-campanhas {
     color: rgb(0, 0, 0);
-    font-size: 100px;
-    opacity: 0.2;
+    font-size: 50px;
+    opacity: 0.7;
     font-weight: bold;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
@@ -56,22 +53,20 @@
     overflow: hidden; 
     width: 100%; 
 }
-
 .campanhas {
-    flex: 0 0 calc(25% - 20px); 
+    flex: 0 0 calc(23% - 20px); 
     text-align: center;
     padding: 10px;
-    margin: 0 10px; 
+    margin-left: 140px; 
+    
     box-sizing: border-box;
 
 }
-
 .img_camp-campanhas img {
     width: 100%; 
     height: auto;
     border-radius: 10px; 
 }
-
 .detalhar {
     background-color: #6A0303;
     color: #ffffff;
@@ -80,27 +75,49 @@
     cursor: pointer;
     margin-top: 10px;
 }
-
 .detalhe:hover {
     background-color: #5a5555;
 }
 
-/* Setas de navegação */
-.prev, .next {
-    background-color: transparent;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
+
+/*Botões prox e ant */
+.botoes1-campanhas{
+    margin-left: 30px; 
+}
+.botoes2-campanhas{
+    margin-right: 30px;
+    
+}
+.prox{
+    text-decoration: none;
+    text-align: center;
+    background-color: #6A0303;
+    border-radius: 30px;
+    color: #FFF;
+    padding: 5px 20px;
+    
+}
+.prox:hover{
+    background-color: #392f2f;
+    border-radius: 30px;
+    color: #FFF;
+    padding: 5px 20px;
+    
+}
+.ant{
+    text-decoration: none;
+    text-align: center;
+    background-color: #6A0303;
+    border-radius: 30px;
+    color: #FFF;
+    padding: 5px 20px;
+   
+}
+.ant:hover{
+    background-color: #392f2f;
+    border-radius: 30px;
+    color: #FFF;
+    padding: 5px 20px;
+    
 }
 
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}

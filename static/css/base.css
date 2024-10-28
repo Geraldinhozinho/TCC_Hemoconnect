@@ -5,14 +5,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ledger&family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ledger&family=Lemon&family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Rammetto+One&display=swap'); */
+
 
 body { 
-    font-family: Arial, sans-serif;
-    background-color: #F5D1D1; 
+    background-color: #FFD3D3; 
 }
 .bloco-base {
     display: flex;
@@ -96,4 +97,3 @@ body {
     font-style: normal;
     margin-right: 15px;
 }
-

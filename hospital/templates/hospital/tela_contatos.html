@@ -3,19 +3,76 @@
 {% load static %}
 {% block parte_central %}
     <h1 class="titulo-cont">Contatos</h1>
-    <h2 class="titulo2-cont">Como  você prefere falar com a gente?</h2>
     
-    <div>
-    <img src="{% static 'image/Email.png' %}" alt="Heart with blood drop" class="img-cont">
+    <div class= "bloco1-contatos">
+        <div class= "subbloco1-contatos">
+            <div class = 'sub-subbloco1-contatos'>
+                <img src="{% static 'image/Email.png' %}" alt="Heart with blood drop" class="email-contatos">
+            </div>
+            <div class = 'sub-subbloco2-contatos'>
+                <h1 class='subtitulo-contatos'>E-mail</h1>
+                <p class='textop1-contatos'> Tem alguma dúvida? </p>
+                <p class='textop2-contatos'> Hemo@hotmail.com </p>
+            </div>
+        </div>
+
+        <div class= "subbloco1-contatos">
+            <div class = 'sub-subbloco1-contatos'>
+                <img src="{% static 'image/telefone.png' %}" alt="Heart with blood drop" class="email-contatos">
+            </div>
+            <div class = 'sub-subbloco2-contatos'>
+                <h1 class='subtitulo-contatos'>Telefone</h1>
+                <p class='textop1-contatos'> Você pode nos ligar </p>
+                <p class='textop2-contatos'> (84) 3351-9895 </p>
+            </div>
+        </div>
+
+        <div class= "subbloco1-contatos">
+            <div class = 'sub-subbloco1-contatos'>
+                <img src="{% static 'image/localizacao.png' %}" alt="Heart with blood drop" class="email-contatos">
+            </div>
+            <div class = 'sub-subbloco2-contatos'>
+                <h1 class='subtitulo-contatos'>Localização</h1>
+                <p class='textop1-contatos'> Br 405, KM 3, 19-Arizona </p>
+                <p class='textop2-contatos'> Pau Dos Ferros/RN </p>
+            </div>
+        </div>
+
+        <div class= "subbloco1-contatos">
+            <div class = 'sub-subbloco3-contatos'>
+                <img src="{% static 'image/chat.png' %}" alt="Heart with blood drop" class="chat1-contatos">
+            </div>
+            <div class = 'sub-subbloco4-contatos'>
+                <h1 class='subtitulo-contatos'>Chat</h1>
+                <p class='textop3-contatos'> Acesse o chat virtual para ver as dúvidas mais frequentes. </p>
+            </div>
+        </div>
+    </div>
 
 
-    <img src="{% static 'image/telefone.png' %}" alt="Heart with blood drop" class="img-cont">
+    <div class= 'bloco2-contatos'>
+        <h1 class="titulo2-cont">Horários de antendimento</h1>
+        <div class='subbloco5-contatos'>
+            <div class="relogio1-contatos">
+                <img src="{% static 'image/relogio.png' %}" alt="Heart with blood drop" class="relogio-contatos">
+                <p class="p2"> Segunda-feira a Sexta-feira
+                    08:00 às 18:00
+                </p>
+            </div>
+            <div class="relogio2-contatos">
+                <img src="{% static 'image/relogio.png' %}" alt="Heart with blood drop" class="relogio-contatos">
+                <p class="p3"> Sábado e domingo 
+                    08:00 às 12:00
+                </p>
+            </div>
+            <div class="botao-contatos">
+                <button class="chat-contatos">Chat</button>
+            </div>
+        </div>            
+    </div>
 
-    <img src="{% static 'image/chat.png' %}" alt="Heart with blood drop" class="img-cont">
-
-
-
-
-
-    <h1 class="titulo-cont">Localização</h1>
 {% endblock %}
+
+
+
+

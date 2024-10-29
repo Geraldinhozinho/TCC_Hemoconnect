@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Poppins:wght@600&family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ledger&family=Lemon&family=Poppins:wght@600;700&family=Rammetto+One&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -6,40 +10,50 @@
 /*banner*/
 .banner-campanhas {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, red, black);
-    padding: 20px;
-    text-align: center;
+    background-color: #FFF;
+    padding: 50px;
     border-bottom: 1px solid #000;
 }
 .texto_central-campanhas {
-    color: #fdfdfd;
+    color: #000000;
+    margin: 0px;
+    line-height: 48px;
 }
 .h1_banner1-campanhas {
     font-size: 48px;
     font-weight: bold;
-    margin-bottom: 10px;
+    font-family: "Poppins";
+    font-weight: 900;
+    margin-left: 70px;
+    text-align: left;
 }
-.h1_banner-campanhas {
-    font-size: 36px; 
-    margin-bottom: 20px;
+.h3_banner-campanhas {
+    font-size: 24px;
+    font-family: "Lato";
+    font-weight: 300;
+    font-style:normal;
+    margin-left: 70px;
+    line-height: 20px;
 }
 .spa {
-    color: #e62a2a;
+    color: #CE2A2A;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: "Poppins";
+    font-weight: 900;
+    margin-left: 70px;
+    text-align: left;
 }
 
 
 /*bloco unico*/
 .titulo-campanhas {
-    color: rgb(0, 0, 0);
-    font-size: 50px;
-    opacity: 0.7;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
-
-
+    color: #6A0303;
+    font-size: 40px;
+    font-family: "Poppins";
+    font-weight: 900;
+    margin-left: 70px;
+    margin-left: 150px;
 }
 .carrossel1-campanhas {
     display: flex;

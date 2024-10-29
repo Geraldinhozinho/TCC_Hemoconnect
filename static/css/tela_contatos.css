@@ -115,22 +115,22 @@
 
 .subbloco5-contatos {
     display: flex;
-    align-items: center; /* Alinha verticalmente ao centro */
-    gap: 20px; /* Espaço entre os itens, ajuste conforme necessário */
+    align-items: center; 
+    gap: 20px; 
     max-height: 50%;
 }
 
 .relogio1-contatos {
     display: flex;
-    align-items: center; /* Alinha a imagem e o texto verticalmente */
-    gap: 10px; /* Espaço entre a imagem e o texto */
+    align-items: center;
+    gap: 10px; 
     max-width: 18%;
     margin-left: 160px;
 }
 .relogio2-contatos{
     display: flex;
-    align-items: center; /* Alinha a imagem e o texto verticalmente */
-    gap: 10px; /* Espaço entre a imagem e o texto */
+    align-items: center; 
+    gap: 10px; 
     max-width: 15%;
 }
 
@@ -141,18 +141,6 @@
 .p2, .p3{
     color: #6A0303;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*botão*/
 
@@ -173,7 +161,7 @@
     position: relative;
     display: inline-block;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    animation: pulse 1.5s infinite; /* Animação de pulsação aplicada ao botão */
+    animation: pulse 1.5s infinite; 
     transition: all 0.3s ease;
 }
 

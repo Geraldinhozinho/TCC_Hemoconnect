@@ -28,7 +28,7 @@ urlpatterns = [
     path('quest/', questionario, name='tela_form'),
     path('perfil/', perfil, name='perfil'),
     path('campanhas/', campanhas, name='campanhas'),
-    path('campanhas/<int:id>/',detalhe, name='tela_detalhe_camp'),
+    path('tela_detalhe_camp/<int:campa_id>/', detalhe, name='tela_detalhe_camp'),
     path('doador/',doador, name='tela_doador'),
     path('contatos/',contatos, name='tela_contatos'),
 

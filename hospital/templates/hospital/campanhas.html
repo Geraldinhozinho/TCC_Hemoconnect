@@ -10,32 +10,43 @@
             <h3 class='h3_banner-campanhas'>FAÇA PARTE DESSA CORRENTE DE VIDA!</p>
         </div>
     </div> 
-
-
-    <h1 class="titulo-campanhas">Campanhas</h1>
-    <div class="carrossel1-campanhas">
-        <div class = "botoes1-campanhas">
+<div class = "botoes1-campanhas">
             {% if page.has_previous%}
                 <a class="ant" href="{% url 'campanhas'%}?page={{page.previous_page_number}}">⇦ </a>
             {% endif %}
         </div>
+
+    <h1 class="titulo-campanhas">Campanhas</h1>
+
+    <div class="carrossel1-campanhas">
+        <button id="anteriorBtn" class="anterior" onclick="scrollCarousel(-1)">&#10094;</button>
+        
         <div class="carrossel2-campanhas">
-            {% for campa in page.object_list %}
+            {% for campa in campanhas %}
             <div class="campanhas">
                 <div class="img_camp-campanhas">
                     <img src="{{ campa.image.url }}" alt="Imagem da campanha">
                 </div>
-                <a href="{% url 'tela_detalhe_camp' campa.id %}">
-                    <button type="button" class="detalhar">Detalhar</button>
-                </a>
+                <button onclick="Alert.render({{ campa.id }})" class="detalhar">Detalhar</button>
             </div>
             {% endfor %}
         </div>
-        <div class = "botoes2-campanhas"> 
+        
+        <button class="proximo" onclick="scrollCarousel(1)">&#10095;</button>
+    </div>
+ <div class = "botoes2-campanhas"> 
             {% if page.has_next %}
                 <a class="prox" href="{% url 'campanhas'%}?page={{page.next_page_number}}">⇨ </a>
             {% endif %}
+        </div>   
+    <div id="popUpOverlay" class="modal-overlay hidden"></div>
+    <div id="popUpBox" class="modal-box hidden">
+        <div id="box">
+            <div id="closeModal">
+                <button  onclick="Alert.ok()">X</button>
+            </div>
+            <div id="tela_detalhe_camp"></div>
         </div>
     </div>
-
+    <script src="{% static 'js/campanhas.js' %}"></script>
 {% endblock %}

@@ -78,4 +78,7 @@ class CampanhasForm(forms.ModelForm):
         model = Campanhas
         fields = ['titulo','descricao','image']
         
-        
+        widgets = {
+            'titulo': forms.TextInput(attrs=({'class':'titulomodal'})),
+            'descricao': forms.TextInput(attrs=({'class':'descricaomodal'})),           
+        }

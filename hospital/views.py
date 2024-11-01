@@ -55,25 +55,33 @@ def questionario(request):
     }
     return render(request, 'hospital/tela_form.html', contexto)
 
-
-
 def campanhas(request):
-    dados = Campanhas.objects.all()
-    dados_pag = Paginator(dados, 3)
-    page_num = request.GET.get('page')
-    page = dados_pag.get_page(page_num) 
-    contexto = {
-        'page': page
+    campanhas = Campanhas.objects.all()  # Ou algum filtro específico
+    context = {
+        'campanhas': campanhas
     }
-    return render(request, 'hospital/campanhas.html', contexto)
+    return render(request, 'hospital/campanhas.html', context)
 
-def detalhe(request, id):
-    campanha = get_object_or_404(Campanhas, id=id)  # Busca a campanha pelo ID ou retorna 404
-    contexto = {
-        'camp': campanha
+# def campanhas(request):
+#     dados = Campanhas.objects.all()
+#     dados_pag = Paginator(dados, 3)
+#     page_num = request.GET.get('page')
+#     page = dados_pag.get_page(page_num) 
+#     contexto = {
+#         'page': page
+#     }
+#     return render(request, 'hospital/campanhas.html', contexto)
+
+from django.http import JsonResponse
+
+def detalhe(request, campa_id):
+    campanha = Campanhas.objects.get(id=campa_id)
+    data = {
+        "titulo": campanha.titulo,
+        "descricao": campanha.descricao,
+        "image_url": campanha.image.url,  # Corrigido para retornar o URL da imagem
     }
-    return render(request, 'hospital/tela_detalhe_camp.html', contexto)
-
+    return JsonResponse(data)
 def doador(request):
           
      return render(request, 'hospital/tela_doador.html')

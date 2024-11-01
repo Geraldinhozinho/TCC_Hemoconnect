@@ -38,12 +38,12 @@ body{
 }
 
 .infor {
-    max-width: 600px; /* Largura máxima para o bloco de informações */
+    max-width: 800px; /* Largura máxima para o bloco de informações */
 }
 
 .title {
     font-size: 28px; /* Tamanho do título */
-    color: #333; /* Cor do título */
+    color: #6A0303; /* Cor do título */
     margin: 0 0 10px; /* Margem abaixo do título */
     text-align: left; /* Alinha o texto à esquerda */
 }

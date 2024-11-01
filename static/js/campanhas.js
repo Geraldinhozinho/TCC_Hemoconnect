@@ -1,23 +1,67 @@
-// let currentSlide = 0; // Variável para controlar o slide atual
+var Alert = new CustomAlert();
 
-//     function moveCarousel(direction) {
-//         const carousel = document.querySelector('.carrossel2-campanhas'); // Seleciona o carrossel
-//         const slides = document.querySelectorAll('.campanhas'); // Seleciona os slides
-//         const slideWidth = slides[0].offsetWidth + 20; // Largura de um slide (mais margem de 20px)
-//         const maxSlide = slides.length - 4; // Número máximo de slides visíveis (no caso de 4)
+function CustomAlert() {
+    this.render = function(campId) {
+        document.getElementById('popUpOverlay').classList.remove('hidden');
+        document.getElementById('popUpBox').classList.remove('hidden');
 
-//         // Atualiza o slide atual com base na direção
-//         currentSlide += direction;
+        fetch(`/tela_detalhe_camp/${campId}/`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('tela_detalhe_camp').innerHTML = `
+                <div class='teste'>
+                    <img class='foto' src="${data.image_url}" alt="Imagem da campanha"  display:flex;" />
+                    <div class='ele'>
+                        <h3>${data.titulo}</h3>
+                        <p>${data.descricao}</p>
+                    </div>
+                </div>
+                    
+                `;
+            })
+            .catch(error => console.error('Erro ao buscar detalhes da campanha:', error));
+    };
 
-//         // Impede que o slide ultrapasse os limites
-//         if (currentSlide < 0) {
-//             currentSlide = 0;
-//         } else if (currentSlide > maxSlide) {
-//             currentSlide = maxSlide;
-//         }
+    this.ok = function() {
+        document.getElementById('popUpOverlay').classList.add('hidden');
+        document.getElementById('popUpBox').classList.add('hidden');
+    };
+}
+//carrossel
+let currentPosition = 0;
 
-//         // Move o carrossel com base no slide atual
-//         carousel.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-//     }
+function scrollCarousel(direction) {
+    const container = document.querySelector('.carrossel2-campanhas');
+    const items = container.querySelectorAll('.campanhas'); // Seleciona todos os itens
+    const itemWidth = items[0].offsetWidth + 20; // Largura de cada item + gap
+    const maxScroll = container.scrollWidth - container.offsetWidth; // Máximo de rolagem possível
 
+    // Atualiza a posição atual com base na direção
+    currentPosition += direction * itemWidth;
 
+    // Limita a rolagem para não ultrapassar os limites
+    if (currentPosition < 0) currentPosition = 0;
+    if (currentPosition > maxScroll) currentPosition = maxScroll;
+
+    // Aplica a transformação de rolagem
+    container.style.transform = `translateX(-${currentPosition}px)`;
+
+    // Mostra ou oculta o botão "Anterior"
+    const anteriorBtn = document.getElementById('anteriorBtn');
+    anteriorBtn.style.display = currentPosition > 0 ? 'block' : 'none';
+
+    // Oculta o botão "Próximo" se chegar ao final
+    const proximoBtn = document.querySelector('.proximo');
+    proximoBtn.style.display = currentPosition < maxScroll ? 'block' : 'none';
+}
+
+// Inicializa a visibilidade dos botões
+window.onload = function() {
+    const anteriorBtn = document.getElementById('anteriorBtn');
+    anteriorBtn.style.display = currentPosition > 0 ? 'block' : 'none';
+
+    const container = document.querySelector('.carrossel2-campanhas');
+    const maxScroll = container.scrollWidth - container.offsetWidth;
+    const proximoBtn = document.querySelector('.proximo');
+    proximoBtn.style.display = currentPosition < maxScroll ? 'block' : 'none';
+}

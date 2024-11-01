@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 <!DOCTYPE html>
 <html lang="PT-br">
 <head>
@@ -12,7 +12,6 @@
 <body>
    
     <div class="tela-detalhe">
-        <a class="x" href="{% url 'campanhas' %}">✖</a>
         <div class="detalhar">
             <img src="{{ camp.image.url }}" alt="Imagem da campanha" class="campanha-imagem">
             <div class="infor">
@@ -23,4 +22,4 @@
     </div>
 
 </body>
-</html>
+</html> {% endcomment %}

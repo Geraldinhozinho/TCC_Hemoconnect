@@ -151,6 +151,7 @@
     justify-content: space-between;
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .carrossel2-campanhas {
@@ -164,7 +165,7 @@
     flex: 0 0 calc(23% - 30px); /* Largura de cada item com espaço */
     text-align: center; /* Centraliza o texto */
     padding: 10px;
-    margin-left: 140px; /* Margem à esquerda para espaçamento */
+    margin-left: 20px; /* Margem à esquerda para espaçamento */
     box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
 }
 
@@ -191,7 +192,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5); /* Cor de fundo semitransparente */
+    background: rgba(1, 1, 1, 1.5); /* Cor de fundo semitransparente */
     color: white;
     border: none;
     padding: 10px;

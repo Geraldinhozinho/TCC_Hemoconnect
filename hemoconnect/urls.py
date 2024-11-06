@@ -16,22 +16,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospital.views import inicio, cadastro, login, questionario,perfil, campanhas, detalhe, doador, contatos
+from hospital.views import inicio, cadastrar, login_view, questionario,perfil, campanhas, detalhe, doador, contatos, logout_view
 from django.conf import settings
 from django.conf.urls.static import static
-
+app_name = 'hospital'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio, name='tela_inicial'),
-    path('cadastrar/', cadastro, name='tela_login1'),
-    path('logar/', login, name='tela_login2'),
-    path('quest/', questionario, name='tela_form'),
-    path('perfil/', perfil, name='perfil'),
+    
     path('campanhas/', campanhas, name='campanhas'),
     path('tela_detalhe_camp/<int:campa_id>/', detalhe, name='tela_detalhe_camp'),
+    
     path('doador/',doador, name='tela_doador'),
+    path('quest/', questionario, name='tela_form'),
+    
     path('contatos/',contatos, name='tela_contatos'),
-
+    
+    
+    path('cadastrar/', cadastrar, name='tela_login1'),
+    path('logar/', login_view, name='tela_login2'),
+    path('logout/', logout_view, name='logout'),
+    path('perfil/', perfil, name='perfil')
 ]
 
 

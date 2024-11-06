@@ -1,44 +1,51 @@
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render,redirect
 from .forms import UsuarioForm, QuestionarioForm
-from .models import Usuario, Campanhas
-from django.shortcuts import get_object_or_404
-from django.core.paginator import Paginator
+from .models import Campanhas
+from django.contrib import messages
 # Create your views here.
-
+# from django.shortcuts import get_object_or_404
+# from django.core.paginator import Paginator
 def inicio(request):
      return render(request, 'hospital/tela_inicial.html')
 
 
-from django.shortcuts import render, redirect
-from .forms import UsuarioForm  # Certifique-se de que o formulário está importado corretamente
 
-def cadastro(request):
-     form = UsuarioForm()
-     if request.method == 'POST':
-          form = UsuarioForm(request.POST)
-          if form.is_valid():
-               form.save()  # Salva o usuário no banco de dados
-               return redirect('tela_inicial')  # Redireciona para uma página de sucesso ou outra URL
-     contexto = {
-          'form': form  # O nome correto seria 'form' e não 'forms'
-     }
+def cadastrar(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Cadastro realizado com sucesso! Você já pode fazer login.')
+            return redirect('tela_login2')  
+        else:
+            # Exibir mensagens de erro no template
+            messages.error(request, "Erro ao cadastrar usuário. Verifique os dados informados.")
+    else:
+        form = UsuarioForm()
+     
+    return render(request, 'hospital/tela_login1.html', {'form': form})
 
-     return render(request, 'hospital/tela_login1.html', contexto)
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password1']
+        
+        # Autenticar o usuário
+        user = authenticate(request, username=username, password=password)
+        
+        if user is not None:
+            login(request, user)  # Loga o usuário
+            return redirect('tela_inicial')  # Redireciona após login
+        else:
+            messages.error(request, 'Usuário ou senha inválidos.')
 
+    return render(request, 'hospital/tela_login2.html')
 
+def logout_view(request):
+    logout(request) 
+    return redirect('tela_login1')  
 
-def login(request):
-     form = UsuarioForm()
-     if request.method == 'POST':
-          form = UsuarioForm(request.POST)
-          if form.is_valid():
-               form.save()  # Salva o usuário no banco de dados
-               return redirect('tela_inicial')  # Redireciona para uma página de sucesso ou outra URL
-     contexto = {
-          'form': form  # O nome correto seria 'form' e não 'forms'
-     }
-
-     return render(request, 'hospital/tela_login2.html', contexto)
 
 
 #QUESTIONARIO 2 

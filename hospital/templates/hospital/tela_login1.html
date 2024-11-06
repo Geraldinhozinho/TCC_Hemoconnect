@@ -10,31 +10,53 @@
     <link href="{% static 'css/telalogin1.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="image-section">
-            <img src="{% static 'image/Foto_tela_inicial.png' %}" alt="Heart with blood drop" class="heart-image">
+    <div class="bloco1-login">
+        <div class="image-login">
+            <img src="{% static 'image/Foto_tela_inicial.png' %}" alt="Coração na mão" class="coracao-login">
         </div>
-        <div class="form-section">
-            <div class="form-container">
-                <h1 class="logo">HEM<span>❤️</span>CONNECT</h1>
-                <form  method="post" class="signup-form">
-                    {% csrf_token %} 
-                    <div>
-                        {{form.nome }}
-                    </div>
-                    <div>
-                        {{form.email}}
-                    </div>
-                    <div>
-                        {{form.senha}}
-                    </div>
-                    <div>
-                        {{form.confir}}
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Cadastrar-se</button>
+        <div class="forms-login">
+            <div class="form-login">
+                <h1 class="logo-login">HEM<span>❤️</span>CONNECT</h1>
+                <form method="post" class="formulario-login">
+                    {% csrf_token %}
+                    <p>
+                        <label for="id_username"></label>
+                        <input type="text" name="username" placeholder="Digite um nome para seu usuario, sem espaços" maxlength="150" autofocus="" required="" id="id_username">
+                    </p>                   
+                    <p>
+                        <label for="id_nome_completo"></label>
+                        <input type="text" name="nome_completo" placeholder="Digite seu nome completo" maxlength="200" id="id_nome_completo">                       
+                    </p>
+                    <p>
+                        <label for="id_cpf"></label>
+                        <input type="text" name="cpf" placeholder="Digite seu CPF, sem pontos ou traços" maxlength="11" required="" aria-describedby="id_cpf_helptext" id="id_cpf">
+                    </p>
+                    <p>
+                        <label for="id_endereco"></label>
+                        <input type="text" name="endereco" placeholder="Informe sua cidade" maxlength="255" id="id_endereco">
+                    </p>
+                    <p>
+                        <label for="id_email"></label>
+                        <input type="email" name="email" placeholder="Informe seu E-mail" maxlength="254" id="id_email">
+                    </p>
+                    <p>
+                        <label for="id_password1"></label>
+                        <input type="password" name="password1" placeholder="Crie uma senha" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
+                        <span class="helptext" id="id_password1_helptext"></span>
+                    </p>
+                    <ul>
+                        <li>A senha não deve ser similar à informações pessoais.</li>
+                        <li>A senha deve ter pelo menos 8 caracteres.</li>
+                        <li>A senha não pode ser totalmente numérica.</li>
+                    </ul>
+                    <p>
+                        <label for="id_password2"></label>
+                        <input type="password" name="password2" placeholder="Confirme sua senha" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
+                    </p>
+                    <button type="submit" class="botao-login">Cadastrar-se</button>
                 </form>
-                <p class="login-link">Já possui uma conta? <a href="{% url 'tela_login2' %}">Entrar</a></p>
+                
+                <p class="login-login">Já possui uma conta? <a href="{% url 'tela_login2' %}">Entrar</a></p>
             </div>
         </div>
     </div>

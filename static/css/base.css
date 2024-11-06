@@ -1,5 +1,9 @@
 /*Barra de navegação*/
 
+/*paleta de cores*/
+.x{
+    color: #FFD3D3, #CE2A2A, #6A0303, #FFFFFF, #000000;
+}
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +17,7 @@
 
 
 body { 
-    background-color: #570dec; 
+    background-color: #FFD3D3; 
 }
 .bloco-base {
     display: flex;

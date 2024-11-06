@@ -1,35 +1,28 @@
 from django import forms
 from .models import Usuario, Questionario, Campanhas
+from django.contrib.auth.forms import UserCreationForm
+from django.core.exceptions import ValidationError
 
-class UsuarioForm(forms.ModelForm):
+
+class UsuarioForm(UserCreationForm):
+    cpf = forms.CharField(max_length=11, required=True, help_text="Digite seu CPF sem pontos ou traços.")
+    endereco = forms.CharField(max_length=255, required=False)
+    nome_completo = forms.CharField(max_length=200, required=False)
+
     class Meta:
         model = Usuario
-        fields = ['nome', 'email', 'senha', 'confir'] 
-        #posso usar o '__all__' também
-        widgets = {
-            'nome': forms.TextInput(attrs={
-                'class': 'form-input', 
-                'placeholder': 'Nome',
-                'required': 'true'
-            }),
-            'email': forms.TextInput(attrs={
-                'class': 'form-input', 
-                'placeholder': 'Email',
-                'required': 'true'
-            }),
-            'senha': forms.PasswordInput(attrs={
-                'class': 'form-input', 
-                'placeholder': 'Senha',
-                'required': 'true'
-                
-            }),
-            'confir': forms.PasswordInput(attrs={
-                'class': 'form-input', 
-                'placeholder': 'Confirmar Senha',
-                'required': 'true'
-            }),
-        }
+        fields = ('username', 'nome_completo', 'cpf', 'endereco', 'email', 'password1', 'password2')
         
+        widget={
+            'username': forms.TextInput(attrs=({'placeholder': 'Digite seu nome'})),
+        }
+
+    def clean_cpf(self):
+        cpf = self.cleaned_data.get('cpf')
+        if Usuario.objects.filter(cpf=cpf).exists():
+            raise ValidationError("Este CPF já está cadastrado.")
+        return cpf
+
         
 class QuestionarioForm(forms.ModelForm):
     class Meta:

@@ -2,21 +2,57 @@ from django import forms
 from .models import Usuario, Questionario, Campanhas
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
-
+import re
 
 class UsuarioForm(UserCreationForm):
-    cpf = forms.CharField(max_length=11, required=True, help_text="Digite seu CPF sem pontos ou traços.")
+    cpf = forms.CharField(max_length=14, required=True, help_text="Digite seu CPF sem pontos ou traços.")
     endereco = forms.CharField(max_length=255, required=False)
     nome_completo = forms.CharField(max_length=200, required=False)
 
     class Meta:
         model = Usuario
         fields = ('username', 'nome_completo', 'cpf', 'endereco', 'email', 'password1', 'password2')
+        error_messages = {
+            'username': {
+                'max_length': 'O nome de usuário não pode exceder 150 caracteres.',
+                'invalid': 'O nome de usuário contém caracteres inválidos.',
+            },
+            'nome_completo': {
+                'max_length': 'O nome completo não pode exceder 200 caracteres.',
+            },
+            'cpf': {
+                'max_length': 'O CPF deve ter no máximo 14 caracteres.',
+                'invalid': 'Insira um CPF válido.',
+            },
+            'email': {
+                'invalid': 'Insira um e-mail válido.',
+            },
+            'password1': {
+                'password_too_similar': 'A senha é muito parecida com informações pessoais.',
+                'password_too_short': 'A senha deve ter pelo menos 8 caracteres.',
+                'password_too_common': 'A senha é muito comum.',
+                'password_entirely_numeric': 'A senha não pode ser inteiramente numérica.',
+            },
+            'password2': {
+                'password_mismatch': 'As senhas não correspondem.',
+            },
+        }
         
         widget={
-            'username': forms.TextInput(attrs=({'placeholder': 'Digite seu nome'})),
         }
-
+        
+    def clean_nome_completo(self):
+        nome_completo = self.cleaned_data['nome_completo']
+        if not re.match(r'^[A-Za-zÀ-ÿ\s]+$', nome_completo):
+            raise forms.ValidationError('Seu nome só pode conter letras e espaços.')
+        return nome_completo
+    
+    # def clean_email(self):
+    #     email = self.cleaned_data['email']
+    #     if not email.endswith('.com'):
+    #         raise forms.ValidationError('O e-mail deve terminar com ".com".')
+    #     return email
+    
     def clean_cpf(self):
         cpf = self.cleaned_data.get('cpf')
         if Usuario.objects.filter(cpf=cpf).exists():
@@ -25,45 +61,40 @@ class UsuarioForm(UserCreationForm):
 
         
 class QuestionarioForm(forms.ModelForm):
+    doenca_det = forms.CharField(
+        required=False,  # Não obrigatório, será validado dinamicamente
+        widget=forms.TextInput(attrs={'class': 'doenca2-forms', 'placeholder': 'Digite o nome da doença'}),
+    )
+
     class Meta:
-        model = Questionario
-        fields = ['querer', 'nome', 'email', 'tipo_sangue', 'fuma', 'sexo', 'doenca', 'doenca_det', 'disponibilidade', 'dias']
-        
-        # Definir widgets personalizados para alguns campos
+        model = Questionario  # Modelo associado ao formulário
+        fields = [
+            'querer', 'nome', 'email', 'tipo_sangue', 'fuma', 'sexo',
+            'doenca', 'doenca_det', 'disponibilidade', 'dias'
+        ]  # Inclua 'doenca_det' nos campos
+
         widgets = {
-            'querer': forms.RadioSelect(attrs=({'class':'quer'})),
-            
-            'nome': forms.TextInput(attrs=({'class':'nome','placeholder': 'Digite seu nome'})),
-            
-            'email': forms.TextInput(attrs=({'class':'nome','placeholder': 'Digite seu email'})),
-            
-            'tipo_sangue': forms.RadioSelect(attrs=({'class':'sangue'})),
-            
-            'fuma': forms.RadioSelect(attrs=({'class':'fuma'})),
-            
-           'sexo': forms.RadioSelect(attrs=({'class':'sexo'})),
-           
-           'doenca': forms.RadioSelect(attrs=({'class':'doenca'})),
-           
-           'doenca_det': forms.TextInput(attrs=({'class':'doenca2','placeholder': 'Digite aqui o nome da doença'})),
-           
-           'disponibilidade': forms.RadioSelect(attrs=({'class':'dispo'})),
-           
-           'dias': forms.CheckboxSelectMultiple(attrs=({'class':'dias'})),
-           
+            'querer': forms.RadioSelect(attrs={'class': 'tornar-forms'}),
+            'nome': forms.TextInput(attrs={'class': 'nome-forms', 'placeholder': 'Digite seu nome'}),
+            'email': forms.EmailInput(attrs={'class': 'email-forms', 'placeholder': 'Digite seu email'}),
+            'tipo_sangue': forms.RadioSelect(attrs={'class': 'sangue-forms'}),
+            'fuma': forms.RadioSelect(attrs={'class': 'fuma-forms'}),
+            'sexo': forms.RadioSelect(attrs={'class': 'sexo-forms'}),
+            'doenca': forms.RadioSelect(attrs={'class': 'doenca-forms'}),
+            'disponibilidade': forms.RadioSelect(attrs={'class': 'disponibilidade-forms'}),
+            'dias': forms.CheckboxSelectMultiple(attrs={'class': 'dias-forms'}),
         }
-        
     def clean(self):
         cleaned_data = super().clean()
         doenca = cleaned_data.get('doenca')
         doenca_det = cleaned_data.get('doenca_det')
 
-        # Se a resposta de 'doenca' for 'Sim', o campo 'doenca_det' deve ser obrigatório
-        if doenca == 'sim' and not doenca_det:
-            self.add_error('doenca_det', 'Por favor, informe a doença se você marcou "Sim".')
+        if doenca == 'Sim' and not doenca_det:
+            self.add_error('doenca-det', 'Por favor, informe o nome da doença.')
+
+            return cleaned_data
         
-        return cleaned_data
-        
+    
 
         
 class CampanhasForm(forms.ModelForm):

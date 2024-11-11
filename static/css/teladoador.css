@@ -81,8 +81,8 @@
     font-style:normal;
 }
 
-
 /*imagem e texto 1*/
+
 .bloco1-doador {
     display: flex;
     align-items: flex-start;
@@ -143,55 +143,42 @@
 
 /*texto 2 sem imagem*/
 
+
 .bloco2-doador {
     display: flex;
-    align-items: flex-start;
-    gap: 20px; 
-    margin: 100px auto;
-    justify-content: center; 
+   
+    padding: 30px 0;
+    margin-left: 150px;
 }
 .subbloco2-doador {
-    padding: 20px;
-    max-width: 1200px;
-    width: 100%;    
-}
-.subbloco2-doador h1 {
-    background-color: transparent; 
-    color: #570707;
-    text-align: center;
-    margin-bottom: 20px; 
-    font-family: "Lemon", serif;   
-}
-
-
-
-.parent-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Garante que o conteúdo esteja no centro vertical */
-}
-
-
-.container {
     text-align: center;
     max-width: 1000px;
     
 }
-
-h1 {
+.bloco2-doador h1 {
     color: #CE2A2A;
-    font-weight: 900;
     margin-bottom: 20px;
+    font-family: "Poppins";
+    font-weight: 900;
+    margin-left: 150px;
 }
-
-.cards {
+.cards-doador {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
+.icon-doador {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
 
-.card {
+.titulo-bloco2-doador {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card1-doador {
     background-color: #CE2A2A;
     color: #FFF;
     padding: 20px;
@@ -200,36 +187,19 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 280px;
 }
-
-.icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.description {
+.descricao1-doador {
     font-size: 14px;
+    text-align: left;
 }
-
-
-
-
-
-
-
 
 /*imagem2 e texto 3*/
 
 .bloco3-doador {
     display: flex;
     gap: 20px; 
-    margin: 100px auto 0px;
+    margin: 40px auto 0px;
     justify-content: center;
     background-color: #FFF;
     padding: 30px;
@@ -302,7 +272,9 @@ h1 {
     background-color: #6A0303; /* Cor de fundo semelhante à imagem */
     padding: 40px;
 }
+
 /*botão*/
+
 .botao-doador {
     background-color: #FFF;
     color: #6A0303;
@@ -327,4 +299,3 @@ h1 {
     transform: translateY(2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-

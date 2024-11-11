@@ -50,17 +50,35 @@ def logout_view(request):
 
 #QUESTIONARIO 2 
 def questionario(request):
-    form = QuestionarioForm()
-    if request.method == 'POST':
-        form = QuestionarioForm(request.POST)
-        if form.is_valid():
-            print("Formulário é válido!")  # Verifica se a validação está correta
-            form.save()  # Salva no banco de dados
-            return redirect('tela_inicial')  # Redireciona após salvar
-    contexto = {
-        'form': form  # Certifique-se de que é 'form' e não 'forms'
-    }
-    return render(request, 'hospital/tela_form.html', contexto)
+    # Verifique se o usuário está autenticado
+    if request.user.is_authenticated:
+        # Preencher o formulário com os dados do usuário, caso ele esteja autenticado
+        form = QuestionarioForm()
+
+        if request.method == 'POST':
+            form = QuestionarioForm(request.POST)
+
+            if form.is_valid():
+                print("Formulário é válido!")  # Verifica se a validação está correta
+                form.save()  # Salva no banco de dados
+                return redirect('tela_inicial')  # Redireciona após salvar
+
+        # Passa o contexto com o formulário e o nome do usuário
+        contexto = {
+            'form': form,  # Certifique-se de que é 'form' e não 'forms'
+            'user': request.user  # Adiciona o usuário para preencher automaticamente o nome
+        }
+
+        return render(request, 'hospital/tela_form.html', contexto)
+    
+    else:
+        # Caso o usuário não esteja logado, redirecione para a página de login
+        return redirect('login')
+
+
+
+
+
 
 def campanhas(request):
     campanhas = Campanhas.objects.all()  # Ou algum filtro específico

@@ -26,7 +26,15 @@
                     <p>
                         <label for="password1"></label>
                         <input type="password" placeholder="Informe sua senha" name="password1" id="password1" class="form-control" required>
+                        {% if messages %}
+                            <ul class="error-list">
+                                {% for message in messages %}
+                                    <li class="error-message">{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </p>
+
                     <button type="submit" class="botao-login"> Entrar </button>
                 </form>
                 <p class="login-login">Não possui uma conta? <a href="{% url 'tela_login1' %}">Clique aqui</a>

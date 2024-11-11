@@ -8,7 +8,7 @@ admin.site.register(Campanhas)
 
 class UsuarioAdmin(UserAdmin):
     fieldsets = UserAdmin.fieldsets + (
-        (None, {'fields': ('endereco','cpf')}),
+        (None, {'fields': ('endereco','cpf','nome_completo')}),
     )
 
 admin.site.register(Usuario, UsuarioAdmin)

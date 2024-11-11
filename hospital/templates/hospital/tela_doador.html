@@ -54,69 +54,104 @@
         </div>
     </div>
 
-    {% comment %} <div class="bloco2-doador">       
+    <div class="bloco2-doador">
         <div class="subbloco2-doador">
-            <h1>IMPEDIMENTOS DEFINITIVOS</h1>
-            <div class='fundo-doador'>
-                <div class="criterio-doador">
-                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
-                    <p>Aguardar após doenças/sintomas: Resfriado (7 dias após desaparecimento), dengue (4 semanas ou 6 meses), Covid-19 (7 dias após cura), herpes (após lesões desaparecerem), febre amarela (30 dias após viagem a áreas de surto);</p>
+            <h1>IMPEDIMENTOS TEMPORÁRIOS</h1>
+            <div class="cards-doador">
+                <div class="card1-doador">
+                    <div class="icon-doador"> 🦠</div>
+                    <div class="titulo-bloco2-doador">Resfriados e Doenças Virais</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Resfriado: 7 dias após desaparecer.</li>
+                            <li>Dengue: 4 semanas ou até 6 meses.</li>
+                            <li>Covid-19: 7 dias após cura.</li>
+                            <li>Herpes: Após lesões sumirem.</li>
+                            <li>Febre amarela: 30 dias após viagem.</li>
+                        </ul>
+                    </div>
                 </div>
-        
-                <div class="criterio-doador">
-                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
-                    <p>Prazos após procedimentos: Endoscopia e procedimentos similares (6 meses), extração dentária ou canal (7 dias), cirurgia odontológica com anestesia geral (4 semanas), tatuagem/piercing (6-12 meses), acupuntura (24h a 6 meses, depende do método);</p>
+                <div class="card1-doador">
+                    <div class="icon-doador"> 🏥</div>
+                    <div class="titulo-bloco2-doador">Procedimentos Médicos</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Endoscopia: 6 meses.</li>
+                            <li>Extração dentária: 7 dias.</li>
+                            <li>Cirurgia com anestesia geral: 4 semanas</li>
+                        </ul>
+                    </div>
                 </div>
-        
-                <div class="criterio-doador">
-                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
-                    <p>Pós-parto: 90 dias após parto normal, 180 dias após cesariana, amamentação (12 meses);</p>
+                <div class="card1-doador">
+                    <div class="icon-doador">✒️</div>
+                    <div class="titulo-bloco2-doador">Tatuagens e Piercings</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Tatuagem/Piercing: 6-12 meses.</li>
+                            <li>Acupuntura: 24h a 6 meses (depende do método).</li>
+                        </ul>
+                    </div>
                 </div>
-        
-                <div class="criterio-doador">
-                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
-                    <p>Vacinas: Gripe (48h), Covid-19 (7 dias), dengue (4 semanas);</p>
+                
+                <div class="card1-doador">
+                    <div class="icon-doador">👶</div>
+                    <div class="titulo-bloco2-doador">Pós-Parto</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Parto normal: 90 dias.</li>
+                            <li>Cesárea: 180 dias.</li>
+                            <li>Amamentação: Após 12 meses.</li>
+                        </ul>
+                    </div>
                 </div>
-        
-                <div class="criterio-doador">
-                    <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
-                    <p>Viagens: Alta prevalência de malária (12 meses) e Febre Amarela (30 dias);</p>
+                
+                <div class="card1-doador">
+                    <div class="icon-doador">💉</div>
+                    <div class="titulo-bloco2-doador">Vacinas</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Gripe: 48h após.</li>
+                            <li>Covid-19: 7 dias após.</li>
+                            <li>Dengue: 4 semanas.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card1-doador">
+                    <div class="icon-doador">🌍</div>
+                    <div class="titulo-bloco2-doador">Viagens Recentes</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Malária: 12 meses.</li>
+                            <li>Febre amarela: 30 dias após áreas de surto.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card1-doador">
+                    <div class="icon-doador">🩺</div>
+                    <div class="titulo-bloco2-doador">Doenças de Recuperação Curta</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Febre amarela: 30 dias.</li>
+                            <li>Resfriado: 7 dias após sintomas.</li>
+                            <li>Herpes: Apenas quando as lesões desaparecem.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card1-doador">
+                    <div class="icon-doador">🦷</div>
+                    <div class="titulo-bloco8-doador">Cuidados Odontológicos</div>
+                    <div class="descricao1-doador">
+                        <ul>
+                            <li>Extração dentária: 7 dias.</li>
+                            <li>Cirurgia odontológica geral: 4 semanas.</li>
+                        </ul>
+                    </div>
+                </div>
                 </div>
             </div>
-        </div>
-    </div> {% endcomment %}
-    <div class="parent-container">
-        <div class="container">
-        <h1>IMPEDIMENTOS TEMPORÁRIOS</h1>
-        <div class="cards">
-            <div class="card">
-                <div class="icon">⭐</div>
-                <div class="title">DOENÇA</div>
-                <div class="description">Dengue e sarampo ou 6 meses. Covid-19 de 10 dias após cura, herpes labial após desaparecimento. Herpes zóster: 180 dias após lesão.</div>
-            </div>
-            <div class="card">
-                <div class="icon">⭐</div>
-                <div class="title">Tristeza</div>
-                <div class="description">14 semanas ou 6 meses. Covid-19 até 30 dias pós cura, herpes após lesão desaparecer. Herpes zóster: 180 dias após.</div>
-            </div>
-            <div class="card">
-                <div class="icon">⭐</div>
-                <div class="title">Tristeza</div>
-                <div class="description">14 semanas ou 6 meses. Covid-19 até 30 dias pós cura, herpes após lesão desaparecer. Herpes zóster: 180 dias após.</div>
-            </div>
-            <div class="card">
-                <div class="icon">⭐</div>
-                <div class="title">Tristeza</div>
-                <div class="description">14 semanas ou 6 meses. Covid-19 até 30 dias pós cura, herpes após lesão desaparecer. Herpes zóster: 180 dias após.</div>
-            </div>
-            <div class="card">
-                <div class="icon">⭐</div>
-                <div class="title">Tristeza</div>
-                <div class="description">14 semanas ou 6 meses. Covid-19 até 30 dias pós cura, herpes após lesão desaparecer. Herpes zóster: 180 dias após.</div>
-            </div>
-            
-            <!-- Repita para os outros cartões -->
-        </div>
         </div>
     </div>
     <div class="bloco3-doador">        

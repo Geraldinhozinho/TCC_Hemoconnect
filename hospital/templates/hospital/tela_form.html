@@ -7,84 +7,89 @@
     <title>HemoConnect</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
-    <link href="{% static 'css/telaforms.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tela_forms.css' %}" rel="stylesheet">
 </head>
 <body>
-        <div class="bloco">
-            <div class="titulo1">
-                <h1 class="logo">HEMO<span>❤️</span>CONNECT</h1>
-            </div>
-        
-            <div class="conteudo">
-                <div class="bonequinha">
-                    <img src="{% static 'image/Enfer.png' %}" alt="Mascote">
-                </div>
-        
-                <div class="aviso">
-                    <p>ATENÇÃO! Antes de responder o questionário, é importante saber que:</p>
-                    <ul>
-                        <li>Suas informações serão mantidas em total sigilo.</li>
-                        <li>É importante que o formulário seja respondido com informações verdadeiras, pois o hemocentro trabalhará com elas.</li>
-                        <li>Mesmo após responder a essas perguntas, é provável que o hospital realize exames adicionais.</li>
-                    </ul>
-                    <p>Após responder o formulário, entraremos em contato com você o mais breve possível!</p>
-                </div>
-            </div>
+    <div class="bloco1-aviso">
+        <div class="titulo1-aviso">
+            <h1 class="logo-aviso">HEMO<span>❤️</span>CONNECT</h1>
         </div>
     
+        <div class="bloco2-aviso">
+            <div class="bonequinha-aviso">
+                <img src="{% static 'image/Enfer.png' %}" alt="Mascote">
+            </div>
     
-        <form method="post" class="form">
-            <div class="titulo2">
-                <h1 class="logo2">HEMO<span>❤️</span>CONNECT</h1>
+            <div class="aviso-aviso">
+                <p><span>ATENÇÃO!</span> Antes de responder o questionário, é importante saber que:</p>
+                <ul>
+                    <li>Suas informações serão mantidas em total sigilo.</li>
+                    <li>É importante que o formulário seja respondido com informações verdadeiras, pois o hemocentro trabalhará com elas.</li>
+                    <li>Mesmo após responder a essas perguntas, é provável que o hospital realize exames adicionais.</li>
+                </ul>
+                <p>Após responder o formulário, entraremos em contato com você o mais breve possível!</p>
+            </div>
+        </div>
+    </div>
+    
+    
+        <form method="post" class="form-form">
+            <div class="titulo2-form">
+                <h1> HEM<span>❤️</span>CONNECT</h1>
             </div>
             {% csrf_token %}
-            <div class="quer1"> 
-                <div class= "quer">
+            <div class='nome-usuario'>
+                <label>Nome do úsuario</label>
+                <input type="text" name="nome" class='nome-usuario-form' value="{{ user.username }}" readonly>
+            </div>            
+                       
+            <div class= "nome-completo-form">
+                {{ form.nome }}
+            </div>
+                       
+            <div>
+                {{ form.email }}
+            </div>
+
+            <div class="opcoes-form"> 
+                <div class= "tornar-forms">
                     <label>Deseja tornar-se um doador?</label>
                     {{ form.querer }}
                 </div>
             </div>
 
-            
-            <div class= "nome">
-                <label>Digite seu nome completo</label>
-                {{ form.nome }}
-            </div>
-                       
-            <div class= "email">
-                <label>Digite seu email</label>
-                {{ form.email }}
-            </div>
-
-            <div class="quer1">
-                <div class= "sangue">
+            <div class="opcoes-form">
+                <div class= "sangue-forms">
                     <label>Seu tipo sanguíneo?</label>
-                {{ form.tipo_sangue }}
+                    {{ form.tipo_sangue }}
                  </div>
             </div>
 
-            <div class="quer1">
-                <div class= "fuma">
+            <div class="opcoes-form">
+                <div class= "fuma-forms">
                     <label>Você fuma?</label>
                     {{ form.fuma }}
                 </div>
             </div>
 
-            <div class="quer1">
-                <div class= "sexo">
+            <div class="opcoes-form">
+                <div class= "sexo-forms">
                     <label>Sua vida sexual ativa?</label>
                     {{ form.sexo }}
                 </div>
             </div>
 
-            <div class="quer1">
-                <div class= "doenca">
-                    <label>Tem alguma doença crônica</label>
+            <div class="opcoes-form">
+                <div class="doenca-forms">
+                    <label>Tem alguma doença crônica?</label>
                     {{ form.doenca }}
+                </div>
+                <div class="doenca2-forms" style="display: none;" id="campo-doenca">
+                    {{ form.doenca_det }}
                 </div>
             </div>
             
-             <div class="doenca2">
+             {% comment %} <div class="doenca2">
             <label>Se sim, qual?</label>
             {{ form.doenca_det }}
             {% if form.doenca_det.errors %}
@@ -94,24 +99,23 @@
                     {% endfor %}
                 </div>
             {% endif %}
-        </div>
+        </div> {% endcomment %}
 
-            <div class="quer1">
-                <div class= "dispo">
-                    <label>Você possui disponibilidade para vir ao hemocentro?</label>
-                    {{ form.disponibilidade }}
-                </div>
+        <div class="opcoes-form">
+            <div class="disponibilidade-forms">
+                <label>Você possui disponibilidade para vir ao hemocentro?</label>
+                {{ form.disponibilidade }}
             </div>
-
-            <div class="quer1">
-                <div class= "dias">
-                    <label>Se sim, quais dias?</label>
+            <div class='espaco-forms'>
+                <div class="dias-forms" id="campo-dias" style="display: none;">
+                    <label>Quais dias?</label>
                     {{ form.dias }}
                 </div>
             </div>
-            <div class="botao">
-                <button type="submit" class="submit-btn">Enviar</button>
-                <a href="{% url 'tela_inicial' %}" class="back-btn">Voltar</a>
+        </div>
+            <div class="botao-form">
+                <button type="submit" class="botao-enviar-form">Enviar</button>
+                <a href="{% url 'tela_inicial' %}" class="botao-voltar-form">Voltar</a>
             </div>
         </form>
         

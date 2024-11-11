@@ -1,11 +1,12 @@
 from django.db import models
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MinLengthValidator
 # Create your models here.
 
 class Usuario(AbstractUser):
-    nome_completo =models.CharField(max_length=200, default='')
-    cpf = models.CharField(max_length=11, unique=True, verbose_name="CPF")
+    nome_completo =models.CharField(max_length=200, validators=[MinLengthValidator(8, message="O nome completo deve ter pelo menos 8 caracteres.")])
+    cpf = models.CharField(max_length=14, unique=True, verbose_name="CPF")
     endereco = models.CharField(max_length=255, blank=True, null=True)
     
     def __str__(self):
@@ -83,8 +84,8 @@ class Questionario(models.Model):
     dias = MultiSelectField(
         max_length=15,
         choices=DIAS_SEMANA,
-        default=True,
-        null=False
+        blank=True,
+        null=True
         )
 
     def __str__(self):

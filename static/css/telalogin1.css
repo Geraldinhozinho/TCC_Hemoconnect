@@ -106,3 +106,21 @@ body {
     text-decoration: none;
 }
 
+/*erros*/
+
+
+
+/* Mensagens de erro */
+.error-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.error-message {
+    color: #ff4d4d; /* Vermelho para destacar erros */
+    font-size: 12px;
+    margin-left: 5px;
+    text-align: left;
+}
+

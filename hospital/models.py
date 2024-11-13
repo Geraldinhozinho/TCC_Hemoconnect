@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinLengthValidator
@@ -47,6 +48,13 @@ class Questionario(models.Model):
         choices=CHOICES,
         default=True 
     )
+    
+    
+    usuario = models.ForeignKey(
+        settings.AUTH_USER_MODEL,  # Usando o modelo de usuário configurado
+        on_delete=models.CASCADE,
+        related_name='questionarios'
+    )
 
     nome = models.CharField(max_length=150)
     email = models.EmailField() 
@@ -87,9 +95,9 @@ class Questionario(models.Model):
         blank=True,
         null=True
         )
-
+    
     def __str__(self):
-        return self.nome
+        return self.usuario.username
     
 
 class Campanhas(models.Model):

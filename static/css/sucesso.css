@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Poppins:wght@600&family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ledger&family=Lemon&family=Poppins:wght@600;700&family=Rammetto+One&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+    background-color: #FFD3D3;
+}
+/* Estilo para o bloco1  */
+
+.bloco1-sucesso {
+    max-width: 800px;
+    margin: 20px auto 0;
+    background-color: #f8f8f8;
+    padding: 20px 20px 0px 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.1);
+    font-family: "Lato";
+    font-weight: 800;
+    font-style:normal;
+    margin-bottom: 20px;
+}
+.titulo1-sucesso {
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: "Poppins";
+    font-weight: 900;
+}
+
+.logo-sucesso{
+    color: #6A0303;
+    font-family: "Poppins";
+    font-weight: 900;
+}
+/*bonequinha e frase*/
+.bonequinha-sucesso {
+    display: flex; 
+    align-items: center; 
+}
+
+.bonequinha-sucesso img {
+    margin-right: 10px;
+    width: 80px; 
+    height: auto;
+    margin-left: 180px;
+}
+
+.bonequinha-sucesso p {
+    margin-left: 20px; /* Remove a margem padrão do parágrafo */
+    font-size: 16px; /* Ajuste o tamanho do texto conforme necessário */
+    color: #6A0303;
+    font-family: "Poppins";
+    font-weight: 900;
+}
+
+/*botões*/
+
+.a {
+    display: flex; /* Flexbox para organizar os botões */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 80px; /* Espaço entre os botões */
+    font-family: "Poppins";
+    font-weight: 900;
+    background-color: #f8f8f8;
+    padding: 10px;
+}
+
+.botao-voltar-form {
+    padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
+    text-align: center;
+    background-color: #6A0303; /* Exemplo de cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
+.botao-voltar-form:hover {
+    background-color: #CE2A2A; /* Cor do botão ao passar o mouse */
+    color: #000;
+}
+
+/*rodapé*/
+.footer1 {
+    background-color: #CE2A2A;
+    color: white;
+    padding: 5px 0;
+    border-top: 1px #000 solid;
+    display: flex;
+    position: fixed;  /* Fixa o rodapé na parte inferior */
+    bottom: 0;        /* Coloca o rodapé na parte inferior da página */
+    width: 100%;      /* Garante que o rodapé ocupe toda a largura da tela */
+    z-index: 10;      /* Garante que o rodapé fique acima de outros elementos */
+}
+
+.footer-sucesso {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer2-sucesso {
+    margin: 0;
+}
+
+.footer1 p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #b0acac;
+}
+
+.logoif-sucesso {
+    max-width: 90px;
+    max-height: 50px;
+    display: flex;
+    margin-left: 40px;
+    margin-top: 12px;
+}
+
+.logo2-sucesso {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: "Rammetto One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 15px;
+}

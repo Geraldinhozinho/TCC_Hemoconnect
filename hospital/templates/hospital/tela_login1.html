@@ -7,7 +7,7 @@
     <title>HemoConnect</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
-    <link href="{% static 'css/telalogin1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tela_login1.css' %}" rel="stylesheet">
 </head>
 <body>
     <div class="bloco1-login">
@@ -17,6 +17,7 @@
         <div class="forms-login">
             <div class="form-login">
                 <h1 class="logo-login">HEM<span>❤️</span>CONNECT</h1>
+                
                 <form method="post" class="formulario-login">
                     {% csrf_token %}
                     <p>
@@ -111,15 +112,8 @@
         </div>
     </div>
 
-    <script>
-        function formatCPF(campo) {
-            let cpf = campo.value.replace(/\D/g, ''); // Remove tudo que não for número
-            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca o primeiro ponto
-            cpf = cpf.replace(/(\d{3})(\d)/, '$1.$2'); // Coloca o segundo ponto
-            cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Coloca o traço
-            campo.value = cpf;
-        }
-    </script>
+    <!--Código JS-->
+    <script src="{% static 'js/tela_login1.js' %}"></script>
     
 </body>
 </html>

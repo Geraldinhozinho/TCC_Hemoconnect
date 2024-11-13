@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hospital.views import inicio, cadastrar, login_view, questionario,perfil, campanhas, detalhe, doador, contatos, logout_view
+from hospital.views import inicio, cadastrar, login_view, questionario,perfil, campanhas, detalhe, doador, contatos, logout_view, editar,questionario_sus
 from django.conf import settings
 from django.conf.urls.static import static
 app_name = 'hospital'
@@ -29,6 +29,9 @@ urlpatterns = [
     
     path('doador/',doador, name='tela_doador'),
     path('quest/', questionario, name='tela_form'),
+    path('sucesso/', questionario_sus, name='sucesso'),
+    path('questionario/editar/<int:id>/', editar, name='editar_questionario'),
+    
     
     path('contatos/',contatos, name='tela_contatos'),
     

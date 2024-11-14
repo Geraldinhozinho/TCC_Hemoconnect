@@ -106,6 +106,19 @@ body {
     text-decoration: none;
 }
 
+
+.login2-login {
+    margin-top: 40px;
+    color: white;
+    text-align: right;
+}
+.login2-login a {
+    color: #fff;
+    text-decoration: underline;
+}
+.login2-login a:hover {
+    text-decoration: none;
+}
 /*erros*/
 
 

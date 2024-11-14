@@ -7,7 +7,7 @@ urlpatterns = [
     path('tela_detalhe_camp/<int:campa_id>/', detalhe, name='tela_detalhe_camp'),
     
     path('doador/',doador, name='tela_doador'),
-    path('quest/', questionario, name='tela_form'),
+    path('quest', questionario, name='tela_form'),
     path('sucesso/', questionario_sus, name='sucesso'),
     path('questionario/editar/<int:id>/', editar, name='editar_questionario'),
     

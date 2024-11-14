@@ -125,5 +125,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 AUTH_USER_MODEL = 'hospital.Usuario'
-LOGIN_URL = 'tela_login2'
+LOGIN_URL = 'tela_login1'
 LOGOUT_REDIRECT_URL = 'hospital:tela_login2'

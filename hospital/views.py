@@ -71,7 +71,7 @@ def questionario(request):
     else:
         form = QuestionarioForm()
 
-    return render(request, 'hospital/tela_form.html', {'form': form})
+    return render(request, 'hospital/tela_formulario.html', {'form': form})
 
 
 def questionario_sus(request):

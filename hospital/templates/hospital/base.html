@@ -12,6 +12,7 @@
     <link href="{% static 'css/tela_doador.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_contatos.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_inicial.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tela_perfil.css' %}" rel="stylesheet">
 
     <!--fonte rammeto one-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,8 +29,13 @@
                 <li><a href="{% url 'tela_doador' %}">Seja um doador</a></li>
                 <li><a href="{% url 'campanhas' %}">Campanhas</a></li>
                 <li><a href="{% url 'tela_contatos' %}">Contatos</a></li>
-                <li><a href="#">{{ user.username }}</a></li>
-
+                <li>
+                    <a href="{% url 'tela_perfil' %}">
+                        <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}{% static 'image/perfil.png' %}{% endif %}" 
+                             alt="Perfil" 
+                             style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>

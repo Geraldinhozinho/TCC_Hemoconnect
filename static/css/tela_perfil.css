@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Poppins:wght@600&family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ledger&family=Lemon&family=Poppins:wght@600;700&family=Rammetto+One&display=swap');
+
+.x {
+    color: #FFD3D3, #CE2A2A, #6A0303, #FFFFFF, #000000;
+}
+
+.body1 {
+    background-color: #FFFFFF;
+}
+
+.perfil {
+    font-size: 30px;
+    color: #6A0303;
+    font-family: "Poppins";
+    font-weight: 900;
+    margin-left: 300px;
+    padding-top: 50px;
+}
+
+.img-perfil {
+    margin-left: 240px;
+    display: flex;
+    flex-direction: column; /* Coloca o botão abaixo da imagem */
+    align-items: center;
+}
+
+.nome-user-perfil {
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    color: #6A0303;
+    margin: 0;
+}
+
+.nome-user-perfil2 {
+    font-family: "Lato";
+    font-weight: 500;
+    color: #6A0303;
+    margin: 5px 0 0 0;
+}
+
+.delete {
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+/* Alinha os ícones de editar e deletar abaixo da imagem de perfil */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Espaço acima dos ícones */
+}
+
+/* Estilo para os ícones */
+.edite img, .delete img {
+    width: 50px; /* Tamanho dos ícones */
+    height: 50px;
+    margin-bottom: 10px; /* Espaço entre os ícones */
+}
+
+/* Ajuste na posição do ícone de editar */
+.edite {
+    margin-bottom: 5px;
+}
+
+/* Ajuste para o botão de salvar/editar aparecer abaixo da imagem */
+#submit-button {
+    margin-top: 20px; /* Alinha o botão logo abaixo da imagem de perfil */
+    padding: 10px 20px;
+    background-color: #6A0303;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+}
+
+/* Garantir que o botão de salvar/editar só apareça quando necessário */
+#submit-button {
+    display: none; /* Inicialmente oculto */
+}
+
+#submit-button.show {
+    display: block; /* Exibe quando o botão for necessário */
+}
+
+.action-buttons {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: left;
+    align-items:start;
+    margin-top: 30px;
+}
+
+.delete{
+    margin-left: 5px;
+}

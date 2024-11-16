@@ -4,11 +4,18 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 import re
 
+
+class FotoPerfilForm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['foto_perfil']
+        
 class UsuarioForm(UserCreationForm):
     cpf = forms.CharField(max_length=14, required=True, help_text="Digite seu CPF sem pontos ou traços.")
     endereco = forms.CharField(max_length=255, required=False)
     nome_completo = forms.CharField(max_length=200, required=False)
-
+    
+    
     class Meta:
         model = Usuario
         fields = ('username', 'nome_completo', 'cpf', 'endereco', 'email', 'password1', 'password2')
@@ -47,12 +54,6 @@ class UsuarioForm(UserCreationForm):
             raise forms.ValidationError('Seu nome só pode conter letras e espaços.')
         return nome_completo
     
-    # def clean_email(self):
-    #     email = self.cleaned_data['email']
-    #     if not email.endswith('.com'):
-    #         raise forms.ValidationError('O e-mail deve terminar com ".com".')
-    #     return email
-    
     def clean_cpf(self):
         cpf = self.cleaned_data.get('cpf')
         if Usuario.objects.filter(cpf=cpf).exists():
@@ -69,13 +70,14 @@ class QuestionarioForm(forms.ModelForm):
     class Meta:
         model = Questionario  # Modelo associado ao formulário
         fields = [
-            'querer', 'nome', 'email', 'tipo_sangue', 'fuma', 'sexo',
+            'idade','querer', 'nome', 'email', 'tipo_sangue', 'fuma', 'sexo',
             'doenca', 'doenca_det', 'disponibilidade', 'dias'
         ]  # Inclua 'doenca_det' nos campos
 
         widgets = {
             'querer': forms.RadioSelect(attrs={'class': 'tornar-forms'}),
             'nome': forms.TextInput(attrs={'class': 'nome-forms', 'placeholder': 'Digite seu nome'}),
+            'idade': forms.NumberInput(attrs={'class': 'nome-forms', 'placeholder': 'Digite sua idade'}),
             'email': forms.EmailInput(attrs={'class': 'email-forms', 'placeholder': 'Digite seu email'}),
             'tipo_sangue': forms.RadioSelect(attrs={'class': 'sangue-forms'}),
             'fuma': forms.RadioSelect(attrs={'class': 'fuma-forms'}),

@@ -1,0 +1,65 @@
+{% extends 'hospital/base.html' %}
+{% load static %}
+{% block parte_central %}
+<div class='body1'>
+    <h1 class='perfil'>MEU PERFIL</h1>
+    <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <!-- Contêiner para a imagem ou pré-visualização -->
+        <div class="img-perfil" id="image-container" 
+             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; 
+                    display: flex; align-items: center; justify-content: center; background-color: #ccc;">
+            {% if user.foto_perfil %}
+                <img id="preview-image" src="{{ user.foto_perfil.url }}" alt="Foto de perfil" 
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            {% else %}
+                <p id="no-photo-text" style="color: #fff;">Sem foto</p>
+            {% endif %}
+        </div>
+
+        <!-- Formulários de editar e deletar -->
+        <div class="action-buttons" style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 20px; gap: 10px;">
+            <!-- Formulário de editar -->
+            <form method="POST" enctype="multipart/form-data" style="margin-top: 10px;">
+                {% csrf_token %}
+                <button type="submit" id="submit-button" style="display: none; margin-top: 10px;">
+                    {% if not user.foto_perfil %}
+                        Salvar Foto
+                    {% else %}
+                        Editar Foto
+                    {% endif %}
+                </button>
+                <label class='edite' for="id_foto_perfil" style="cursor: pointer;">
+                    <img src="{% static 'image/editar.png' %}" alt="Editar" style="width: 25px; height: 25px;">
+                </label>
+                <input type="file" name="foto_perfil" accept="image/*" id="id_foto_perfil" onchange="previewImage()" style="display: none;">
+                <!-- Botão de salvar / editar, inicialmente oculto -->
+                
+            </form>
+
+            <!-- Formulário de deletar -->
+            {% if user.foto_perfil %}
+                <form method="POST" action="{% url 'deletar_foto' %}" style="margin-top: 10px;">
+                    {% csrf_token %}
+                    <label class='delete' for="deletar-button" style="cursor: pointer;">
+                        <img src="{% static 'image/delete.png' %}" alt="Deletar" style="width: 20px; height: 20px;">
+                    </label>
+                    <button type="submit" id="deletar-button" style="display: none;"></button>
+                </form>
+            {% endif %}
+        </div>
+
+        <!-- Texto do perfil -->
+        <div style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 50px;">
+            <h2 class="nome-user-perfil">{{ user.username }}</h2>
+            <h3 class="nome-user-perfil2">{{ user.nome_completo }}</h3>
+            <h3 class="nome-user-perfil2">Idade: {{ questionario.idade }}</h3>
+            <h3 class="nome-user-perfil2">Tipo sanguíneo: {{ questionario.tipo_sangue }}</h3>
+            <h3 class="nome-user-perfil2">{{ user.endereco }}</h3>
+        </div>
+    </div>
+</div>
+
+
+<script src="{% static 'js/tela_perfil.js' %}"></script>
+
+{% endblock %}

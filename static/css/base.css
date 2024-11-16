@@ -9,25 +9,22 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Rammetto+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ledger&family=Lemon&family=Rammetto+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Rammetto+One&display=swap'); */
-
 
 body { 
     background-color: #FFD3D3; 
 }
+
+/* Header */
 .bloco-base {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 4px;
+    padding: 10px 20px; /* Ajuste de espaçamento */
     background-color: #CE2A2A;
     border-bottom: 2px solid #000;
-    
+    height: 60px; /* Define uma altura padrão */
 }
+
 .logo-base {
     font-size: 30px;
     color: white;
@@ -35,16 +32,20 @@ body {
     font-family: "Rammetto One", sans-serif;
     font-weight: 900;
     font-style: normal;
-    margin-left: 15px;
 }
+
+/* Menu */
 .itens-base {
     list-style-type: none;
     display: flex;
-    
+    align-items: center; /* Centraliza os itens verticalmente */
+    margin-right: 15px; /* Espaçamento à direita */
 }
+
 .itens-base li {
     margin-left: 20px;
 }
+
 .itens-base li a {
     font-family: "Rammetto One", sans-serif;
     font-weight: 200;
@@ -55,7 +56,10 @@ body {
     padding: 10px 15px;
     transition: background-color 0.3s ease;
     border-radius: 10px;
+    display: flex; 
+    align-items: center; /* Centraliza o texto dentro do link */
 }
+
 .itens-base li a:hover {
     background-color: #575757;
     border-radius: 10px;

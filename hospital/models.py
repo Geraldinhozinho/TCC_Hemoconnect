@@ -9,11 +9,10 @@ class Usuario(AbstractUser):
     nome_completo =models.CharField(max_length=200, validators=[MinLengthValidator(8, message="O nome completo deve ter pelo menos 8 caracteres.")])
     cpf = models.CharField(max_length=14, unique=True, verbose_name="CPF")
     endereco = models.CharField(max_length=255, blank=True, null=True)
+    foto_perfil = models.ImageField(upload_to='fotos_perfil/', blank=True, null=True)
     
     def __str__(self):
         return self.username
-
-    
 
 class Questionario(models.Model):
     
@@ -57,6 +56,7 @@ class Questionario(models.Model):
     )
 
     nome = models.CharField(max_length=150)
+    idade = models.IntegerField( null=True)
     email = models.EmailField() 
        
     tipo_sangue = models.CharField(max_length=10,
@@ -98,9 +98,10 @@ class Questionario(models.Model):
     
     def __str__(self):
         return self.usuario.username
-    
 
 class Campanhas(models.Model):
+    
+
     titulo = models.CharField(max_length=20, null=True, blank=True)
     descricao = models.TextField(null=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)

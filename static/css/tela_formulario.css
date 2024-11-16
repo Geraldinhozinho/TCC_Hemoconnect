@@ -165,6 +165,10 @@ body{
     font-size: 16px; /* Tamanho da fonte */
     margin: 0;    
 }
+.nome-completo-form input[type="number"]{
+    padding: 10px;    
+    border-radius: 30px;
+}
 .email-forms{
     display: flex;
     flex-direction: column; /* Alinhar rótulos e campos verticalmente */

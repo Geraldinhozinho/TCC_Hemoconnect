@@ -54,3 +54,14 @@ function previewImage() {
         submitButton.style.display = 'none';
     }
 }
+
+//POPUP DAS DOAÇÕES
+
+
+function mostrarDetalhes() {
+    document.getElementById('popup').style.display = 'flex'; // Mostra o popup
+}
+
+function fecharPopup() {
+    document.getElementById('popup').style.display = 'none'; // Esconde o popup
+}

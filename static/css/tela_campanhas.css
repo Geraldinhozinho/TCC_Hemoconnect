@@ -185,7 +185,8 @@
 }
 
 .detalhar:hover {
-    background-color: #5a5555; /* Cor ao passar o mouse */
+    background-color: #FFD3D3;
+    color: #000000;
 }
 
 .anterior, .proximo {

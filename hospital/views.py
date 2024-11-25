@@ -2,10 +2,12 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import UsuarioForm, QuestionarioForm, FotoPerfilForm
-from .models import Campanhas, Questionario
+from .models import Campanhas, Questionario, Doacoes,Usuario, Criador
 from django.contrib import messages
 from django.http import JsonResponse
-
+from django.core.paginator import Paginator
+from django.conf import settings
+import os
 
 def inicio(request):
      return render(request, 'hospital/tela_inicial.html')
@@ -42,6 +44,7 @@ def login_view(request):
     return render(request, 'hospital/tela_login2.html')
 
 #SAIR
+@login_required
 def logout_view(request):
     logout(request) 
     return redirect('tela_login1')  
@@ -67,12 +70,13 @@ def questionario(request):
     return render(request, 'hospital/tela_formulario.html', {'form': form})
 
 #MENSAGEM DE SUCESSO
+@login_required
 def questionario_sus(request):
     questionario = Questionario.objects.filter(usuario=request.user).last() 
     return render(request, 'hospital/sucesso.html', {'questionario': questionario})
 
-#QUESTIONARIO EDITAR  
-@login_required
+#QUESTIONARIO EDITAR
+@login_required  
 def editar(request, id):
     questionario = get_object_or_404(Questionario, id=id, usuario=request.user)
     if request.method == 'POST':
@@ -113,45 +117,55 @@ def contatos(request):
      return render(request, 'hospital/tela_contatos.html')
 
 @login_required
-def perfil(request):
-    user = request.user  # Usuário logado
-
-    # Buscando o questionário associado ao usuário logado
+@login_required
+def perfil(request):   
+    user = request.user  
     try:
         questionario = Questionario.objects.get(usuario=user)
     except Questionario.DoesNotExist:
-        questionario = None  # Caso o questionário não exista para o usuário
+        questionario = None  
+
+    doacoes = user.doacoes.order_by('-data_doacao')   # Recupere as doações do usuário logado
 
     if request.method == 'POST':
         form = FotoPerfilForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
-            return redirect('tela_perfil')  # Redireciona após salvar
+            return redirect('tela_perfil')  
     else:
         form = FotoPerfilForm(instance=user)
-    
+
     return render(request, 'hospital/tela_perfil.html', {
         'form': form,
         'user': user,
-        'questionario': questionario  # Passa o questionário para o template
+        'questionario': questionario,
+        'doacoes': doacoes  # Inclua as doações no contexto
     })
 
-
-import os
-
-from django.conf import settings
-import os
-
-
+    
+    
+@login_required
 def deletar_foto(request):
-    user = request.user
-    if user.foto_perfil:  # Verifica se existe uma foto
-        # Remove a foto do sistema de arquivos
+    user = request.user 
+    if user.foto_perfil: 
         caminho_foto = os.path.join(settings.MEDIA_ROOT, str(user.foto_perfil))
         if os.path.exists(caminho_foto):
             os.remove(caminho_foto)
-
-        # Remove a foto do banco de dados
         user.foto_perfil = None
         user.save()
     return redirect('tela_perfil')
+
+
+
+def criadores(request):
+    criadores = Criador.objects.all()  
+    paginator = Paginator(criadores, 2)  # 2 criadores por página
+
+    page_number = request.GET.get('page') 
+    page_obj = paginator.get_page(page_number)  
+
+    return render(request, 'hospital/tela_criadores.html', {'pagina': page_obj})
+
+
+
+

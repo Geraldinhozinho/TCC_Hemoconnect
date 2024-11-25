@@ -51,13 +51,84 @@
         <!-- Texto do perfil -->
         <div style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 50px;">
             <h2 class="nome-user-perfil">{{ user.username }}</h2>
-            <h3 class="nome-user-perfil2">{{ user.nome_completo }}</h3>
-            <h3 class="nome-user-perfil2">Idade: {{ questionario.idade }}</h3>
-            <h3 class="nome-user-perfil2">Tipo sanguíneo: {{ questionario.tipo_sangue }}</h3>
+            
+            {% if questionario %}
+                <h3 class="nome-user-perfil2">{{ user.nome_completo }}</h3>
+                <h3 class="nome-user-perfil2">Email: {{ questionario.email }}</h3>
+                <h3 class="nome-user-perfil2">Idade: {{ questionario.idade }} anos</h3>
+                <h3 class="nome-user-perfil2">Tipo sanguíneo: {{ questionario.tipo_sangue }}</h3>
+
+            {% else %}
+                <h3 class="nome-user-perfil2"> Tone-se um doador clicando <a href="{% url 'tela_doador' %}">aqui</a></h3>
+            {% endif %}
             <h3 class="nome-user-perfil2">{{ user.endereco }}</h3>
+            <button class="botao-sair-perfil" onclick="window.location.href='/logout';">Sair da conta</button>
         </div>
     </div>
 </div>
+
+{% if doacoes %}
+    <h1 class='titulo-doacao-perfil'> MINHAS DOAÇÕES</h1>
+    <div class="bloco1-carteira">
+        <div class="info-carteira">
+            {% with doacoes.0.data_doacao|date:"Y" as ano %}
+                <p class="ano-doacao"><strong></strong> {{ ano }}</p>
+            {% endwith %}
+            <!-- Data da doação mais recente -->
+            <p class="data1-doacao"><strong>Data da doação mais recente:</strong> {{ doacoes.0.data_doacao|date:"d/m/Y" }}</p>
+            <!-- Data da próxima doação -->
+            <p class="data1-doacao"><strong>Próxima doação:</strong> {{ doacoes.0.data_prox_doacao|date:"d/m/Y" }}</p>
+        </div>
+    
+        <div class="titulo2-e-botao">
+            <h1 class="titulo2-doacao-perfil"> MINHA CARTEIRINHA </h1>
+            <!-- Botão para abrir o popup com mais detalhes -->
+            <button class="botao-detalhar-perfil" onclick="mostrarDetalhes()">Detalhar</button>
+        </div>
+    </div>
+
+
+    <!-- Popup que aparece ao clicar em "Detalhar" -->
+    <div id="popup" style="display: none;">
+        <div id="popup-conteudo">
+            <!-- Botão de fechar o popup -->
+            <span onclick="fecharPopup()" style="cursor: pointer;">Fechar</span>
+            <div id="doacoes-detalhes">
+                <!-- Exibe as doações organizadas por ano -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ano</th> <!-- Coluna para o ano -->
+                            <th>Data da Doação</th> <!-- Coluna para a data da doação -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loop para exibir todas as doações -->
+                        {% for doacao in doacoes %}
+                            {% with doacao.data_doacao|date:"Y" as ano %}
+                                <tr>
+                                    <!-- Exibe o ano da doação -->
+                                    <td>{{ ano }}</td>
+                                    <!-- Exibe a data da doação formatada -->
+                                    <td>{{ doacao.data_doacao|date:"d/m/Y" }}</td>
+                                </tr>
+                            {% endwith %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <!-- Caso não haja doações registradas, exibe esta mensagem -->
+    <p class='if-perfil'>Você ainda não possui doações registradas.</p>
+{% endif %}
+
+
+
+
+
+
 
 
 <script src="{% static 'js/tela_perfil.js' %}"></script>

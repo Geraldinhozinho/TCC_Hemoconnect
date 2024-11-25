@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemoConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
+    <link href="{% static 'css/tela_criadores.css' %}" rel="stylesheet">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criadores</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+ 
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header>
+        <nav class="bloco-criador">
+            <div class="logo-criador">
+                <a href="{% url 'tela_criadores' %}">HEM<span>❤️</span>CONNECT</a>
+            </div>
+            <ul class="itens-criador">
+                <li><a href="{% url 'tela_inicial' %}">Menu</a></li>
+                <li><a href="{% url 'tela_doador' %}">Seja um doador</a></li>
+                <li><a href="{% url 'campanhas' %}">Campanhas</a></li>
+                <li><a href="{% url 'tela_contatos' %}">Contatos</a></li>
+                <li>
+                    <a href="{% url 'tela_perfil' %}">
+                        <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}{% static 'image/perfil.png' %}{% endif %}" 
+                            alt="Perfil" 
+                            style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <h1 class='criadores'>
+        {% comment %} {% if pagina.number == 1 %}
+            DESENVOLVEDORES
+        {% else %}
+            ORIENTADORES
+        {% endif %} {% endcomment %}
+        {% if pagina.number == 1 %}
+            DESENVOLVEDORES
+        {% elif pagina.number == 2 %}
+            ORIENTADORES
+        {% else %}
+            TESTE
+        {% endif %}
+    </h1>
+
+    <div class="bloco1-criadores">
+        {% for criador in pagina %}
+            <div class="bloco2-Criadores">
+                <img src="{{ criador.image.url }}" class="image-criador" alt="Foto do Criador">
+                <div class="info-criador">
+                    <h3>{{ criador.nome }}</h3>
+                    <p><strong>Instagram:</strong> {{ criador.instagram }}</p>
+                    <p><strong>Email:</strong> {{ criador.email }}</p>
+                    <p>{{ criador.descricao }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="popup" style="display: none;">
+        <div id="popup-conteudo">
+            <!-- Botão de fechar o popup -->
+            <span onclick="fecharPopup()" style="cursor: pointer;">Fechar</span>
+            <div id="doacoes-detalhes">
+                <!-- Exibe as doações organizadas por ano -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ano</th> <!-- Coluna para o ano -->
+                            <th>Data da Doação</th> <!-- Coluna para a data da doação -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Loop para exibir todas as doações -->
+                        {% for doacao in doacoes %}
+                            {% with doacao.data_doacao|date:"Y" as ano %}
+                                <tr>
+                                    <!-- Exibe o ano da doação -->
+                                    <td>{{ ano }}</td>
+                                    <!-- Exibe a data da doação formatada -->
+                                    <td>{{ doacao.data_doacao|date:"d/m/Y" }}</td>
+                                </tr>
+                            {% endwith %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <!-- Caso não haja doações registradas, exibe esta mensagem -->
+    <p class='if-perfil'>Você ainda não possui doações registradas.</p>
+{% endif %}
+    
+
+
+    <!--FOOTER-->
+    <footer class="footer">
+        <img src="{% static 'image/logo_if.png' %}" alt="Logo do IFRN" class="logoif-base">
+        <div class="footer-base">
+            <p>&copy; 2024 Hemoconnect. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Geraldo Júnior e Alana Keury </p>
+        </div>
+        <div class="footer2-base">
+            <div class="logo2-base">HEM<span>❤️</span>CONNECT</div>
+            <p>Orientadora: Mary Holanda</p>
+            <p>Coorientador: Kaio Fontes </p>
+        </div>
+        
+    </footer>
+    
+    
+</body>
+</html>

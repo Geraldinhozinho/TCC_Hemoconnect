@@ -4,9 +4,9 @@
 
 <div class="carousel-container">
     <div class="carousel-slide" id="carousel-slide">
-        <img src="{% static 'image/localizacao.png' %}" alt="Imagem 1" class="carousel-image">
-        <img src="{% static 'image/localizacao.png' %}" alt="Imagem 2" class="carousel-image">
-        <img src="{% static 'image/localizacao.png' %}" alt="Imagem 3" class="carousel-image">
+        <img src="{% static 'image/relogio.png' %}" alt="Imagem 1" class="carousel-image">
+        <img src="{% static 'image/relogio.png' %}" alt="Imagem 2" class="carousel-image">
+        <img src="{% static 'image/relogio.png' %}" alt="Imagem 3" class="carousel-image">
         <h1> oiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii </h1>
     </div>
     
@@ -14,19 +14,8 @@
     <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
 </div>
 
-<button class="botao-doador" onclick="window.location.href='/logout';">SAIIIIIIR</button>
 
-<script>
-    let currentSlide = 0;
 
-    function moveSlide(direction) {
-        const slide = document.getElementById("carousel-slide");
-        const slides = document.querySelectorAll(".carousel-image");
-        const totalSlides = slides.length;
-
-        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-        slide.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-</script>
+<script src="{% static 'js/tela_inicial.js' %}"></script>
 
 {% endblock %}

@@ -13,6 +13,7 @@
     <link href="{% static 'css/tela_contatos.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_inicial.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_perfil.css' %}" rel="stylesheet">
+    
 
     <!--fonte rammeto one-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +24,7 @@
     <!-- BARRA DE NAVEGAÇÃO -->
     <header>
         <nav class="bloco-base">
-            <div class="logo-base">HEM<span>❤️</span>CONNECT</div>
+            <div class="logo-base"><a href="{% url 'tela_criadores' %}">HEM<span>❤️</span>CONNECT</a></div>
             <ul class="itens-base">
                 <li><a href="{% url 'tela_inicial' %}">Menu</a></li>
                 <li><a href="{% url 'tela_doador' %}">Seja um doador</a></li>

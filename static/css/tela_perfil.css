@@ -7,6 +7,7 @@
 
 .body1 {
     background-color: #FFFFFF;
+    padding-bottom: 50px;
 }
 
 .perfil {
@@ -39,6 +40,13 @@
     color: #6A0303;
     margin: 5px 0 0 0;
 }
+.nome-user-perfil2  a{
+    font-family: "Lato";
+    font-weight: 500;
+    color: #6A0303;
+    margin: 5px 0 0 0;
+}
+
 
 .delete {
     margin-top: 10px;
@@ -98,4 +106,212 @@
 
 .delete{
     margin-left: 5px;
+}
+
+.botao-sair-perfil{
+    background-color: #6A0303;
+    color: #FFF;
+    padding: 10px 10px;
+    width: 50%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.botao-sair-perfil:hover{
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+.if-perfil{
+    color: #6A0303;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 30px;
+    font-family: "Poppins";
+    font-weight: 900;
+    max-width: 50%;
+    padding: 35px ;
+    margin-top: 30px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para o título "Minhas Doações" */
+
+.titulo-doacao-perfil {
+    font-size: 30px;
+    color: #6A0303;
+    font-family: "Poppins";
+    font-weight: 900;
+    background-color: #FFF;
+    padding: 5px 10px;
+    text-align: left;
+    color: #000000;
+    padding-left: 240px;
+}
+
+.titulo2-doacao-perfil {
+    font-size: 30px; /* Tamanho da fonte */
+    color: #6A0303; /* Cor do texto */
+    font-family: "Poppins"; /* Fonte usada */
+    font-weight: 900; /* Peso da fonte */
+    background-color: #FFF; /* Cor de fundo do título */
+    border-radius: 10px;
+    margin-left: 100px;
+    
+}
+
+
+/* Estilos para o bloco de informações */
+.bloco1-carteira {
+    display: flex;
+    align-items: flex-start;
+    
+    background-color: #FFD3D3;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin-left: 13%;
+}
+
+/* Estilos para as informações da carteira */
+.info-carteira {
+    background-color: #CE2A2A;
+    padding: 20px 10px;
+    width: 35%;
+    border-radius: 10px;
+}
+
+.info-carteira .ano-doacao,
+.info-carteira .data1-doacao {
+    background-color: #f4f0f0;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Poppins";
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Estilos para o título 2 e o botão de detalhamento */
+.titulo2-e-botao {
+    width: 35%;
+    text-align: center;
+}
+
+.titulo2-doacao-perfil {
+    font-size: 30px;
+    color: #6A0303;
+    font-family: "Poppins";
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.botao-detalhar-perfil {
+    background-color: #6A0303;
+    color: #FFF;
+    padding: 10px 50px;
+    width: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin-left: 180px ;
+}
+
+.botao-detalhar-perfil:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+
+
+/*Popup*/
+
+/* Estilos para o popup (aparece sobre a página) */
+#popup {
+    position: fixed; /* Fixa o popup na tela */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Largura total da viewport */
+    height: 100vh; /* Altura total da viewport */
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo translúcido */
+    display: flex; /* Flexbox para centralização */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+#popup-conteudo {
+    background-color: white; /* Cor de fundo do conteúdo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    width: 50%; /* Largura reduzida para 50% */
+    max-height: 50%; /* Limita a altura do popup */
+    overflow-y: auto; /* Permite rolagem se o conteúdo for grande */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona um leve sombreado */
+    transform: translate(0, 0); /* Garante que não haja deslocamento extra */
+}
+
+
+
+/* Estilos para o botão de fechar o popup */
+#popup span {
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Peso da fonte */
+    cursor: pointer; /* Aparece como mãozinha ao passar o mouse */
+}
+
+/* Estilos para a tabela de doações */
+#doacoes-detalhes table {
+    width: 100%; /* Largura total da tabela */
+    border-collapse: collapse; /* Remove o espaço entre as células */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+/* Estilos para as células de cabeçalho e dados da tabela */
+#doacoes-detalhes th,
+#doacoes-detalhes td {
+    padding: 10px; /* Espaçamento interno */
+    text-align: left; /* Alinha o texto à esquerda */
+    border-bottom: 1px solid #ddd; /* Linha separadora abaixo da célula */
+}
+
+/* Estilos para o cabeçalho da tabela */
+#doacoes-detalhes th {
+    background-color: #6A0303; /* Cor de fundo do cabeçalho */
+    color: white; /* Cor do texto */
+}
+
+/* Estilos para as linhas da tabela quando o mouse passa por cima */
+#doacoes-detalhes tr:hover {
+    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
 }

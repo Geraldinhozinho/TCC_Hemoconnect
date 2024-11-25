@@ -1,5 +1,5 @@
 from django import forms
-from .models import Usuario, Questionario, Campanhas
+from .models import Usuario, Questionario, Campanhas, Doacoes
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 import re
@@ -15,38 +15,9 @@ class UsuarioForm(UserCreationForm):
     endereco = forms.CharField(max_length=255, required=False)
     nome_completo = forms.CharField(max_length=200, required=False)
     
-    
     class Meta:
         model = Usuario
         fields = ('username', 'nome_completo', 'cpf', 'endereco', 'email', 'password1', 'password2')
-        error_messages = {
-            'username': {
-                'max_length': 'O nome de usuário não pode exceder 150 caracteres.',
-                'invalid': 'O nome de usuário contém caracteres inválidos.',
-            },
-            'nome_completo': {
-                'max_length': 'O nome completo não pode exceder 200 caracteres.',
-            },
-            'cpf': {
-                'max_length': 'O CPF deve ter no máximo 14 caracteres.',
-                'invalid': 'Insira um CPF válido.',
-            },
-            'email': {
-                'invalid': 'Insira um e-mail válido.',
-            },
-            'password1': {
-                'password_too_similar': 'A senha é muito parecida com informações pessoais.',
-                'password_too_short': 'A senha deve ter pelo menos 8 caracteres.',
-                'password_too_common': 'A senha é muito comum.',
-                'password_entirely_numeric': 'A senha não pode ser inteiramente numérica.',
-            },
-            'password2': {
-                'password_mismatch': 'As senhas não correspondem.',
-            },
-        }
-        
-        widget={
-        }
         
     def clean_nome_completo(self):
         nome_completo = self.cleaned_data['nome_completo']
@@ -96,8 +67,6 @@ class QuestionarioForm(forms.ModelForm):
 
             return cleaned_data
         
-    
-
         
 class CampanhasForm(forms.ModelForm):
     class Meta:
@@ -108,3 +77,14 @@ class CampanhasForm(forms.ModelForm):
             'titulo': forms.TextInput(attrs=({'class':'titulomodal'})),
             'descricao': forms.TextInput(attrs=({'class':'descricaomodal'})),           
         }
+
+
+# class DoacoesForm(forms.ModelForm):
+#     class Meta:
+#         model = Doacoes
+#         fields = ['data_doacao', 'data_prox_doacao']  # Corrigir aqui
+        
+#         widgets = {
+#             'data_doacao': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+#             'data_prox_doacao': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+#         }

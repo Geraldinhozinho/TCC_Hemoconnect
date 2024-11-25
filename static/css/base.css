@@ -25,13 +25,15 @@ body {
     height: 60px; /* Define uma altura padrão */
 }
 
-.logo-base {
+.logo-base a{
     font-size: 30px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: "Rammetto One", sans-serif;
     font-weight: 900;
     font-style: normal;
+    text-decoration: none;
+    
 }
 
 /* Menu */

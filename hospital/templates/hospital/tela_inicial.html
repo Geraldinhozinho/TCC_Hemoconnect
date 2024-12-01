@@ -1,21 +1,84 @@
-{% extends 'hospital/base.html' %}
-{% load static %}
+{% extends 'hospital/base.html' %}  
+{% load static %}  
 {% block parte_central %}
 
-<div class="carousel-container">
-    <div class="carousel-slide" id="carousel-slide">
-        <img src="{% static 'image/relogio.png' %}" alt="Imagem 1" class="carousel-image">
-        <img src="{% static 'image/relogio.png' %}" alt="Imagem 2" class="carousel-image">
-        <img src="{% static 'image/relogio.png' %}" alt="Imagem 3" class="carousel-image">
-        <h1> oiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii </h1>
-    </div>
+<!-- Seção de Conteúdo Principal -->
+<main class="main-inicial">
+
+    <!-- Seção do Slogan -->
+    <section class="slogan-inicial">
+        <div class="text-inicial">
+            <h1>BEM-VINDO AO <span>HEM❤️CONNECT</span></h1>
+            <p>Salve vidas com um gesto simples</p>
+            <p>Doe sangue e faça a diferença hoje!</p>
+            <p class="bnt-inicial"> TORNE-SE UM <a href="{% url 'tela_doador' %}">DOADOR</a></p>
+        </div>
+    </section>
+
+    <!-- Seção de Informações sobre Doação de Sangue -->
+    <section class="bloco1-inicial">
+        <div class="sobre-inicial">
+            <h2>Sobre a Doação de Sangue</h2>
+            <p>A doação de sangue é um ato de extrema importância, capaz de salvar vidas em situações críticas, como cirurgias, acidentes e tratamentos contra doenças graves. No entanto, diversos desafios dificultam a manutenção de estoques adequados nos hemocentros, como a escassez de doadores regulares e a falta de conscientização da população sobre a necessidade constante de sangue.</p>
+            
+            <div class="desafios-inicial">
+                <h3>Desafios da Doação de Sangue</h3>
+                <ul>
+                    <li><strong>Baixa adesão à doação regular:</strong> A maioria das doações ocorre em situações de emergência, deixando os hemocentros vulneráveis em períodos sem grandes eventos.</li>
+                    <li><strong>Desinformação:</strong> Muitos têm receio de doar devido a mitos e medos infundados, como o medo de agulhas ou a falsa ideia de que o processo é doloroso.</li>
+                    <li><strong>Desigualdade geográfica:</strong> Em áreas mais remotas, o acesso aos serviços de doação é limitado, dificultando a manutenção de estoques estáveis.</li>
+                    <li><strong>Exigências rigorosas:</strong> Algumas pessoas não podem doar devido a critérios de saúde, o que limita ainda mais o número de doadores potenciais.</li>
+                </ul>
+            </div>
     
-    <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-    <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-</div>
+            <p>Para enfrentar esses desafios, é essencial que mais pessoas se tornem doadoras regulares e participem das campanhas de conscientização. Com um estoque constante e a ajuda de cada um, é possível salvar milhares de vidas todos os anos.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Frase -->
+    <section class="frase-inicial">
+        <h2 class='decoracao-inicial'>A sua doação de sangue pode salvar vidas e criar um futuro mais <span class='span-inicial'>saudável</span> e <span class='span-inicial'>seguro</span></h2>
+    </section>
+
+    <!-- Seção de Impacto da Doação de Sangue -->
+    <section class="bloco2-inicial">
+        <h2>Impacto da Doação de Sangue</h2>
+        <div class="impacto-inicial">
+            <h3>Salva até 4 vidas</h3>
+            <p>Uma doação pode ser fracionada em diferentes componentes (plasma, plaquetas, hemácias), atendendo a várias necessidades.</p>
+        </div>
+        <div class="impacto-inicial">
+            <h3>Apoia tratamentos</h3>
+            <p>Pessoas com câncer, cirurgias, traumas e outras condições críticas dependem de transfusões.</p>
+        </div>
+        <div class="impacto-inicial">
+            <h3>Ajuda em emergências</h3>
+            <p>Em situações de acidentes graves, cada bolsa de sangue é essencial para manter pacientes estáveis.</p>
+        </div>
+        <div class="impacto-inicial">
+            <h3>Mantém estoques de sangue</h3>
+            <p>Hemocentros precisam de doações constantes para evitar a falta em períodos de alta demanda.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Campanhas em Destaque -->
+    <section class="bloco3-inicial">
+        <h2>Campanhas em Destaque</h2>
+        <div class="campanhas-inicial">
+            {% for campanha in campanhas|slice:":3" %} 
+                <div class="campanha-inicial">
+                    <img src="{{ campanha.image.url }}" alt="{{ campanha.nome }}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="ver-mais-inicial">
+            <a href="{% url 'campanhas' %}" class="botao-ver-mais">Ver todas as campanhas</a>
+        </div>
+    </section>
+    
 
 
-
+<!-- Inclusão de script JS -->
 <script src="{% static 'js/tela_inicial.js' %}"></script>
 
 {% endblock %}

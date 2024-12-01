@@ -253,33 +253,56 @@
 
 
 
-
+ 
 /*Popup*/
 
 /* Estilos para o popup (aparece sobre a página) */
+/* Estilo para o botão de fechar */
+/* Estilo para o botão de fechar */
+.fechar-popup {
+    font-size: 200px; /* Tamanho maior para o 'X' */
+    font-weight: bold;
+    font-family: "Poppins";
+    color: #000000;
+    cursor: pointer;
+    position: absolute;
+    top: 5px; /* Menos distância do topo */
+    right: 30px; /* Menos distância da direita */
+    border: 2px solid #000000;
+    padding: 5px 15px; /* Ajustar o padding para mais espaço ao redor do 'X' */
+    
+}
+
+.fechar-popup:hover {
+    background-color: #FFD3D3;
+}
+
+/* Estilo do popup */
 #popup {
-    position: fixed; /* Fixa o popup na tela */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Largura total da viewport */
-    height: 100vh; /* Altura total da viewport */
-    background-color: rgba(0, 0, 0, 0.7); /* Fundo translúcido */
-    display: flex; /* Flexbox para centralização */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    z-index: 1000; /* Garante que fique acima de outros elementos */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
 #popup-conteudo {
-    background-color: white; /* Cor de fundo do conteúdo */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 5px; /* Bordas arredondadas */
-    width: 50%; /* Largura reduzida para 50% */
-    max-height: 50%; /* Limita a altura do popup */
-    overflow-y: auto; /* Permite rolagem se o conteúdo for grande */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona um leve sombreado */
-    transform: translate(0, 0); /* Garante que não haja deslocamento extra */
+    background-color: white;
+    padding: 30px; /* Aumentar o padding para dar mais espaço dentro do popup */
+    border-radius: 10px; /* Bordas mais arredondadas */
+    width: 60%; /* Aumenta a largura do conteúdo do popup */
+    max-height: 60%; /* Ajuste para permitir mais altura */
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
 }
+
+
 
 
 

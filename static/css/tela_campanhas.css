@@ -1,3 +1,4 @@
+/*FONTES*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Poppins:wght@600&family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ledger&family=Lemon&family=Poppins:wght@600;700&family=Rammetto+One&display=swap');
 
@@ -45,6 +46,51 @@
     text-align: left;
 }
 
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+    .banner-campanhas {
+        padding: 40px;
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .h1_banner1-campanhas {
+        font-size: 36px; 
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .h3_banner-campanhas {
+        font-size: 18px;
+        margin-left: 0; 
+        text-align: center; 
+    }
+
+    .spa {
+        font-size: 36px; 
+        margin-left: 0; 
+        text-align: center; 
+    }
+}
+
+/* Responsividade para telas pequenas (dispositivos móveis) */
+@media (max-width: 600px) {
+    .banner-campanhas {
+        padding: 20px;
+    }
+
+    .h1_banner1-campanhas {
+        font-size: 28px; 
+    }
+
+    .h3_banner-campanhas {
+        font-size: 16px; 
+    }
+
+    .spa {
+        font-size: 28px; 
+    }
+}
 
 /*bloco unico*/
 .titulo-campanhas {
@@ -56,15 +102,10 @@
     margin-left: 150px;
 }
 
-
-
-
-
 /* Estilos para o modal */
 .hidden {
     display: none;
  }
-/* Estilo para o overlay */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -74,7 +115,6 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 10;
 }
-/* Estilo para a caixa do modal */
 .modal-box {
     position: fixed;
     top: 50%;
@@ -90,7 +130,7 @@
     overflow:auto;
     box-sizing: border-box;
 }
-/* Botão de fechamento */
+
 #closeModal button {
     background: transparent;
     border: none;
@@ -103,36 +143,34 @@
     font-size: 10px;
     margin-left: 90%;
 }
-/* Estilos para o título */
+
 .teste h3 {
     font-size: 24px;
     font-family: "Poppins";
     font-weight: 900;
     color: #6A0303;
     margin: 0em 1em;
-    
 }
 .ele{
     flex-direction: column;
 }
-/* Estilos para o parágrafo */
+
 .teste{
-    
     overflow: hidden;
-    
 }
+
 .teste .ele p {
     max-width: 650px;
     margin: 1em 1em;
     color: #6A0303;
-    font-size: 18px; /* Ajuste o tamanho para que se encaixe melhor */
+    font-size: 18px; 
     font-family: "Lato";
     font-weight: 500;
-    word-wrap: break-word; /* Quebra automaticamente linhas longas */
-    line-height: 1.5; /* Aumenta o espaçamento entre linhas para legibilidade */
-    text-align: justify;
-   
+    word-wrap: break-word; 
+    line-height: 1.5; 
+    text-align: justify; 
 }
+
 .teste .foto{
     max-height: 330px;
     max-width: 450px;
@@ -141,10 +179,7 @@
     float: left;
 }
 
-
 /*carrossel*/
-
-
 .carrossel1-campanhas {
     display: flex;
     align-items: center;
@@ -156,35 +191,37 @@
 
 .carrossel2-campanhas {
     display: flex;
-     /* Esconde o conteúdo que está fora da área visível */
-    width: 100%; /* Largura total do contêiner */
-    transition: transform 0.2s ease; /* Transição suave ao deslizar */
+    width: 100%; 
+    transition: transform 0.2s ease; 
 }
 
 .campanhas {
-    flex: 0 0 calc(23% - 30px); /* Largura de cada item com espaço */
-    text-align: center; /* Centraliza o texto */
+    flex: 0 0 calc(23% - 30px);
+    text-align: center; 
     padding: 10px;
-    margin-left: 20px; /* Margem à esquerda para espaçamento */
-    box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+    margin-left: 20px; 
+    box-sizing: border-box; 
 }
 
 .img_camp-campanhas img {
-    width: 80%; /* Imagem ocupando a largura total do item */
-    height: 90%; /* Mantém a proporção da imagem */
-    border-radius: 10px; /* Bordas arredondadas */
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 16 / 20;
+    object-fit: cover; 
+    border-radius: 10px;
+    display: block; 
 }
 
 .detalhar {
-    background-color: #6A0303; /* Cor de fundo do botão */
-    color: #ffffff; /* Cor do texto */
-    padding: 10px 60px; /* Espaçamento interno */
-    border-radius: 30px; /* Bordas arredondadas */
-    cursor: pointer; /* Indica que é clicável */
-    margin-top: 10px; /* Espaço acima do botão */
+    background-color: #6A0303; 
+    color: #ffffff; 
+    padding: 10px 60px;
+    border-radius: 30px; 
+    cursor: pointer; 
+    margin-top: 10px;
 }
 
-.detalhar:hover {
+.detalhar:hover { 
     background-color: #FFD3D3;
     color: #000000;
 }
@@ -193,7 +230,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(1, 1, 1, 1.5); /* Cor de fundo semitransparente */
+    background: rgba(1, 1, 1, 1.5); 
     color: white;
     border: none;
     padding: 10px;
@@ -206,5 +243,40 @@
 .proximo { right: 0; }
 
 .anterior:hover, .proximo:hover {
-    background: rgba(0, 0, 0, 0.8); /* Escurece ao passar o mouse */
+    background: rgba(0, 0, 0, 0.8); 
+}
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+    .modal-box {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    #closeModal button {
+        font-size: 16px;
+        top: 5px;
+        right: 5px;
+    }
+}
+
+/* Responsividade para telas muito pequenas (celulares) */
+@media (max-width: 480px) {
+    .modal-box {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    .foto {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .ele h3 {
+        font-size: 18px; 
+    }
+
+    .ele p {
+        font-size: 14px; 
+    }
 }

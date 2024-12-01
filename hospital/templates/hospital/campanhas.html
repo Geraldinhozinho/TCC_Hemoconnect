@@ -2,55 +2,67 @@
 
 {% load static %}
 {% block parte_central %}
-
-    <div class="banner-campanhas">
+<main>
+    <!-- BANNER -->
+    <section>
+        <div class="banner-campanhas">
         <div class="texto_central-campanhas">
             <h1 class='h1_banner1-campanhas'>SUA DOAÇÃO É UM ATO DE </h1>
             <h1 class='spa'>AMOR E SOLIDARIEDADE</h1>
             <h3 class='h3_banner-campanhas'>FAÇA PARTE DESSA CORRENTE DE VIDA!</p>
         </div>
-    </div> 
+        </div> 
+    </section>
 
-    <div class = "botoes1-campanhas">
-        {% if page.has_previous%}
-            <a class="ant" href="{% url 'campanhas'%}?page={{page.previous_page_number}}">⇦ </a>
-        {% endif %}
-    </div>
-
-    <h1 class="titulo-campanhas">Campanhas</h1>
-
-    <div class="carrossel1-campanhas">
-        <button id="anteriorBtn" class="anterior" onclick="scrollCarousel(-1)">&#10094;</button>
-        <div class="carrossel2-campanhas">
-            {% for campa in campanhas %}
-            <div class="campanhas">
-                <div class="img_camp-campanhas">
-                    <img src="{{ campa.image.url }}" alt="Imagem da campanha">
+    <!-- Imagem das camapnhas/ popup -->
+    <section>  
+        <div class = "botoes1-campanhas">
+            {% if page.has_previous%}
+                <a class="ant" href="{% url 'campanhas'%}?page={{page.previous_page_number}}">⇦ </a>
+            {% endif %}
+        </div> 
+    </section>
+    <!--popup -->
+    <section>
+        <h1 class="titulo-campanhas">Campanhas</h1>
+        <div class="carrossel1-campanhas">
+            <button id="anteriorBtn" class="anterior" onclick="scrollCarousel(-1)">&#10094;</button>
+            <div class="carrossel2-campanhas">
+                {% for campa in campanhas %}
+                <div class="campanhas">
+                    <div class="img_camp-campanhas">
+                        <img src="{{ campa.image.url }}" alt="Imagem da campanha">
+                    </div>
+                    <button onclick="Alert.render({{ campa.id }})" class="detalhar">Detalhar</button>
                 </div>
-                <button onclick="Alert.render({{ campa.id }})" class="detalhar">Detalhar</button>
+                {% endfor %}
             </div>
-            {% endfor %}
+            <button class="proximo" onclick="scrollCarousel(1)">&#10095;</button>
         </div>
-        <button class="proximo" onclick="scrollCarousel(1)">&#10095;</button>
-    </div>
-
+    </section>
+    <!--popup -->
+    <section>
         <div class = "botoes2-campanhas"> 
             {% if page.has_next %}
                 <a class="prox" href="{% url 'campanhas'%}?page={{page.next_page_number}}">⇨ </a>
             {% endif %}
         </div>   
-
-    <div id="popUpOverlay" class="modal-overlay hidden"></div>
-
-    <div id="popUpBox" class="modal-box hidden">
-        <div id="box">
-            <div id="closeModal">
-                <button  onclick="Alert.ok()">X</button>
+    </section>
+    <!--popup -->
+    <section>
+        <div id="popUpOverlay" class="modal-overlay hidden"></div>
+        <div id="popUpBox" class="modal-box hidden">
+            <div id="box">
+                <div id="closeModal">
+                    <button  onclick="Alert.ok()">X</button>
+                </div>
+                <div id="tela_detalhe_camp"></div>
             </div>
-            <div id="tela_detalhe_camp"></div>
         </div>
-    </div>
+    </section>
+</main>
 
-    <!--Código JS-->
-    <script src="{% static 'js/tela_campanhas.js' %}"></script>
+<!-- Inclusão de script JS -->
+<script src="{% static 'js/tela_campanhas.js' %}"></script>
+
 {% endblock %}

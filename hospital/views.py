@@ -2,15 +2,20 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import UsuarioForm, QuestionarioForm, FotoPerfilForm
-from .models import Campanhas, Questionario, Doacoes,Usuario, Criador
+from .models import Campanhas, Questionario, Doacoes,Usuario, Criador, ChatFAQ
 from django.contrib import messages
 from django.http import JsonResponse
 from django.core.paginator import Paginator
 from django.conf import settings
 import os
 
+
 def inicio(request):
-     return render(request, 'hospital/tela_inicial.html')
+    campanhas = Campanhas.objects.all() 
+    context = {
+        'campanhas': campanhas
+    }
+    return render(request, 'hospital/tela_inicial.html',context)
 
 #CADASTRAR USUÁRIO
 def cadastrar(request):
@@ -113,8 +118,11 @@ def doador(request):
      return render(request, 'hospital/tela_doador.html')
 
 def contatos(request):
-          
-     return render(request, 'hospital/tela_contatos.html')
+    listar = ChatFAQ.objects.all()
+    contexto ={
+        'lista': listar
+    }
+    return render(request, 'hospital/tela_contatos.html',contexto )
 
 @login_required
 @login_required

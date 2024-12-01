@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HemoConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
+    <link href="{% static 'css/tela_chat.css' %}" rel="stylesheet">
+</head>
+<body>
+    {% for listar in lista %}
+        {{ listar.pergunta}}
+        {{ listar.resposta}}
+        
+        
+    {% endfor %}
+</body>
+</html>

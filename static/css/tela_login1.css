@@ -13,7 +13,8 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f3f3f3;
-    padding: 0 10px; /* Adiciona um padding lateral */
+    padding: 0px 10px; /* Adiciona um padding lateral */
+
 }
 .bloco1-login {
     display: flex;
@@ -47,19 +48,31 @@ body {
 .logo-login {
     font-size: 36px;
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     text-shadow: 3px 3px 6px rgba(0.5, 0.5, 0.5, 0.5);
     font-family: "Poppins", sans-serif;
     font-weight: 900; /* Deixa as letras bem grossas */
     letter-spacing: 0.5px; /* Adiciona um espaçamento entre as letras para melhorar a legibilidade */   
 }
+
 .logo-login span {
     color: #fff;
 }
+
 .formulario-login input {
     width: 100%;
     padding: 15px;
-    margin: 8px 0;
+   
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    border: 0.9px solid #000;
+}
+.formulario-login  .espaco{
+    width: 100%;
+    padding: 15px;
+    margin-top: 8px;
     border: none;
     border-radius: 5px;
     background-color: #f2f2f2;
@@ -124,10 +137,12 @@ body {
 
 
 /* Mensagens de erro */
+/* Mensagens de erro */
 .error-list {
-    margin: 0;
+    margin-top: 6px;
     padding: 0;
     list-style: none;
+   
 }
 
 .error-message {

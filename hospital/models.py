@@ -131,3 +131,12 @@ class Criador(models.Model):
     
     def __str__(self): 
         return self.nome
+    
+    
+
+class ChatFAQ(models.Model):
+    pergunta = models.CharField(max_length=255, unique=True)
+    resposta = models.TextField()
+
+    def __str__(self):
+        return self.pergunta

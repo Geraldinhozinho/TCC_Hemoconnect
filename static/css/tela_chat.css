@@ -1,0 +1,24 @@
+body {
+    font-family: Arial, sans-serif;
+}
+#chat {
+    margin-top: 20px;
+}
+#perguntas button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#perguntas button:hover {
+    background-color: #0056b3;
+}
+#resposta {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

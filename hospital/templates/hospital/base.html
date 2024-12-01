@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="PT-br">
 <head>
@@ -9,16 +8,16 @@
     <link rel="icon" href="{% static 'image/icon.png' %}" type="image/x-icon">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_campanhas.css' %}" rel="stylesheet">
-    <link href="{% static 'css/tela_doador.css' %}" rel="stylesheet">
+    <link href="{% static 'css/tela_doador.css' %}" rel="stylesheet"> 
     <link href="{% static 'css/tela_contatos.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_inicial.css' %}" rel="stylesheet">
     <link href="{% static 'css/tela_perfil.css' %}" rel="stylesheet">
     
 
-    <!--fonte rammeto one-->
+    <!--fonte rammeto one
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">-->
 </head>
 <body>
     <!-- BARRA DE NAVEGAÇÃO -->
@@ -32,9 +31,7 @@
                 <li><a href="{% url 'tela_contatos' %}">Contatos</a></li>
                 <li>
                     <a href="{% url 'tela_perfil' %}">
-                        <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}{% static 'image/perfil.png' %}{% endif %}" 
-                             alt="Perfil" 
-                             style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                        <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}{% static 'image/perfil.png' %}{% endif %}" alt="Perfil" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
                     </a>
                 </li>
             </ul>
@@ -45,6 +42,7 @@
 
     {% endblock %}
 
+    <!-- FOOTER -->    
     <footer class="footer">
         <img src="{% static 'image/logo_if.png' %}" alt="Logo do IFRN" class="logoif-base">
         <div class="footer-base">
@@ -56,7 +54,6 @@
             <p>Orientadora: Mary Holanda</p>
             <p>Coorientador: Kaio Fontes </p>
         </div>
-        
     </footer>
 
     

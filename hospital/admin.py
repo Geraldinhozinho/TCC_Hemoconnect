@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Usuario, Questionario, Campanhas, Doacoes, Criador
+from .models import Usuario, Questionario, Campanhas, Doacoes, Criador, ChatFAQ
 from django.contrib.auth.admin import UserAdmin
 # Register your models here.
 admin.site.register(Questionario)
@@ -19,6 +19,11 @@ class UsuarioAdmin(UserAdmin):
         (None, {'fields': ('endereco', 'cpf', 'nome_completo', 'foto_perfil')}),
     )
     inlines = [DoacoesInline]  # Vincula as doações ao usuário
+
+@admin.register(ChatFAQ)
+class ChatFAQAdmin(admin.ModelAdmin):
+    list_display = ('pergunta',)
+    search_fields = ('pergunta', 'resposta')
 
 # Registro do Usuario com o UsuarioAdmin personalizado
 admin.site.register(Usuario, UsuarioAdmin)

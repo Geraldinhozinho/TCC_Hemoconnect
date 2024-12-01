@@ -58,7 +58,7 @@ body{
 
 /*botões*/
 
-.a {
+.barra {
     display: flex; /* Flexbox para organizar os botões */
     justify-content: center; /* Centraliza os itens horizontalmente */
     gap: 80px; /* Espaço entre os botões */
@@ -67,7 +67,7 @@ body{
     background-color: #f8f8f8;
     padding: 10px;
 }
-
+ 
 .botao-voltar-form {
     padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
     text-align: center;
@@ -75,11 +75,13 @@ body{
     color: white; /* Cor do texto */
     border-radius: 5px; /* Borda arredondada */
     text-decoration: none; /* Remove o sublinhado do link */
+    border: 1px solid #000;
 }
 
 .botao-voltar-form:hover {
-    background-color: #CE2A2A; /* Cor do botão ao passar o mouse */
-    color: #000;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000;
 }
 
 /*rodapé*/

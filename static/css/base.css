@@ -1,47 +1,46 @@
-/*Barra de navegação*/
-
-/*paleta de cores*/
-.x{
+/* Paleta de Cores */
+.x {
     color: #FFD3D3, #CE2A2A, #6A0303, #FFFFFF, #000000;
 }
+
+/* Reset de Estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo */
 body { 
     background-color: #FFD3D3; 
 }
 
-/* Header */
+/* Barra de Navegação */
 .bloco-base {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px; /* Ajuste de espaçamento */
+    padding: 10px 20px;
     background-color: #CE2A2A;
     border-bottom: 2px solid #000;
-    height: 60px; /* Define uma altura padrão */
+    height: 60px;
 }
 
-.logo-base a{
+.logo-base a {
     font-size: 30px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: "Rammetto One", sans-serif;
     font-weight: 900;
-    font-style: normal;
     text-decoration: none;
-    
 }
 
 /* Menu */
 .itens-base {
     list-style-type: none;
     display: flex;
-    align-items: center; /* Centraliza os itens verticalmente */
-    margin-right: 15px; /* Espaçamento à direita */
+    align-items: center;
+    margin-right: 15px;
 }
 
 .itens-base li {
@@ -51,23 +50,22 @@ body {
 .itens-base li a {
     font-family: "Rammetto One", sans-serif;
     font-weight: 200;
-    font-style: normal;
     color: white;
     text-decoration: none;
     font-size: 14px;
     padding: 10px 15px;
     transition: background-color 0.3s ease;
     border-radius: 10px;
-    display: flex; 
-    align-items: center; /* Centraliza o texto dentro do link */
+    display: flex;
+    align-items: center;
 }
 
 .itens-base li a:hover {
     background-color: #575757;
     border-radius: 10px;
 }
-/*Rodapé*/
 
+/* Rodapé */
 .footer {
     background-color: #CE2A2A;
     color: white;
@@ -75,37 +73,129 @@ body {
     border-top: 1px  #000 solid;
     display: flex;
 }
+
 .footer-base {
-    margin:  auto;
-    
+    margin: auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
+
 .footer2-base {
-    margin: 0 ;
-    
+    margin: 0;
 }
+
 .footer p {
     margin: 5px 0;
     font-size: 14px;
     color: #b0acac;
 }
-.logoif-base{
+
+.logoif-base {
     max-width: 90px;
     max-height: 50px;
     display: flex;
     margin-left: 40px;
     margin-top: 12px;
 }
+
 .logo2-base {
     font-size: 20px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-family: "Rammetto One", sans-serif;
     font-weight: 400;
-    font-style: normal;
     margin-right: 15px;
+}
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .bloco-base {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 10px; 
+        height: auto;
+    }
+
+    .logo-base a {
+        font-size: 24px;  
+    }
+
+    .itens-base {
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        align-items: center; 
+        margin-right: 0;
+        padding: 0;
+    }
+
+    .itens-base li {
+        margin-left: 0;
+        margin-top: 0; 
+    }
+
+    .itens-base li a {
+        font-size: 16px; 
+        padding: 6px 10px; 
+        text-align: center; 
+    }
+
+    
+    .footer {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 10px;
+    }
+
+    .footer-base {
+        margin: 0;
+        text-align: left;
+        display: flex;
+        flex: 1; 
+    }
+
+    .footer2-base {
+        margin: 0;
+    }
+
+    .logoif-base {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .logo2-base {
+        font-size: 18px;
+        margin-right: 0;
+    }
+}
+
+/* Para telas maiores (tablets e up) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bloco-base {
+        padding: 15px 30px;
+    }
+
+    .logo-base a {
+        font-size: 26px;
+    }
+
+    .itens-base {
+        margin-right: 20px;
+    }
+
+    .itens-base li {
+        margin-left: 25px;
+    }
+
+    .itens-base li a {
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+
+    .footer {
+        padding: 15px 0;
+    }
 }

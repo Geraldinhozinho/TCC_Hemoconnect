@@ -22,9 +22,9 @@
                     {% csrf_token %}
                     <p>
                         <label for="id_username"></label>
-                        <input type="text" name="username" placeholder="Digite um nome para seu usuário, sem espaços" 
-                               maxlength="150" autofocus="" required="" id="id_username">
-                        <span class="error-message-username"></span>
+                        <input class='espaco' type="text" name="username" placeholder="Digite um nome para seu usuário, sem espaços" 
+                               maxlength="150" autofocus required id="id_username" 
+                               value="{{ form.username.value|default_if_none:'' }}">
                         {% if form.username.errors %}
                             <ul class="error-list">
                                 {% for error in form.username.errors %}
@@ -32,10 +32,11 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
-                    </p>              
+                    </p>             
                     <p>
                         <label for="id_nome_completo"></label>
-                        <input type="text" name="nome_completo" placeholder="Digite seu nome completo"  maxlength="200" id="id_nome_completo">                       
+                        <input class='espaco' type="text" name="nome_completo" placeholder="Digite seu nome completo" maxlength="200" 
+                               id="id_nome_completo" value="{{ form.nome_completo.value|default_if_none:'' }}">                       
                         {% if form.nome_completo.errors %}
                             <ul class="error-list">
                                 {% for error in form.nome_completo.errors %}
@@ -44,11 +45,10 @@
                             </ul>
                         {% endif %}
                     </p>
-                
                     <p>
                         <label for="id_cpf"></label>
-                        <input type="text" name="cpf" placeholder="Digite seu CPF" maxlength="14" required id="id_cpf" oninput="formatCPF(this)">
-                    
+                        <input class='espaco' type="text" name="cpf" placeholder="Digite seu CPF" maxlength="14" required id="id_cpf" 
+                               value="{{ form.cpf.value|default_if_none:'' }}" oninput="formatCPF(this)">
                         {% if form.cpf.errors %}
                             <ul class="error-list">
                                 {% for error in form.cpf.errors %}
@@ -59,7 +59,8 @@
                     </p>
                     <p>
                         <label for="id_endereco"></label>
-                        <input type="text" name="endereco" placeholder="Informe sua cidade" maxlength="255" id="id_endereco">
+                        <input  class='espaco' type="text" name="endereco" placeholder="Informe sua cidade" maxlength="255" 
+                               id="id_endereco" value="{{ form.endereco.value|default_if_none:'' }}">
                         {% if form.endereco.errors %}
                             <ul class="error-list">
                                 {% for error in form.endereco.errors %}
@@ -70,7 +71,8 @@
                     </p>
                     <p>
                         <label for="id_email"></label>
-                        <input type="email" name="email" placeholder="Informe seu E-mail" maxlength="254" id="id_email">
+                        <input class='espaco' type="email" name="email" placeholder="Informe seu E-mail" maxlength="254" 
+                               id="id_email" value="{{ form.email.value|default_if_none:'' }}">
                         <span class="error-message-email"></span>
                         {% if form.email.errors %}
                             <ul class="error-list">
@@ -82,23 +84,19 @@
                     </p>
                     <p>
                         <label for="id_password1"></label>
-                        <input type="password" name="password1" placeholder="Crie uma senha" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
+                        <input class='espaco' type="password" name="password1" placeholder="Crie uma senha" autocomplete="new-password" 
+                               aria-describedby="id_password1_helptext" id="id_password1">
                         <span class="helptext" id="id_password1_helptext"></span>
-                        {% if form.password1.errors %}
-                            <ul class="error-list">
-                                {% for error in form.password1.errors %}
-                                    <li class="error-message">{{ error }}</li>
-                                {% endfor %}
-                            </ul>
-                        {% endif %}
+                        
                     </p>
-                    
                     <p>
                         <label for="id_password2"></label>
-                        <input type="password" name="password2" placeholder="Confirme sua senha" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
+                        <input class='espaco' type="password" name="password2" placeholder="Confirme sua senha" autocomplete="new-password" 
+                               aria-describedby="id_password2_helptext" id="id_password2">
                         {% if form.password2.errors %}
                             <ul class="error-list">
                                 {% for error in form.password2.errors %}
+
                                     <li class="error-message">{{ error }}</li>
                                 {% endfor %}
                             </ul>
@@ -106,6 +104,7 @@
                     </p>
                     <button type="submit" class="botao-login">Cadastrar-se</button>
                 </form>
+                
                 
                 <p class="login-login">Já possui uma conta? <a href="{% url 'tela_login2' %}">Entrar</a></p>
                 <p class="login2-login"><a href="{% url 'tela_inicial' %}">Continuar como visitante</a></p>

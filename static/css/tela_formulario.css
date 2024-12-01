@@ -168,6 +168,7 @@ body{
 .nome-completo-form input[type="number"]{
     padding: 10px;    
     border-radius: 30px;
+    border: none;
 }
 .email-forms{
     display: flex;

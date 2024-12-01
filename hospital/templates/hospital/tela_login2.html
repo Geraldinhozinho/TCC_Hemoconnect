@@ -22,7 +22,7 @@
                     {% csrf_token %} 
                     <p>
                         <label for="id_username"></label>
-                        <input type="text" name="username" placeholder="Digite o nome do seu usuario" maxlength="150" placeholder="Informe o nome de seu úsuario" autofocus="" required=""  id="id_username">
+                        <input type="text" name="username" placeholder="Nome do usuario" maxlength="150" placeholder="Nome do úsuario" autofocus="" required=""  id="id_username">
                     </p>                  
                     <p>
                         <label for="password1"></label>
@@ -40,6 +40,7 @@
 
                 <p class="login-login">Não possui uma conta? <a href="{% url 'tela_login1' %}">Clique aqui</a>
             </div> 
+        </div>
     </div>
 </body>
 </html>

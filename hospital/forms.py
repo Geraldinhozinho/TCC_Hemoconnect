@@ -1,15 +1,9 @@
 from django import forms
-from .models import Usuario, Questionario, Campanhas, Doacoes
+from .models import Usuario, Questionario, Campanhas
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 import re
 
-
-class FotoPerfilForm(forms.ModelForm):
-    class Meta:
-        model = Usuario
-        fields = ['foto_perfil']
-        
 class UsuarioForm(UserCreationForm):
     cpf = forms.CharField(max_length=14, required=True, help_text="Digite seu CPF sem pontos ou traços.")
     endereco = forms.CharField(max_length=255, required=False)
@@ -30,21 +24,23 @@ class UsuarioForm(UserCreationForm):
         if Usuario.objects.filter(cpf=cpf).exists():
             raise ValidationError("Este CPF já está cadastrado.")
         return cpf
-
-        
+    
+class FotoPerfilForm(forms.ModelForm):
+    class Meta:
+        model = Usuario
+        fields = ['foto_perfil']
+                
 class QuestionarioForm(forms.ModelForm):
     doenca_det = forms.CharField(
-        required=False,  # Não obrigatório, será validado dinamicamente
+        required=False,  
         widget=forms.TextInput(attrs={'class': 'doenca2-forms', 'placeholder': 'Digite o nome da doença'}),
     )
-
     class Meta:
-        model = Questionario  # Modelo associado ao formulário
+        model = Questionario 
         fields = [
             'idade','querer', 'nome', 'email', 'tipo_sangue', 'fuma', 'sexo',
             'doenca', 'doenca_det', 'disponibilidade', 'dias'
-        ]  # Inclua 'doenca_det' nos campos
-
+        ]  
         widgets = {
             'querer': forms.RadioSelect(attrs={'class': 'tornar-forms'}),
             'nome': forms.TextInput(attrs={'class': 'nome-forms', 'placeholder': 'Digite seu nome'}),
@@ -66,8 +62,7 @@ class QuestionarioForm(forms.ModelForm):
             self.add_error('doenca-det', 'Por favor, informe o nome da doença.')
 
             return cleaned_data
-        
-        
+              
 class CampanhasForm(forms.ModelForm):
     class Meta:
         model = Campanhas
@@ -77,14 +72,3 @@ class CampanhasForm(forms.ModelForm):
             'titulo': forms.TextInput(attrs=({'class':'titulomodal'})),
             'descricao': forms.TextInput(attrs=({'class':'descricaomodal'})),           
         }
-
-
-# class DoacoesForm(forms.ModelForm):
-#     class Meta:
-#         model = Doacoes
-#         fields = ['data_doacao', 'data_prox_doacao']  # Corrigir aqui
-        
-#         widgets = {
-#             'data_doacao': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
-#             'data_prox_doacao': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
-#         }

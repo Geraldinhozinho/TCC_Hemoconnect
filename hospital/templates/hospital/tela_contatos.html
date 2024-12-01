@@ -2,70 +2,75 @@
 
 {% load static %}
 {% block parte_central %}
+<main>
     <h1 class="titulo-cont">Contatos</h1>
     
-    <div class= "bloco1-contatos">
-        <div class= "subbloco1-contatos">
-            <div class = 'sub-subbloco1-contatos'>
-                <img src="{% static 'image/Email.png' %}" alt="Heart with blood drop" class="email-contatos">
+    <!-- Bloco de contatos principais -->
+    <section class="bloco1-contatos">
+        <!-- Contato por e-mail -->
+        <article class="subbloco1-contatos">
+            <figure class="sub-subbloco1-contatos">
+                <img src="{% static 'image/Email.png' %}" alt="Ícone de e-mail" class="email-contatos">
+            </figure>
+            <div class="sub-subbloco2-contatos">
+                <h2 class="subtitulo-contatos">E-mail</h2>
+                <p class="textop1-contatos">Tem alguma dúvida?</p>
+                <p class="textop2-contatos">Hemo@hotmail.com</p>
             </div>
-            <div class = 'sub-subbloco2-contatos'>
-                <h1 class='subtitulo-contatos'>E-mail</h1>
-                <p class='textop1-contatos'> Tem alguma dúvida? </p>
-                <p class='textop2-contatos'> Hemo@hotmail.com </p>
-            </div>
-        </div>
+        </article>
 
-        <div class= "subbloco1-contatos">
-            <div class = 'sub-subbloco1-contatos'>
-                <img src="{% static 'image/telefone.png' %}" alt="Heart with blood drop" class="email-contatos">
+        <!-- Contato por telefone -->
+        <article class="subbloco1-contatos">
+            <figure class="sub-subbloco1-contatos">
+                <img src="{% static 'image/telefone.png' %}" alt="Ícone de telefone" class="email-contatos">
+            </figure>
+            <div class="sub-subbloco2-contatos">
+                <h2 class="subtitulo-contatos">Telefone</h2>
+                <p class="textop1-contatos">Você pode nos ligar</p>
+                <p class="textop2-contatos">(84) 3351-9895</p>
             </div>
-            <div class = 'sub-subbloco2-contatos'>
-                <h1 class='subtitulo-contatos'>Telefone</h1>
-                <p class='textop1-contatos'> Você pode nos ligar </p>
-                <p class='textop2-contatos'> (84) 3351-9895 </p>
-            </div>
-        </div>
+        </article>
 
-        <div class= "subbloco1-contatos">
-            <div class = 'sub-subbloco1-contatos'>
-                <img src="{% static 'image/localizacao.png' %}" alt="Heart with blood drop" class="email-contatos">
+        <!-- Contato por localização -->
+        <article class="subbloco1-contatos">
+            <figure class="sub-subbloco1-contatos">
+                <img src="{% static 'image/localizacao.png' %}" alt="Ícone de localização" class="email-contatos">
+            </figure>
+            <div class="sub-subbloco2-contatos">
+                <h2 class="subtitulo-contatos">Localização</h2>
+                <p class="textop1-contatos">Br 405, KM 3, 19-Arizona</p>
+                <p class="textop2-contatos">Pau Dos Ferros/RN</p>
             </div>
-            <div class = 'sub-subbloco2-contatos'>
-                <h1 class='subtitulo-contatos'>Localização</h1>
-                <p class='textop1-contatos'> Br 405, KM 3, 19-Arizona </p>
-                <p class='textop2-contatos'> Pau Dos Ferros/RN </p>
-            </div>
-        </div>
+        </article>
 
-        <div class= "subbloco1-contatos">
-            <div class = 'sub-subbloco3-contatos'>
-                <img src="{% static 'image/chat.png' %}" alt="Heart with blood drop" class="chat1-contatos">
+        <!-- Contato por chat -->
+        <article class="subbloco1-contatos">
+            <figure class="sub-subbloco3-contatos">
+                <img src="{% static 'image/chat.png' %}" alt="Ícone de chat" class="chat1-contatos">
+            </figure>
+            <div class="sub-subbloco4-contatos">
+                <h2 class="subtitulo-contatos">Chat</h2>
+                <p class="textop3-contatos">Acesse o chat virtual para ver as dúvidas mais frequentes.</p>
             </div>
-            <div class = 'sub-subbloco4-contatos'>
-                <h1 class='subtitulo-contatos'>Chat</h1>
-                <p class='textop3-contatos'> Acesse o chat virtual para ver as dúvidas mais frequentes. </p>
-            </div>
-        </div>
-    </div>
-    
-    <div class= 'bloco2-contatos'>
-        <h1 class="titulo2-cont">Horários de antendimento</h1>
-        <div class='subbloco5-contatos'>
-            <div class="relogio1-contatos">
-                <img src="{% static 'image/relogio.png' %}" alt="Heart with blood drop" class="relogio-contatos">
-                <p class="p2"> Segunda-feira a Sexta-feira
-                    08:00 às 18:00
-                </p>
-            </div>
-            <div class="relogio2-contatos">
-                <img src="{% static 'image/relogio.png' %}" alt="Heart with blood drop" class="relogio-contatos">
-                <p class="p3"> Sábado e domingo 
-                    08:00 às 12:00
-                </p>
-            </div>
-           <!-- Sobreposição escura (fundo) -->
-            <div id="chat-popup-overlay" class="chat-popup-overlay"></div>
+        </article>
+    </section>
+
+    <!-- Bloco de horários de atendimento -->
+    <section class="bloco2-contatos">
+        <h2 class="titulo2-cont">Horários de atendimento</h2>
+        <div class="subbloco5-contatos">
+            <article class="relogio1-contatos">
+                <figure>
+                    <img src="{% static 'image/relogio.png' %}" alt="Ícone de relógio" class="relogio-contatos">
+                </figure>
+                <p class="p2">Segunda-feira a Sexta-feira<br>08:00 às 18:00</p>
+            </article>
+            <article class="relogio2-contatos">
+                <figure>
+                    <img src="{% static 'image/relogio.png' %}" alt="Ícone de relógio" class="relogio-contatos">
+                </figure>
+                <p class="p3">Sábado e domingo<br>08:00 às 12:00</p>
+            </article>
 
             <!-- Botão de chat -->
             <div class="botao-contatos">
@@ -73,35 +78,34 @@
             </div>
 
             <!-- Popup do chat -->
-            <div id="chat-popup" class="chat-popup">
+            <dialog id="chat-popup" class="chat-popup">
                 <div class="popup-header">
                     <h3>HEMOCONNECT - Perguntas Frequentes</h3>
                     <button class="close-btn" onclick="togglePopup()">&times;</button>
                 </div>
                 <div class="popup-body">
                     {% if lista %}
-                        {% for pergunta in lista %}
-                        <div class="faq-item">
-                            <button class="faq-question" onclick="toggleAnswer(this)">
-                                {{ pergunta.pergunta }}
-                            </button>
-                            <div class="faq-answer">
-                                <p>{{ pergunta.resposta }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
+                        <ul>
+                            {% for pergunta in lista %}
+                            <li class="faq-item">
+                                <button class="faq-question" onclick="toggleAnswer(this)">
+                                    {{ pergunta.pergunta }}
+                                </button>
+                                <div class="faq-answer">
+                                    <p>{{ pergunta.resposta }}</p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
                     {% else %}
                         <p>Não há perguntas cadastradas.</p>
                     {% endif %}
                 </div>
-            </div>
-
-            
+            </dialog>
         </div>            
-    </div>
-    <script src="{% static 'js/tela_contatos.js' %}"></script>
+    </section>
+</main>
+
+<!-- Inclusão de script JS -->
+<script src="{% static 'js/tela_contatos.js' %}"></script>
 {% endblock %}
-
-
-
-

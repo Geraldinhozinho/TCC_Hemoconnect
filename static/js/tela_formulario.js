@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// Para dias
-
+// Para o campo de dias
 document.addEventListener('DOMContentLoaded', function () {
     const disponibilidadeRadios = document.querySelectorAll('input[name="disponibilidade"]'); 
     const campoDias = document.getElementById('campo-dias');

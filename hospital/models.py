@@ -3,8 +3,8 @@ from django.conf import settings
 from multiselectfield import MultiSelectField
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MinLengthValidator
-# Create your models here.
 
+# Model para criação de um usuário
 class Usuario(AbstractUser):
     nome_completo =models.CharField(max_length=200, validators=[MinLengthValidator(8, message="O nome completo deve ter pelo menos 8 caracteres.")])
     cpf = models.CharField(max_length=14, unique=True, verbose_name="CPF")
@@ -13,7 +13,7 @@ class Usuario(AbstractUser):
     
     def __str__(self):
         return self.username
-
+# Model para criação de um formulario
 class Questionario(models.Model):
     
     CHOICES = [
@@ -48,7 +48,6 @@ class Questionario(models.Model):
         default=True 
     )
     
-    
     usuario = models.ForeignKey(
         settings.AUTH_USER_MODEL,  # Usando o modelo de usuário configurado
         on_delete=models.CASCADE,
@@ -56,7 +55,9 @@ class Questionario(models.Model):
     )
 
     nome = models.CharField(max_length=150)
+    
     idade = models.IntegerField( null=True)
+    
     email = models.EmailField() 
        
     tipo_sangue = models.CharField(max_length=10,
@@ -75,11 +76,13 @@ class Questionario(models.Model):
         choices=CHOICES,
         default=True
     )
+    
     doenca = models.CharField(
         max_length=3,
         choices=CHOICES,
         default=True
     )
+    
     doenca_det = models.CharField(
         max_length=150,
         blank=True, null=True)  
@@ -98,16 +101,15 @@ class Questionario(models.Model):
     
     def __str__(self):
         return self.usuario.username
-
+# Model para cadastrar e remover campanhas
 class Campanhas(models.Model):
-    
     titulo = models.CharField(max_length=20, null=True, blank=True)
     descricao = models.TextField(null=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)
   
     def __str__(self):
         return self.titulo
-    
+# Model para cadastrar e remover doações de um usuário 
 class Doacoes(models.Model):
     usuario = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -120,8 +122,7 @@ class Doacoes(models.Model):
 
     def __str__(self):
         return f"Doação de {self.usuario.username} em {self.data_doacao.strftime('%d/%m/%Y')}"
-
-
+# Model para cadastrar e remover colaboradores
 class Criador(models.Model):
     image= models.ImageField(upload_to='images_criadores/', null=True, blank=True)
     nome= models.CharField(max_length=50)
@@ -131,9 +132,7 @@ class Criador(models.Model):
     
     def __str__(self): 
         return self.nome
-    
-    
-
+# Model para cadastrar e remover perguntas e respostas do chat
 class ChatFAQ(models.Model):
     pergunta = models.CharField(max_length=255, unique=True)
     resposta = models.TextField()

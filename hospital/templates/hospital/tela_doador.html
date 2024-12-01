@@ -2,66 +2,67 @@
 
 {% load static %}
 {% block parte_central %}
-
-    <div class="banner-doador">
+<main>
+    <!--HEADER-->
+    <section class="banner-doador">
         <div class="texto_central-doador">
-            <h1 class='h1_banner1-doador'>SALVE<span class='spa-doador'>VIDAS</span></h1>
-            <h3 class='h3_banner-doador'>TORNE-SE UM DOADOR DE SANGUE</p>
+            <h1 class="h1_banner1-doador">SALVE<span class="spa-doador">VIDAS</span></h1>
+            <h3 class="h3_banner-doador">TORNE-SE UM DOADOR DE SANGUE</h3>
         </div>
-    </div> 
-   
-    <div class="texto1-doador">
+    </section>
+
+    <section class="texto1-doador">
         <h1>A doação de <span class="span1-doador">sangue</span> é um ato altruísta e de solidariedade, que ajuda a <span class="span1-doador">salvar muitas vidas.</span></h1>
-    </div>
+    </section>
+
     <p class="p1-doador">É um gesto de amor ao próximo que pode gerar muitos sorrisos</p>
     <p class="p2-doador">É importante destacar que não há um substituto para o sangue e sua disponibilidade é essencial em diversas situações.</p>
-
-    <h1 class='h1-doador'>CRITÉRIOS BÁSICOS PARA DOAR SANGUE</h1>
-
-    <div class="bloco1-doador">
+    <!--CRITÉRIOS-->
+    <h1 class="h1-doador">CRITÉRIOS BÁSICOS PARA DOAR SANGUE</h1>
+    <section class="bloco1-doador">
         <img src="{% static 'image/doador.png' %}" alt="Pessoa doando sangue" class="img-doador">
         <div class="subbloco-doador">
-            <div class='fundo-doador'>
+            <div class="fundo-doador">
                 <div class="criterio-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
                     <p>Estar em boas condições de saúde;</p>
                 </div>
-        
+            
                 <div class="criterio-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
                     <p>Ter entre 16 e 69 anos (É necessário autorização de um responsável para menores de 18 anos);</p>
                 </div>
-        
+            
                 <div class="criterio-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
                     <p>Pesar no mínimo 50kg;</p>
                 </div>
-        
+            
                 <div class="criterio-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
                     <p>Estar descansado (dormir ao menos 6 horas nas últimas 24 horas);</p>
                 </div>
-        
+            
                 <div class="criterio-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
                     <p>Estar alimentado (evitar alimentos gordurosos nas 4 horas anteriores à doação);</p>
                 </div>
-        
+            
                 <div class="criterio-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img_gota-doador">
                     <p>Apresentar documento original com foto recente, como RG ou CNH, física ou digital;</p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="bloco2-doador">
+    </section>
+    <!--IMPEDIMENTOS TEMPORÁRIOS-->
+    <section class="bloco2-doador">
         <div class="subbloco2-doador">
             <h1>IMPEDIMENTOS TEMPORÁRIOS</h1>
             <div class="cards-doador">
                 <div class="card1-doador">
                     <div class="icon-doador"> 🦠</div>
-                    <div class="titulo-bloco2-doador">Resfriados e Doenças Virais</div>
+                    <h2 class="titulo-bloco2-doador">Resfriados e Doenças Virais</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Resfriado: 7 dias após desaparecer.</li>
@@ -74,7 +75,7 @@
                 </div>
                 <div class="card1-doador">
                     <div class="icon-doador"> 🏥</div>
-                    <div class="titulo-bloco2-doador">Procedimentos Médicos</div>
+                    <h2 class="titulo-bloco2-doador">Procedimentos Médicos</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Endoscopia: 6 meses.</li>
@@ -85,7 +86,7 @@
                 </div>
                 <div class="card1-doador">
                     <div class="icon-doador">✒️</div>
-                    <div class="titulo-bloco2-doador">Tatuagens e Piercings</div>
+                    <h2 class="titulo-bloco2-doador">Tatuagens e Piercings</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Tatuagem/Piercing: 6-12 meses.</li>
@@ -93,10 +94,9 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="card1-doador">
                     <div class="icon-doador">👶</div>
-                    <div class="titulo-bloco2-doador">Pós-Parto</div>
+                    <h2 class="titulo-bloco2-doador">Pós-Parto</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Parto normal: 90 dias.</li>
@@ -105,10 +105,9 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="card1-doador">
                     <div class="icon-doador">💉</div>
-                    <div class="titulo-bloco2-doador">Vacinas</div>
+                    <h2 class="titulo-bloco2-doador">Vacinas</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Gripe: 48h após.</li>
@@ -117,10 +116,9 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="card1-doador">
                     <div class="icon-doador">🌍</div>
-                    <div class="titulo-bloco2-doador">Viagens Recentes</div>
+                    <h2 class="titulo-bloco2-doador">Viagens Recentes</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Malária: 12 meses.</li>
@@ -128,10 +126,9 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="card1-doador">
                     <div class="icon-doador">🩺</div>
-                    <div class="titulo-bloco2-doador">Doenças de Recuperação Curta</div>
+                    <h2 class="titulo-bloco2-doador">Doenças de Recuperação Curta</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Febre amarela: 30 dias.</li>
@@ -140,10 +137,9 @@
                         </ul>
                     </div>
                 </div>
-                
                 <div class="card1-doador">
                     <div class="icon-doador">🦷</div>
-                    <div class="titulo-bloco8-doador">Cuidados Odontológicos</div>
+                    <h2 class="titulo-bloco2-doador">Cuidados Odontológicos</h2>
                     <div class="descricao1-doador">
                         <ul>
                             <li>Extração dentária: 7 dias.</li>
@@ -151,52 +147,51 @@
                         </ul>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="bloco3-doador">        
+    </section>
+    <!--IMPEDIMENTOS DEFINITIVOS-->
+    <section class="bloco3-doador">        
         <div class="subbloco3-doador">
             <h1>IMPEDIMENTOS DEFINITIVOS</h1>
-            <div class='fundo-doador'>
-                <div class="criterio2-doador">
+            <div class="fundo-doador">
+                <article class="criterio2-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img2_gota-doador">
                     <p>Evidência clínica ou laboratorial de Hepatite B ou C (em qualquer idade);</p>
-                </div>
-                <div class="criterio2-doador">
+                </article>
+                <article class="criterio2-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img2_gota-doador">
                     <p>Hepatite após 11 anos;</p>
-                </div>
-                <div class="criterio2-doador">
+                </article>
+                <article class="criterio2-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img2_gota-doador">
                     <p>Uso de drogas;</p>
-                </div>
-                <div class="criterio2-doador">
+                </article>
+                <article class="criterio2-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img2_gota-doador">
                     <p>AIDS (HIV);</p>
-                </div>
-                <div class="criterio2-doador">
+                </article>
+                <article class="criterio2-doador">
                     <img src="{% static 'image/gota.png' %}" alt="Gota de sangue" class="img2_gota-doador">
                     <p>HTLV I/II (leucemia/linfoma de células T, mielopatia, condições neurológicas leves)</p>
-                </div>
-                <!-- Outros elementos -->
+                </article>
             </div>
         </div>
-        <img src="{% static 'image/medico.png' %}" alt="Imagem do doador" class="img2-doador">
-    </div>
-    
-    <div class="texto-doador2">
-        <h1>Ao doar, você oferece <span class="span2-doador">esperança</span> e uma segunda chance para aqueles que mais precisam</h1>
-        
-        <h3>Cada gota conta, cada gesto de solidariedade faz a diferença</h3>
-        
-        <div class="bloco-doador">
-            <button class="botao-doador" onclick="window.location.href='/quest';">Quero ser um doador</button>
+        <figure>
+            <img src="{% static 'image/medico.png' %}" alt="Imagem do doador" class="img2-doador">
+        </figure>
+    </section>
+    <!--CHAMAR-->
+    <section>
+        <div class="texto-doador2">
+            <h1>Ao doar, você oferece <span class="span2-doador">esperança</span> e uma segunda chance para aqueles que mais precisam</h1>
+            <h3>Cada gota conta, cada gesto de solidariedade faz a diferença</h3>
+            <div class="bloco-doador">
+                <button class="botao-doador" onclick="window.location.href='/quest';">Quero ser um doador</button>
+            </div>
         </div>
-    </div>
-
-
+    </section>
+</main>
     
     
     

@@ -9,13 +9,13 @@ from django.core.paginator import Paginator
 from django.conf import settings
 import os
 
-
+#TELA INICIAL
 def inicio(request):
     campanhas = Campanhas.objects.all() 
-    context = {
+    contexto = {
         'campanhas': campanhas
     }
-    return render(request, 'hospital/tela_inicial.html',context)
+    return render(request, 'hospital/tela_inicial.html',contexto)
 
 #CADASTRAR USUÁRIO
 def cadastrar(request):
@@ -29,8 +29,10 @@ def cadastrar(request):
             messages.error(request, "")
     else:
         form = UsuarioForm()
-     
-    return render(request, 'hospital/tela_login1.html', {'form': form})
+    contexto={
+        'form': form
+        }
+    return render(request, 'hospital/tela_login1.html', contexto )
 
 #LOGAR
 def login_view(request):
@@ -48,15 +50,13 @@ def login_view(request):
 
     return render(request, 'hospital/tela_login2.html')
 
-#SAIR
+#SAIR/LOGOUT
 @login_required
 def logout_view(request):
     logout(request) 
     return redirect('tela_login1')  
 
-
-
-#QUESTIONARIO 2 
+#QUESTIONARIO 2 - DOAÇÃO 
 @login_required
 def questionario(request):
     if Questionario.objects.filter(usuario=request.user).exists():
@@ -72,15 +72,24 @@ def questionario(request):
             messages.error(request, "Houve um erro no envio do formulário. Verifique os dados.")
     else:
         form = QuestionarioForm()
-    return render(request, 'hospital/tela_formulario.html', {'form': form})
+        
+    contexto= {
+        'form': form
+        }
+    return render(request, 'hospital/tela_formulario.html', contexto )
 
 #MENSAGEM DE SUCESSO
 @login_required
 def questionario_sus(request):
     questionario = Questionario.objects.filter(usuario=request.user).last() 
-    return render(request, 'hospital/sucesso.html', {'questionario': questionario})
+    
+    contexto = {
+        'questionario': questionario
+        }
+    
+    return render(request, 'hospital/sucesso.html', contexto )
 
-#QUESTIONARIO EDITAR
+#QUESTIONARIO RESPONDIDO - EDITAR
 @login_required  
 def editar(request, id):
     questionario = get_object_or_404(Questionario, id=id, usuario=request.user)
@@ -94,29 +103,35 @@ def editar(request, id):
     else:
         form = QuestionarioForm(instance=questionario)
 
-    return render(request, 'hospital/tela_formulario.html', {'form': form})
+    contexto= {
+        'form': form
+        }
+    
+    return render(request, 'hospital/tela_formulario.html', contexto)
 
-
+#CADASTRAR E REMOVER CAMPANHAS - APENAS O ADMIN
 def campanhas(request):
     campanhas = Campanhas.objects.all() 
-    context = {
+    contexto = {
         'campanhas': campanhas
     }
-    return render(request, 'hospital/campanhas.html', context)
+    return render(request, 'hospital/campanhas.html', contexto)
 
+#DETALHAR CAMPANHAS
 def detalhe(request, campa_id):
     campanha = Campanhas.objects.get(id=campa_id)
-    data = {
+    contexto = {
         "titulo": campanha.titulo,
         "descricao": campanha.descricao,
         "image_url": campanha.image.url,  
     }
-    return JsonResponse(data)
+    return JsonResponse(contexto)
 
-def doador(request):
-          
+#TELA DO DOADOR
+def doador(request):     
      return render(request, 'hospital/tela_doador.html')
 
+#TELA DE CONTATOS
 def contatos(request):
     listar = ChatFAQ.objects.all()
     contexto ={
@@ -124,7 +139,7 @@ def contatos(request):
     }
     return render(request, 'hospital/tela_contatos.html',contexto )
 
-@login_required
+#TELA DE PERFIL
 @login_required
 def perfil(request):   
     user = request.user  
@@ -142,16 +157,17 @@ def perfil(request):
             return redirect('tela_perfil')  
     else:
         form = FotoPerfilForm(instance=user)
-
-    return render(request, 'hospital/tela_perfil.html', {
+    
+    contexto= {
         'form': form,
         'user': user,
         'questionario': questionario,
-        'doacoes': doacoes  # Inclua as doações no contexto
-    })
+        'doacoes': doacoes  
+    }
+    
+    return render(request, 'hospital/tela_perfil.html', contexto)
 
-    
-    
+#DELETAR FOTO DO USUÁRIO
 @login_required
 def deletar_foto(request):
     user = request.user 
@@ -163,16 +179,18 @@ def deletar_foto(request):
         user.save()
     return redirect('tela_perfil')
 
-
-
+#TELAS DOS CRIADORES
 def criadores(request):
     criadores = Criador.objects.all()  
     paginator = Paginator(criadores, 2)  # 2 criadores por página
-
+    
     page_number = request.GET.get('page') 
-    page_obj = paginator.get_page(page_number)  
-
-    return render(request, 'hospital/tela_criadores.html', {'pagina': page_obj})
+    page_obj = paginator.get_page(page_number) 
+     
+    contexto={
+        'pagina': page_obj
+        }
+    return render(request, 'hospital/tela_criadores.html',contexto )
 
 
 

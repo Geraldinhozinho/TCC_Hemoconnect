@@ -1,125 +1,119 @@
 {% extends 'hospital/base.html' %}
 {% load static %}
 {% block parte_central %}
-<div class='body1'>
-    <h1 class='perfil'>MEU PERFIL</h1>
-    <div style="display: flex; align-items: flex-start; gap: 20px;">
-        <!-- Contêiner para a imagem ou pré-visualização -->
-        <div class="img-perfil" id="image-container" 
-             style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; 
-                    display: flex; align-items: center; justify-content: center; background-color: #ccc;">
-            {% if user.foto_perfil %}
-                <img id="preview-image" src="{{ user.foto_perfil.url }}" alt="Foto de perfil" 
-                     style="width: 100%; height: 100%; object-fit: cover;">
-            {% else %}
-                <p id="no-photo-text" style="color: #fff;">Sem foto</p>
-            {% endif %}
-        </div>
-
-        <!-- Formulários de editar e deletar -->
-        <div class="action-buttons" style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 20px; gap: 10px;">
-            <!-- Formulário de editar -->
-            <form method="POST" enctype="multipart/form-data" style="margin-top: 10px;">
-                {% csrf_token %}
-                <button type="submit" id="submit-button" style="display: none; margin-top: 10px;">
-                    {% if not user.foto_perfil %}
-                        Salvar Foto
+<main>
+    <div class='body1'>
+        <h1 class='perfil'>MEU PERFIL</h1>
+        <section>
+            <div style="display: flex; align-items: flex-start; gap: 20px;">
+                <!-- Contêiner para a imagem ou pré-visualização -->
+                <div class="img-perfil" id="image-container" style="width: 300px; height: 300px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #ccc;">
+                    {% if user.foto_perfil %}
+                        <img id="preview-image" src="{{ user.foto_perfil.url }}" alt="Foto de perfil" style="width: 100%; height: 100%; object-fit: cover;">
                     {% else %}
-                        Editar Foto
+                        <p id="no-photo-text" style="color: #fff;">Sem foto</p>
                     {% endif %}
-                </button>
-                <label class='edite' for="id_foto_perfil" style="cursor: pointer;">
-                    <img src="{% static 'image/editar.png' %}" alt="Editar" style="width: 25px; height: 25px;">
-                </label>
-                <input type="file" name="foto_perfil" accept="image/*" id="id_foto_perfil" onchange="previewImage()" style="display: none;">
-                <!-- Botão de salvar / editar, inicialmente oculto -->
-                
-            </form>
+                </div>
 
-            <!-- Formulário de deletar -->
-            {% if user.foto_perfil %}
-                <form method="POST" action="{% url 'deletar_foto' %}" style="margin-top: 10px;">
-                    {% csrf_token %}
-                    <label class='delete' for="deletar-button" style="cursor: pointer;">
-                        <img src="{% static 'image/delete.png' %}" alt="Deletar" style="width: 20px; height: 20px;">
-                    </label>
-                    <button type="submit" id="deletar-button" style="display: none;"></button>
-                </form>
-            {% endif %}
-        </div>
+                <!-- Formulários de editar e deletar -->
+                <div class="action-buttons" style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 20px; gap: 10px;">
+                    <!-- Formulário de editar -->
+                    <form method="POST" enctype="multipart/form-data" style="margin-top: 10px;">
+                        {% csrf_token %}
+                        <button type="submit" id="submit-button" style="display: none; margin-top: 10px;">
+                            {% if not user.foto_perfil %}
+                                Salvar Foto
+                            {% else %}
+                                Editar Foto
+                            {% endif %}
+                        </button>
+                        <label class='edite' for="id_foto_perfil" style="cursor: pointer;">
+                            <img src="{% static 'image/editar.png' %}" alt="Editar" style="width: 25px; height: 25px;">
+                        </label>
+                        <input type="file" name="foto_perfil" accept="image/*" id="id_foto_perfil" onchange="previewImage()" style="display: none;">
+                        <!-- Botão de salvar / editar, inicialmente oculto -->
+                        
+                    </form>
+                    <!-- Formulário de deletar -->
+                    {% if user.foto_perfil %}
+                        <form method="POST" action="{% url 'deletar_foto' %}" style="margin-top: 10px;">
+                            {% csrf_token %}
+                            <label class='delete' for="deletar-button" style="cursor: pointer;">
+                                <img src="{% static 'image/delete.png' %}" alt="Deletar" style="width: 20px; height: 20px;">
+                            </label>
+                            <button type="submit" id="deletar-button" style="display: none;"></button>
+                        </form>
+                    {% endif %}
+                </div>
 
-        <!-- Texto do perfil -->
-        <div style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 50px;">
-            <h2 class="nome-user-perfil">{{ user.username }}</h2>
-            
-            {% if questionario %}
-                <h3 class="nome-user-perfil2">{{ user.nome_completo }}</h3>
-                <h3 class="nome-user-perfil2">Email: {{ questionario.email }}</h3>
-                <h3 class="nome-user-perfil2">Idade: {{ questionario.idade }} anos</h3>
-                <h3 class="nome-user-perfil2">Tipo sanguíneo: {{ questionario.tipo_sangue }}</h3>
+                <!-- Texto do perfil -->
+                <div style="display: flex; flex-direction: column; justify-content: flex-start; padding-left: 50px;">
+                    <h2 class="nome-user-perfil">{{ user.username }}</h2>
+                    
+                    {% if questionario %}
+                        <h3 class="nome-user-perfil2">{{ user.nome_completo }}</h3>
+                        <h3 class="nome-user-perfil2">Email: {{ questionario.email }}</h3>
+                        <h3 class="nome-user-perfil2">Idade: {{ questionario.idade }} anos</h3>
+                        <h3 class="nome-user-perfil2">Tipo sanguíneo: {{ questionario.tipo_sangue }}</h3>
 
-            {% else %}
-                <h3 class="nome-user-perfil2"> Tone-se um doador clicando <a href="{% url 'tela_doador' %}">aqui</a></h3>
-            {% endif %}
-            <h3 class="nome-user-perfil2">{{ user.endereco }}</h3>
-            <button class="botao-sair-perfil" onclick="window.location.href='/logout';">Sair da conta</button>
-        </div>
-    </div>
-</div>
-
-{% if doacoes %}
-    <h1 class='titulo-doacao-perfil'> MINHAS DOAÇÕES</h1>
-    <div class="bloco1-carteira">
-        <div class="info-carteira">
-            {% with doacoes.0.data_doacao|date:"Y" as ano %}
-                <p class="ano-doacao"><strong></strong> {{ ano }}</p>
-            {% endwith %}
-            <p class="data1-doacao"><strong>Data da doação mais recente:</strong> {{ doacoes.0.data_doacao|date:"d/m/Y" }}</p>
-            <p class="data1-doacao"><strong>Próxima doação:</strong> {{ doacoes.0.data_prox_doacao|date:"d/m/Y" }}</p>
-        </div>
-        <div class="titulo2-e-botao">
-            <h1 class="titulo2-doacao-perfil"> MINHA CARTEIRINHA </h1>
-            <button class="botao-detalhar-perfil" onclick="mostrarDetalhes()">Detalhar</button>
-        </div>
-    </div>
-    <div id="popup" style="display: none;">
-        <div id="popup-conteudo">
-            <span onclick="fecharPopup()" class="fechar-popup">×</span>
-
-            <div id="doacoes-detalhes">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ano</th>
-                            <th>Data da Doação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for doacao in doacoes %}
-                            {% with doacao.data_doacao|date:"Y" as ano %}
-                                <tr>
-                                    <td>{{ ano }}</td>
-                                    <td>{{ doacao.data_doacao|date:"d/m/Y" }}</td>
-                                </tr>
-                            {% endwith %}
-                        {% endfor %}
-                    </tbody> 
-                </table>
+                    {% else %}
+                        <h3 class="nome-user-perfil2"> Tone-se um doador clicando <a href="{% url 'tela_doador' %}">aqui</a></h3>
+                    {% endif %}
+                    <h3 class="nome-user-perfil2">{{ user.endereco }}</h3>
+                    <button class="botao-sair-perfil" onclick="window.location.href='/logout';">Sair da conta</button>
+                </div>
             </div>
-        </div>
+        </section>
     </div>
-{% else %}
-    <p class='if-perfil'>Você ainda não possui doações registradas.</p>
-{% endif %}
+    <section>
+        {% if doacoes %}
+            <h1 class='titulo-doacao-perfil'> MINHAS DOAÇÕES</h1>
+            <div class="bloco1-carteira">
+                <div class="info-carteira">
+                    {% with doacoes.0.data_doacao|date:"Y" as ano %}
+                        <p class="ano-doacao"><strong></strong> {{ ano }}</p>
+                    {% endwith %}
+                    <p class="data1-doacao"><strong>Data da doação mais recente:</strong> {{ doacoes.0.data_doacao|date:"d/m/Y" }}</p>
+                    <p class="data1-doacao"><strong>Próxima doação:</strong> {{ doacoes.0.data_prox_doacao|date:"d/m/Y" }}</p>
+                </div>
+                <div class="titulo2-e-botao">
+                    <h1 class="titulo2-doacao-perfil"> MINHA CARTEIRINHA </h1>
+                    <button class="botao-detalhar-perfil" onclick="mostrarDetalhes()">Detalhar</button>
+                </div>
+            </div>
+            <div id="popup" style="display: none;">
+                <div id="popup-conteudo">
+                    <span onclick="fecharPopup()" class="fechar-popup">×</span>
 
+                    <div id="doacoes-detalhes">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ano</th>
+                                    <th>Data da Doação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for doacao in doacoes %}
+                                    {% with doacao.data_doacao|date:"Y" as ano %}
+                                        <tr>
+                                            <td>{{ ano }}</td>
+                                            <td>{{ doacao.data_doacao|date:"d/m/Y" }}</td>
+                                        </tr>
+                                    {% endwith %}
+                                {% endfor %}
+                            </tbody> 
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <p class='if-perfil'>Você ainda não possui doações registradas.</p>
+        {% endif %}
+    </section>
+</main>
 
-
-
-
-
-
-
-
+<!-- Inclusão de script JS -->
 <script src="{% static 'js/tela_perfil.js' %}"></script>
 
 {% endblock %}

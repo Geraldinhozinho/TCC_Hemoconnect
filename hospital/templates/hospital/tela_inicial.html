@@ -37,28 +37,28 @@
 
     <!-- Seção de Frase -->
     <section class="frase-inicial">
-        <h2 class='decoracao-inicial'>A sua doação de sangue pode salvar vidas e criar um futuro mais <span class='span-inicial'>saudável</span> e <span class='span-inicial'>seguro</span></h2>
+        <h2 class="decoracao-inicial">A sua doação de sangue pode salvar vidas e criar um futuro mais <span class="span-inicial">saudável</span> e <span class="span-inicial">seguro</span></h2>
     </section>
 
     <!-- Seção de Impacto da Doação de Sangue -->
     <section class="bloco2-inicial">
         <h2>Impacto da Doação de Sangue</h2>
-        <div class="impacto-inicial">
+        <article class="impacto-inicial">
             <h3>Salva até 4 vidas</h3>
             <p>Uma doação pode ser fracionada em diferentes componentes (plasma, plaquetas, hemácias), atendendo a várias necessidades.</p>
-        </div>
-        <div class="impacto-inicial">
+        </article>
+        <article class="impacto-inicial">
             <h3>Apoia tratamentos</h3>
             <p>Pessoas com câncer, cirurgias, traumas e outras condições críticas dependem de transfusões.</p>
-        </div>
-        <div class="impacto-inicial">
+        </article>
+        <article class="impacto-inicial">
             <h3>Ajuda em emergências</h3>
             <p>Em situações de acidentes graves, cada bolsa de sangue é essencial para manter pacientes estáveis.</p>
-        </div>
-        <div class="impacto-inicial">
+        </article>
+        <article class="impacto-inicial">
             <h3>Mantém estoques de sangue</h3>
             <p>Hemocentros precisam de doações constantes para evitar a falta em períodos de alta demanda.</p>
-        </div>
+        </article>
     </section>
 
     <!-- Seção de Campanhas em Destaque -->
@@ -72,11 +72,11 @@
             {% endfor %}
         </div>
         <div class="ver-mais-inicial">
-            <a href="{% url 'campanhas' %}" class="botao-ver-mais">Ver todas as campanhas</a>
+            <a href="{% url 'campanhas' %}" class="botao-ver-mais">Ver todas as campanhas de doação</a>
         </div>
     </section>
-    
 
+</main>
 
 <!-- Inclusão de script JS -->
 <script src="{% static 'js/tela_inicial.js' %}"></script>

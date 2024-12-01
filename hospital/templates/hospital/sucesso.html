@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,41 +10,43 @@
     <link href="{% static 'css/sucesso.css' %}" rel="stylesheet">
 </head>
 <body>
-    <div class="bloco1-sucesso">
+    <!-- Header -->
+    <header class="bloco1-sucesso">
         <div class="titulo1-sucesso">
             <h1 class="logo-sucesso">HEMO<span>❤️</span>CONNECT</h1>
         </div>
-    
-        <div class="bloco2-sucesso">
+        <!-- Section com mensagem de sucesso -->
+        <section class="bloco2-sucesso">
             <div class="bonequinha-sucesso">
                 <img src="{% static 'image/Enfer.png' %}" alt="Mascote">
-                <p> O formulário foi preenchido </p>
+                <p>O formulário foi preenchido</p>
             </div>
-        </div>
-    </div>
+        </section>
+    </header>
 
-    <div class='barra'>
-        <a href="{% url 'editar_questionario' questionario.id %}" class="botao-voltar-form">Editar Informações</a>
-        <a href="{% url 'tela_doador' %}" class="botao-voltar-form">Voltar</a>
-    </div>
-       
-
+    <!-- Barra de navegação -->
+    <main>
+        <nav class="barra">
+            <a href="{% url 'editar_questionario' questionario.id %}" class="botao-voltar-form">Editar Informações</a>
+            <a href="{% url 'tela_doador' %}" class="botao-voltar-form">Voltar</a>
+        </nav>
+    </main>
+    
+    <!-- Footer -->
     <footer class="footer1">
         <img src="{% static 'image/logo_if.png' %}" alt="Logo do IFRN" class="logoif-sucesso">
         <div class="footer-sucesso">
             <p>&copy; 2024 Hemoconnect. Todos os direitos reservados.</p>
-            <p>Desenvolvido por Geraldo Júnior e Alana Keury </p>
+            <p>Desenvolvido por Geraldo Júnior e Alana Keury</p>
         </div>
         <div class="footer2-sucesso">
             <div class="logo2-sucesso">HEM<span>❤️</span>CONNECT</div>
             <p>Orientadora: Mary Holanda</p>
-            <p>Coorientador: Kaio Fontes </p>
+            <p>Coorientador: Kaio Fontes</p>
         </div>
     </footer>
 
-
-    <!--Código JS-->
+    <!-- Inclusão de script JS -->
     <script src="{% static 'js/tela_formulario.js' %}"></script>
-    
 </body>
 </html>

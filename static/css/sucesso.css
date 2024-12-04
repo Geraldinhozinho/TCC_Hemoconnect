@@ -132,3 +132,190 @@ body{
     font-style: normal;
     margin-right: 15px;
 }
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .bloco1-sucesso {
+        padding: 15px;
+    }
+
+    .bonequinha-sucesso img {
+        width: 60px; /* Reduz o tamanho da imagem */
+    }
+
+    .bonequinha-sucesso p {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+    }
+
+    .barra {
+        gap: 10px; /* Reduz ainda mais o espaçamento entre os botões */
+    }
+
+    .botao-voltar-form {
+        padding: 8px 15px; /* Ajusta o padding dos botões */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    .bonequinha-sucesso {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        text-align: center;
+    }
+
+    .bonequinha-sucesso img {
+        margin: 0 auto; /* Centraliza a imagem */
+        margin-bottom: 10px;
+    }
+
+    .barra {
+        flex-direction: column; /* Empilha os botões */
+    }
+
+    .botao-voltar-form {
+        width: 90%; /* Botões ocupam a largura total */
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .bloco1-sucesso {
+        padding: 15px;
+    }
+
+    .bonequinha-sucesso img {
+        width: 60px; /* Reduz o tamanho da imagem */
+    }
+
+    .bonequinha-sucesso p {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+    }
+
+    .barra {
+        gap: 10px; /* Reduz ainda mais o espaçamento entre os botões */
+    }
+
+    .botao-voltar-form {
+        padding: 8px 15px; /* Ajusta o padding dos botões */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+}
+
+@media (max-width: 480px) {
+    .bonequinha-sucesso {
+        flex-direction: column; /* Empilha a imagem e o texto */
+        text-align: center;
+    }
+
+    .bonequinha-sucesso img {
+        margin: 0 auto; /* Centraliza a imagem */
+        margin-bottom: 10px;
+    }
+
+    .barra {
+        flex-direction: column; /* Empilha os botões */
+    }
+
+    .botao-voltar-form {
+        width: 90%; /* Botões ocupam a largura total */
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade - Ajuste no Rodapé */
+@media (max-width: 768px) {
+    .footer1 {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .footer-sucesso, .footer2-sucesso {
+        margin: 10px 0; /* Espaçamento entre seções */
+    }
+
+    .logoif-sucesso {
+        margin: 0 auto 15px; /* Centralizar e adicionar margem inferior */
+        max-width: 80px; /* Ajustar tamanho da logo */
+        max-height: 45px;
+    }
+
+    .footer2-sucesso {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo2-sucesso {
+        font-size: 18px;
+        margin-bottom: 8px; /* Espaçamento entre o título e os textos */
+    }
+
+    .footer1 p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer1 {
+        padding: 15px;
+        justify-content: space-between;
+    }
+
+    .footer-sucesso, .footer2-sucesso {
+        margin: 0 15px;
+        text-align: left;
+    }
+
+    .logoif-sucesso {
+        max-width: 85px;
+        max-height: 50px;
+        margin-left: 10px;
+    }
+
+    .logo2-sucesso {
+        font-size: 20px;
+    }
+
+    .footer1 p {
+        font-size: 13px;
+    }
+}

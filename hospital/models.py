@@ -83,6 +83,11 @@ class Questionario(models.Model):
         default=True
     )
     
+    endereco = models.CharField(
+        max_length=150,
+        blank=True, null=True
+    )
+    
     doenca_det = models.CharField(
         max_length=150,
         blank=True, null=True)  
@@ -103,6 +108,7 @@ class Questionario(models.Model):
         return self.usuario.username
 # Model para cadastrar e remover campanhas
 class Campanhas(models.Model):
+    data_campanha = models.DateTimeField(null=True, blank=True)
     titulo = models.CharField(max_length=20, null=True, blank=True)
     descricao = models.TextField(null=True)
     image = models.ImageField(upload_to='images/', null=True, blank=True)

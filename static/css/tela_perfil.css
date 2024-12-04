@@ -338,3 +338,133 @@
 #doacoes-detalhes tr:hover {
     background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade para telas menores (Celulares e tablets) */
+@media (max-width: 768px) {
+    .body1 {
+        margin: 20px;
+    }
+
+    /* Ajusta as imagens e o layout de perfil */
+    .img-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nome-user-perfil {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .titulo-doacao-perfil,
+    .titulo2-doacao-perfil {
+        font-size: 1rem;
+    }
+
+    .titulo2-e-botao {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    /* Ajuste no botão de sair */
+    .botao-sair-perfil {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Ajuste no texto do perfil */
+    .nome-user-perfil2 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajuste para telas muito pequenas */
+    .perfil {
+        font-size: 1.5rem;
+    }
+
+    .img-perfil {
+        width: 120px;
+        height: 120px;
+    }
+
+    .nome-user-perfil {
+        font-size: 1.125rem;
+        text-align: center;
+    }
+
+    .titulo-doacao-perfil,
+    .titulo2-doacao-perfil {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .botao-sair-perfil {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .action-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .info-carteira {
+        width: 100%;
+        text-align: center;
+    }
+
+    .titulo2-e-botao {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #popup-conteudo {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Ajustes nos botões */
+    .botao-detalhar-perfil {
+        width: 100%;
+        text-align: center;
+    }
+}

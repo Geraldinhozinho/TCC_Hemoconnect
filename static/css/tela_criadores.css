@@ -16,13 +16,61 @@
 
 .bloco1-criadores {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: center;
-    gap: 40px; /* Espaçamento entre os itens */
+    gap: 40px; 
     margin: 20px auto;
-    max-width: 80%; /* Limita a largura do conteúdo */
+    max-width: 80%; 
 }
 
+/* Ajustes para telas menores */
+@media (max-width: 768px) {
+    .bloco1-criadores {
+        max-width: 100%; 
+    }
+    .bloco2-Criadores {
+        flex-direction: column; 
+        align-items: center; 
+        padding: 10px;
+    }
+    .image-criador {
+        width: 150px; 
+        height: 150px; 
+        margin-right: 0;
+        margin-bottom: 10px; 
+    }
+    .info-criador {
+        text-align: center; 
+        font-size: 14px; 
+    }
+    .criadores {
+        font-size: 35px; 
+    }
+}
+
+/* Para telas entre 769px e 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bloco1-criadores {
+        max-width: 90%; 
+    }
+    .bloco2-Criadores {
+        flex-direction: row; 
+        align-items: center;
+        padding: 20px; 
+    }
+    .image-criador {
+        width: 180px; 
+        height: 180px; 
+    }
+    .info-criador {
+        text-align: left; 
+    }
+    .criadores {
+        font-size: 45px;
+    }
+}
+
+/* Ajustes para as imagens e texto */
 .bloco2-Criadores {
     display: flex;
     align-items: center;
@@ -30,23 +78,58 @@
     border: 2px solid #6A0303;
     border-radius: 10px;
     padding: 15px;
-    width: 100%; /* Ocupa toda a largura disponível */
-    max-width: 900px; /* Limita o tamanho máximo do bloco */
+    width: 100%; 
+    max-width: 900px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Responsividade para o conteúdo principal */
+@media (max-width: 768px) {
+    .bloco2-Criadores {
+        flex-direction: column; 
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+    .image-criador {
+        width: 150px; 
+        height: 150px;
+        margin-bottom: 10px;
+    }
+    .info-criador {
+        text-align: center; 
+        font-size: 14px;
+    }
+}
+
+/* Ajustes finais para o bloco de criadores */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bloco2-Criadores {
+        flex-direction: row; 
+        align-items: center;
+        padding: 20px;
+    }
+    .image-criador {
+        width: 180px; 
+        height: 180px;
+    }
+    .info-criador {
+        text-align: left; 
+    }
+}
 .image-criador {
     width: 200px;
     height: 200px;
-    border-radius: 15px; /* Borda levemente arredondada */
+    border-radius: 15px; 
     object-fit: cover;
-    margin-right: 20px; /* Espaço entre a imagem e o texto */
+    margin-right: 20px; 
     border: 1px solid #000000;
 }
 
 .info-criador {
-    flex: 1; /* Faz os textos ocuparem o restante do espaço */
-    text-align: left; /* Alinha o texto à esquerda */
+    flex: 1; 
+    text-align: left; 
     font-size: 16px;
     font-family: "Lato";
     font-weight: 300;
@@ -65,34 +148,69 @@
     color: #000000;
 }
 
-
-/*pagnação*/
-
+/* Paginação */
 .pagination {
-    position: fixed; /* Fixa a barra na tela */
-    top: 50%; /* Centraliza verticalmente */
-    right: 20px; /* Margem da borda direita */
-    transform: translateY(-50%); /* Ajusta para o centro vertical exato */
-    background-color: #FFFFFF; /* Fundo branco para destaque */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-    z-index: 100; /* Garante que esteja acima de outros elementos */
-    display: flex; /* Exibe itens em uma única coluna */
-    flex-direction: column; /* Coloca os itens em coluna */
-    gap: 10px; /* Espaçamento entre os botões */
+    position: fixed; 
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%); 
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 100; 
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; 
 }
 
+/* Para telas menores que 768px */
+@media (max-width: 768px) {
+    .pagination {
+        position: relative; 
+        top: auto; 
+        right: auto; 
+        transform: none; 
+        margin-top: 20px; 
+        margin-bottom: 20px; 
+        flex-direction: row; 
+        justify-content: center;
+        gap: 5px; 
+    }
+    .pagination .page-item {
+        font-size: 12px; 
+    }
+    .pagination .page-link {
+        padding: 6px 12px;
+    }
+}
+
+/* Para telas entre 769px e 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .pagination {
+        flex-direction: row; 
+        justify-content: center; 
+        gap: 10px; 
+    }
+    .pagination .page-item {
+        font-size: 14px; 
+    }
+    .pagination .page-link {
+        padding: 8px 16px; 
+    }
+}
+
+/* Estilo normal dos botões */
 .pagination .page-item.active .page-link {
     background-color: #CE2A2A;
     color: #FFFFFF;
     border-color: #CE2A2A;
 }
 .pagination .page-item.disabled .page-link {
-    background-color: #f1f1f1; /* Cor de fundo para o botão desativado */
-    color: #ccc; /* Cor do texto do botão desativado */
-    pointer-events: none; /* Impede qualquer interação com o botão */
-    border-color: #ddd; /* Cor da borda do botão desativado */
+    background-color: #f1f1f1;
+    color: #ccc;
+    pointer-events: none;
+    border-color: #ddd;
 }
 
 .pagination .page-link {
@@ -100,111 +218,29 @@
     border: 1px solid #6A0303;
     text-align: center;
 }
-
+.pagination .page-link:hover {
+    background-color: #FFD3D3;
+    color: #6A0303;
+}
+.pagination .page-item.active .page-link {
+    background-color: #CE2A2A;
+    color: #FFFFFF;
+    border-color: #CE2A2A;
+}
+.pagination .page-item.disabled .page-link {
+    background-color: #f1f1f1;
+    color: #ccc; 
+    pointer-events: none; 
+    border-color: #ddd; 
+}
+.pagination .page-link {
+    color: #6A0303;
+    border: 1px solid #6A0303;
+    text-align: center;
+}
 .pagination .page-link:hover {
     background-color: #FFD3D3;
     color: #6A0303;
 }
 
 
-
-/*header e footer*/
-
-/* Header */
-.bloco-criador {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; /* Ajuste de espaçamento */
-    background-color: #CE2A2A;
-    border-bottom: 2px solid #000;
-    height: 60px; /* Garante altura suficiente */
-    box-sizing: border-box; /* Garantir que o padding não afete o tamanho total */
-}
-
-/* Logo */
-.logo-criador a {
-    font-size: 30px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: "Rammetto One", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    text-decoration: none;
-}
-
-/* Menu */
-.itens-criador {
-    list-style-type: none;
-    display: flex;
-    align-items: center; /* Garante o alinhamento central dos itens */
-    margin: 0; /* Remove margens para evitar deslocamento */
-    padding: 0; /* Remove padding para não interferir no alinhamento */
-}
-
-.itens-criador li {
-    margin-left: 20px; /* Espaçamento entre os itens */
-}
-
-.itens-criador li a {
-    font-family: "Rammetto One", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 10px 15px;
-    transition: background-color 0.3s ease;
-    border-radius: 10px;
-    display: flex;
-    align-items: center; /* Garante o alinhamento vertical dos itens do menu */
-}
-
-.itens-criador li a:hover {
-    background-color: #575757;
-    border-radius: 10px;
-}
-
-/*Rodapé*/
-
-.footer {
-    background-color: #CE2A2A;
-    color: white;
-    padding: 5px 0;
-    border-top: 1px  #000 solid;
-    display: flex;
-}
-.footer-base {
-    margin:  auto;
-    
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-.footer2-base {
-    margin: 0 ;
-    
-}
-.footer p {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #b0acac;
-}
-.logoif-base{
-    max-width: 90px;
-    max-height: 50px;
-    display: flex;
-    margin-left: 40px;
-    margin-top: 12px;
-}
-.logo2-base {
-    font-size: 20px;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    font-family: "Rammetto One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-right: 15px;
-}

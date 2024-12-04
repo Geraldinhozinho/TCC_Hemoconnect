@@ -90,7 +90,7 @@
 }
 .sub-subbloco4-contatos{
     text-align: center;
-    background-color: #FFF;
+    background-color: #FFF; 
     padding: 10px 30px 30px 30px;
     border-radius: 0px 0px 30px 30px;
     max-width: 68%;
@@ -245,6 +245,131 @@
     color: #000000;
 }
 .faq-question.selected {
-    background-color: #FFB6B6;  /* Cor de fundo para a pergunta selecionada */
-    color: #000000;  /* Cor do texto da pergunta selecionada */
+    background-color: #FFB6B6;  
+    color: #000000;
+}
+
+
+
+/* Responsividade para telas médias (tablets) */
+@media screen and (max-width: 768px) {
+    .titulo-cont, .titulo2-cont {
+        font-size: 30px;
+        margin: 50px 20px;
+        text-align: center;
+    }
+
+    .bloco1-contatos, .bloco2-contatos {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .sub-subbloco3-contatos, .sub-subbloco4-contatos {
+        max-width: 90%;
+    }
+
+    .botao-contatos .chat-contatos {
+        margin: 20px auto;
+    }
+    .chat1-contatos{
+        width: 90px;
+        height: auto;
+        margin-left: 100px;
+    }
+}
+
+/* Responsividade para telas pequenas (celulares) */
+@media screen and (max-width: 480px) {
+    .titulo-cont, .titulo2-cont {
+        font-size: 24px;
+        margin: 30px 10px;
+    }
+    .chat-contatos{
+        margin-left: 50px;
+    }
+    .subbloco1-contatos, .subbloco5-contatos {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .relogio1-contatos, .relogio2-contatos {
+        max-width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .sub-subbloco3-contatos, .sub-subbloco4-contatos {
+        padding: 20px;
+    }
+
+    .chat-popup {
+        width: 90%;
+    }
+
+    .popup-header {
+        font-size: 16px;
+    }
+
+    .botao-contatos .chat-contatos {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .chat1-contatos{
+        width: 90px;
+        height: auto;
+        margin-left: 60px;
+    }
+}
+/* Ajustes para telas médias (tablets) */
+@media screen and (max-width: 768px) {
+    .bloco2-contatos {
+        padding: 20px; 
+        text-align: center;  
+    }
+
+    .subbloco5-contatos {
+        flex-direction: column; 
+        gap: 15px; 
+        align-items: center; 
+    }
+
+    .relogio1-contatos, .relogio2-contatos {
+        max-width: 100%; 
+        justify-content: center; 
+        margin: 0;
+    }
+
+    .chat1-contatos{
+        width: 90px;
+        height: auto;
+        margin-left: 100px;
+    }
+}
+
+/* Ajustes para telas pequenas (celulares) */
+@media screen and (max-width: 480px) {
+    .bloco2-contatos {
+        padding: 10px; 
+    }
+
+    .relogio1-contatos, .relogio2-contatos {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 10px; 
+    }
+
+    .relogio-contatos {
+        width: 40px;
+    }
+
+    .p2, .p3 {
+        font-size: 14px; 
+    }
+
+    .chat1-contatos{
+        width: 90px;
+        height: auto;
+        margin-left: 100px;
+    }
 }

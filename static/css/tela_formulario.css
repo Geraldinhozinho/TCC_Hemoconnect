@@ -337,3 +337,113 @@ input[type="text"], input[type="email"], select {
 .botao-voltar-form {
     margin-left: 200px; /* Espaçamento entre os botões */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade para o formulário */
+@media (max-width: 768px) {
+    .form-form {
+        padding: 10px; /* Reduzir o preenchimento em telas menores */
+        max-width: 100%; /* Permitir que o formulário ocupe toda a largura */
+        margin: 20px; /* Adicionar margem para espaçamento */
+    }
+
+    .titulo2-form {
+        width: auto; /* Ajusta automaticamente para caber no espaço disponível */
+        margin-left: auto; /* Centralizar horizontalmente */
+        margin-right: auto;
+        font-size: 14px; /* Diminuir a fonte para telas menores */
+    }
+    .email-forms {
+        display: flex    ;
+        flex-direction: column;
+        font-size: 16px;
+        margin-left: 5px;
+        width: 92.1%;
+    }
+    .nome-usuario,
+    .nome-forms,
+    
+    .opcoes-form,
+    .botao-form {
+        margin: 0 5px 10px; /* Reduzir margens em telas menores */
+    }
+
+    .nome-usuario-form,
+    .tornar-forms,
+    .sangue-forms,
+    .fuma-forms,
+    .sexo-forms,
+    .doenca-forms,
+    .disponibilidade-forms {
+        flex-direction: column; /* Empilhar os campos verticalmente */
+        align-items: stretch; /* Ajustar para ocupar toda a largura */
+        padding: 10px; /* Adicionar espaçamento interno */
+    }
+
+    .dias-forms {
+        flex-direction: column; /* Empilhar os itens dos dias verticalmente */
+        align-items: stretch;
+    }
+
+    .dias-forms label {
+        width: auto; /* Ajustar automaticamente */
+        margin-bottom: 10px; /* Espaçamento entre os rótulos */
+    }
+
+    .botao-form {
+        margin: 20px auto; /* Centralizar os botões */
+        text-align: center; /* Garantir alinhamento */
+    }
+    .bloco2-aviso{
+        text-align: left;
+        text-align: justify;
+    }
+    .opcoes-form .dias-forms {
+        display: block;
+        flex-direction: row;
+        font-size: 20px;
+        background-color: #ffffff;
+        border-radius: 30px;
+        color: #555;
+        padding: 4px 0px 8px;
+        align-items: center;
+    }
+    .botao-enviar-form{
+        width: 100%; /* Ocupam toda a largura do container */
+        margin-bottom: 10px; /* Espaçamento entre botões */
+    }
+    .opcoes-form .doenca2-forms {
+        display: flex
+    ;
+        flex-direction: row;
+        font-size: 16px;
+        width: 90%;
+        border-radius: 30px;
+        color: #555;
+        align-items: center;
+        margin-top: 5px;
+    }
+    .botao-voltar-form {
+        padding: 10px 165px;
+        margin: 0;
+        margin-top: 10px; /* Espaçamento entre botões */
+    }
+    
+}
+
+
+
+
+

@@ -11,7 +11,7 @@ import os
 
 #TELA INICIAL
 def inicio(request):
-    campanhas = Campanhas.objects.all() 
+    campanhas = Campanhas.objects.all().order_by('-data_campanha')
     contexto = {
         'campanhas': campanhas
     }
@@ -111,7 +111,7 @@ def editar(request, id):
 
 #CADASTRAR E REMOVER CAMPANHAS - APENAS O ADMIN
 def campanhas(request):
-    campanhas = Campanhas.objects.all() 
+    campanhas = Campanhas.objects.all().order_by('-data_campanha')
     contexto = {
         'campanhas': campanhas
     }

@@ -108,94 +108,138 @@ body {
     font-weight: 400;
     margin-right: 15px;
 }
-/* Responsividade */
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade - Ajuste no Rodapé */
 @media (max-width: 768px) {
-    .bloco-base {
-        flex-direction: column; 
-        align-items: flex-start; 
-        padding: 10px; 
-        height: auto;
-    }
-
-    .logo-base a {
-        font-size: 24px;  
-    }
-
-    .itens-base {
-        display: grid; 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px; 
-        align-items: center; 
-        margin-right: 0;
-        padding: 0;
-    }
-
-    .itens-base li {
-        margin-left: 0;
-        margin-top: 0; 
-    }
-
-    .itens-base li a {
-        font-size: 16px; 
-        padding: 6px 10px; 
-        text-align: center; 
-    }
-
-    
     .footer {
-        flex-direction: row; 
-        justify-content: space-between; 
-        align-items: center; 
-        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
     }
 
-    .footer-base {
-        margin: 0;
-        text-align: left;
-        display: flex;
-        flex: 1; 
-    }
-
-    .footer2-base {
-        margin: 0;
+    .footer-base, .footer2-base {
+        margin: 10px 0; /* Espaçamento entre seções */
     }
 
     .logoif-base {
-        margin-left: 0;
-        margin-top: 10px;
+        margin: 0 auto 15px; /* Centralizar e adicionar margem inferior */
+        max-width: 80px; /* Ajustar tamanho da logo */
+        max-height: 45px;
+    }
+
+    .footer2-base {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo2-base {
         font-size: 18px;
-        margin-right: 0;
+        margin-bottom: 8px; /* Espaçamento entre o título e os textos */
+    }
+
+    .footer p {
+        font-size: 12px;
     }
 }
 
-/* Para telas maiores (tablets e up) */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .bloco-base {
-        padding: 15px 30px;
+    .footer {
+        padding: 15px;
+        justify-content: space-between;
     }
 
-    .logo-base a {
-        font-size: 26px;
+    .footer-base, .footer2-base {
+        margin: 0 15px;
+        text-align: left;
     }
 
+    .logoif-base {
+        max-width: 85px;
+        max-height: 50px;
+        margin-left: 10px;
+    }
+
+    .logo2-base {
+        font-size: 20px;
+    }
+
+    .footer p {
+        font-size: 13px;
+    }
+}
+
+/* Estilo inicial do botão de hambúrguer (oculto em telas grandes) */
+.hamburguer {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* Barra de navegação fixa no topo */
+.bloco-base {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; /* Mantém a posição relativa para o controle do menu */
+    top: 0;
+    width: 100%;
+    background-color: #CE2A2A;
+    z-index: 1000; /* Garante que a barra de navegação fique sobre outros elementos */
+    border-bottom: 2px solid #000;
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
     .itens-base {
-        margin-right: 20px;
+        display: none; /* Esconde o menu inicialmente */
+        flex-direction: column;
+        background-color: #CE2A2A; /* Fundo para o menu */
+        position: absolute; /* Posiciona o menu sobre os outros itens */
+        top: 60px; /* Ajuste a distância do topo conforme necessário */
+        right: 0;
+        width: 100%;
+        text-align: right;
+        border-top: 2px solid #000;
+        z-index: 999; /* Garante que o menu fique acima de outros elementos da página */
     }
 
     .itens-base li {
-        margin-left: 25px;
+        margin: 10px 0;
     }
 
     .itens-base li a {
-        font-size: 15px;
-        padding: 10px 18px;
+        font-size: 16px;
+        padding: 1px 0;
     }
 
-    .footer {
-        padding: 15px 0;
+    .hamburguer {
+        display: block; /* Mostra o botão de hambúrguer */
+    }
+
+    .bloco-base {
+        justify-content: space-between;
+        position: relative; /* Permanece no fluxo de layout */
+    }
+
+    .itens-base.active {
+        display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
     }
 }

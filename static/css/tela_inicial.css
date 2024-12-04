@@ -188,7 +188,7 @@
 .span-inicial{
     color: #6A0303;
 }
-/*responsivida*/
+/*responsividade*/
 @media (max-width: 768px) {
     .decoracao-inicial {
         font-size: 24px; 
@@ -285,10 +285,12 @@
     justify-content: center;
     gap: 40px;
     margin: 20px 0;
+    
 }
 .campanha-inicial img {
-    width: 200px; 
-    height: auto;
+    width: 200px; /* Largura fixa */
+    height: 300px; /* Altura fixa para manter a proporção */
+    object-fit: cover; /* Garante que a imagem preencha o espaço mantendo a proporção */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -314,12 +316,13 @@
 @media (max-width: 768px) {
     .campanhas-inicial {
         flex-direction: row;
-        gap: 20px; 
+        gap: 10px; 
     }
 
     .campanha-inicial img {
-        width: 100%; 
-        height: auto;
+        width: 130px; /* Largura fixa */
+        height: 200px; /* Altura fixa para manter a proporção */
+        object-fit: cover; 
     }
 
     .ver-mais-inicial {

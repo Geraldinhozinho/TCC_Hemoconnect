@@ -59,3 +59,5 @@ window.onload = function() {
     const proximoBtn = document.querySelector('.proximo');
     proximoBtn.style.display = currentPosition < maxScroll ? 'block' : 'none';
 }
+
+

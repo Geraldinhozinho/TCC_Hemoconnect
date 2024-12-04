@@ -137,8 +137,7 @@
 .img_gota-doador {
     width: 18px;
     height: auto;
-    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
-    
+    margin-right: 10px;    
 }
 
 /*texto 2 sem imagem*/
@@ -269,7 +268,7 @@
 }
 .bloco-doador {   
     align-items: center;
-    background-color: #6A0303; /* Cor de fundo semelhante à imagem */
+    background-color: #6A0303; 
     padding: 40px;
 }
 
@@ -298,4 +297,101 @@
     background: #5e0000;
     transform: translateY(2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .bloco1-doador {
+        flex-direction: column;
+        padding: 40px;
+    }
+    .spa-doador {
+        font-size: 40px;
+    }
+    .bloco2-doador {
+        margin-left: 0;
+    }
+    .cards-doador {
+        grid-template-columns: 1fr;
+    }
+    .subbloco2-doador {
+        justify-items: center;
+    }
+    .subbloco-doador {
+        min-width: 100%;
+    }
+    .texto1-doador, .p1-doador, .p2-doador {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .botao-doador {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .texto-doador2 h1 {
+        margin-left: 30px;
+        font-size: 24px;
+    }
+    .texto-doador2 h3 {
+        margin-left: 30px;
+    }
+    .card1-doador {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .h1_banner1-doador {
+        font-size: 40px;
+        margin-left: 1px;
+    }
+    .h3_banner-doador {
+        font-size: 18px;
+        margin-left: 1px;
+    }
+    .spa-doador {
+        font-size: 40px;
+    }
+    .fundo-doador {
+        background-color: #CE2A2A;
+        border-radius: 20px;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+    .bloco2-doador {
+        margin-left: 0;
+        padding: 30px;
+    }
+    .texto1-doador, .p1-doador, .p2-doador {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .bloco2-doador h1 {
+        color: #CE2A2A;
+        margin-bottom: 20px;
+        font-family: "Poppins";
+        font-weight: 900;
+        margin-left: 10px;
+    }
+    .cards-doador {
+        grid-template-columns: 1fr;
+    }
+    .subbloco2-doador {
+        justify-items: center;
+    }    
+    .subbloco3-doador {
+        justify-items: center;
+        min-width: 100%;
+    }
+    .subbloco-doador {
+        min-width: 100%;
+    }
+    .img-doador {
+        max-width: 50%;
+    }
+    .img2-doador {
+        max-width: 100%;
+    }
 }

@@ -38,14 +38,15 @@ class QuestionarioForm(forms.ModelForm):
     class Meta:
         model = Questionario 
         fields = [
-            'idade','querer', 'nome', 'email', 'tipo_sangue', 'fuma', 'sexo',
+            'idade','querer', 'nome', 'email', 'endereco', 'tipo_sangue', 'fuma', 'sexo',
             'doenca', 'doenca_det', 'disponibilidade', 'dias'
         ]  
         widgets = {
             'querer': forms.RadioSelect(attrs={'class': 'tornar-forms'}),
             'nome': forms.TextInput(attrs={'class': 'nome-forms', 'placeholder': 'Digite seu nome'}),
             'idade': forms.NumberInput(attrs={'class': 'nome-forms', 'placeholder': 'Digite sua idade'}),
-            'email': forms.EmailInput(attrs={'class': 'email-forms', 'placeholder': 'Digite seu email'}),
+            'email': forms.EmailInput(attrs={'class': 'email-forms', 'placeholder': 'Digite seu E-mail'}),
+            'endereco': forms.TextInput(attrs={'class': 'email-forms', 'placeholder': 'Digite seu endereço'}),
             'tipo_sangue': forms.RadioSelect(attrs={'class': 'sangue-forms'}),
             'fuma': forms.RadioSelect(attrs={'class': 'fuma-forms'}),
             'sexo': forms.RadioSelect(attrs={'class': 'sexo-forms'}),

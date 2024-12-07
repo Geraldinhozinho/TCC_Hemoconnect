@@ -80,7 +80,7 @@ body{
 /* layout responsivo */
 @media (max-width: 768px) {
     .bloco2-aviso {
-        flex-direction: column; /* Em telas menores, coloca a bonequinha em cima do texto */
+        flex-direction: column; 
         text-align: center;
     } 
     .aviso-aviso {
@@ -110,7 +110,7 @@ body{
     list-style: none;
 }
 .error-message {
-    color: #ff4d4d; /* Vermelho para destacar erros */
+    color: #ff4d4d; 
     font-size: 12px;
     margin-left: 5px;
     text-align: left;
@@ -119,33 +119,31 @@ body{
 
 .form-form {
     
-    background-color: #CE2A2A; /* Vermelho como fundo do formulário */
+    background-color: #CE2A2A; 
     border-radius: 15px;
     padding: 0 15px 15px 15px;
-    max-width: 800px; /* Limite a largura do formulário */
-    margin: auto; /* Centralizar o formulário na página */
-    color: rgb(0, 0, 0); /* Cor do texto */
+    max-width: 800px; 
+    margin: auto; 
+    color: rgb(0, 0, 0); 
     font-family: "Arial";
 }
 .nome-usuario label{
-    font-size: 16px; /* Tamanho da fonte */
+    font-size: 16px; 
     font-family: "Poppins";
     font-weight: 900;
     
 }
-
 .nome-usuario{
     display: flex;
-    flex-direction: column; /* Alinhar rótulos e campos verticalmente */
-    font-size: 16px; /* Tamanho da fonte */
+    flex-direction: column; 
+    font-size: 16px; 
     margin: 0 15px 15px;
     color: #FFF;
-    
 }
 .nome-usuario-form{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 16px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 16px;
     background-color: #ffffff;
     border-radius: 30px;
     color: #000000;
@@ -154,15 +152,14 @@ body{
 }
 .nome-forms{
     display: flex;
-    flex-direction: column; /* Alinhar rótulos e campos verticalmente */
-    font-size: 16px; /* Tamanho da fonte */
+    flex-direction: column; 
+    font-size: 16px; 
     margin: 0 15px 15px;
-    
 }
 .nome-completo-form{
     display: flex;
-    flex-direction: column; /* Alinhar rótulos e campos verticalmente */
-    font-size: 16px; /* Tamanho da fonte */
+    flex-direction: column;
+    font-size: 16px; 
     margin: 0;    
 }
 .nome-completo-form input[type="number"]{
@@ -172,35 +169,33 @@ body{
 }
 .email-forms{
     display: flex;
-    flex-direction: column; /* Alinhar rótulos e campos verticalmente */
-    font-size: 16px; /* Tamanho da fonte */
+    flex-direction: column; 
+    font-size: 16px; 
     margin: 0 15px 15px;  
     width:  94%;
     
 }
 .opcoes-form{
     display: flex;
-    flex-direction: column; /* Alinhar rótulos e campos verticalmente */
+    flex-direction: column; 
     font-size: 16px;
     margin: 0 15px 15px;  
 }
 .tornar-forms{
    
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px;
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
     padding: 4px 0px;
     align-items: center;
-
-      
 }
 .sangue-forms{
     display: flex;
-    flex-direction: row ; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row ;
+    font-size: 20px; 
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
@@ -208,23 +203,20 @@ body{
     align-items: center;
     
 }
-
-
 .fuma-forms{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px; 
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
     padding: 4px 0px;
     align-items: center;
-    
 }
 .sexo-forms{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px;
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
@@ -234,46 +226,41 @@ body{
 }
 .doenca-forms{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px; 
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
     padding: 4px 0px;
     align-items: center;
-    
 }
 .opcoes-form .doenca2-forms{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 16px; /* Tamanho da fonte */
-    
+    flex-direction: row;
+    font-size: 16px; 
     width: 96%;
     border-radius: 30px;
     color: #555;
     align-items: center;
     margin-top: 5px;
 }
-
 .opcoes-form .doenca2-forms input{ 
     padding: 10px 30px;
 }
 .disponibilidade-forms{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px; 
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
     padding: 4px 0px;
     align-items: center;
-    
 }
-
 .opcoes-form .dias-forms{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px; 
     background-color: #ffffff;
     border-radius: 30px;
     color: #555;
@@ -287,8 +274,8 @@ body{
 
 .opcoes-form .dias-forms label{
     display: flex;
-    flex-direction: row; /* Alinhar rótulos e campos verticalmente */
-    font-size: 20px; /* Tamanho da fonte */
+    flex-direction: row; 
+    font-size: 20px; 
     background-color: #ffffff; 
     border-radius: 30px;  
     width: 50%;
@@ -299,10 +286,7 @@ label {
     align-items: center;
     display: inline-flex;
     margin-left: 12px;
-    font-size: 16px;
-    
-    
-    
+    font-size: 16px;    
 }
 input[type="radio"],[type="checkbox"]{
     margin-right: 10px;   
@@ -310,18 +294,17 @@ input[type="radio"],[type="checkbox"]{
 input[type="text"], input[type="email"], select {
     padding: 10px;
     border-radius: 30px;
-    border: none; /* Remover bordas padrão */
-    
+    border: none;     
 }
 .botao-enviar-form, .botao-voltar-form {
-    background-color: #6A0303; /* Verde para os botões */
+    background-color: #6A0303; 
     color: white;
     border: none;
     padding: 10px 40px;
     border-radius: 5px;
     font-size: 18px;
-    cursor: pointer; /* Mudar o cursor ao passar o mouse sobre os botões */
-    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+    cursor: pointer; 
+    transition: background-color 0.3s; 
     font-family: "Poppins";
     font-weight: 900;
     text-decoration: none;
@@ -331,39 +314,25 @@ input[type="text"], input[type="email"], select {
    
 }
 .botao-enviar-form:hover, .botao-voltar-form:hover {
-    background-color: #ffffff; /* Escurecer o botão ao passar o mouse */
+    background-color: #ffffff; 
     color: #000;
 }
 .botao-voltar-form {
-    margin-left: 200px; /* Espaçamento entre os botões */
+    margin-left: 200px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsividade para o formulário */
 @media (max-width: 768px) {
     .form-form {
-        padding: 10px; /* Reduzir o preenchimento em telas menores */
-        max-width: 100%; /* Permitir que o formulário ocupe toda a largura */
-        margin: 20px; /* Adicionar margem para espaçamento */
+        padding: 10px; 
+        max-width: 100%; 
+        margin: 20px; 
     }
-
     .titulo2-form {
-        width: auto; /* Ajusta automaticamente para caber no espaço disponível */
-        margin-left: auto; /* Centralizar horizontalmente */
+        width: auto; 
+        margin-left: auto; 
         margin-right: auto;
-        font-size: 14px; /* Diminuir a fonte para telas menores */
+        font-size: 14px; 
     }
     .email-forms {
         display: flex    ;
@@ -377,7 +346,7 @@ input[type="text"], input[type="email"], select {
     
     .opcoes-form,
     .botao-form {
-        margin: 0 5px 10px; /* Reduzir margens em telas menores */
+        margin: 0 5px 10px;
     }
 
     .nome-usuario-form,
@@ -387,24 +356,24 @@ input[type="text"], input[type="email"], select {
     .sexo-forms,
     .doenca-forms,
     .disponibilidade-forms {
-        flex-direction: column; /* Empilhar os campos verticalmente */
-        align-items: stretch; /* Ajustar para ocupar toda a largura */
-        padding: 10px; /* Adicionar espaçamento interno */
+        flex-direction: column; 
+        align-items: stretch; 
+        padding: 10px; 
     }
 
     .dias-forms {
-        flex-direction: column; /* Empilhar os itens dos dias verticalmente */
+        flex-direction: column;
         align-items: stretch;
     }
 
     .dias-forms label {
-        width: auto; /* Ajustar automaticamente */
-        margin-bottom: 10px; /* Espaçamento entre os rótulos */
+        width: auto; 
+        margin-bottom: 10px; 
     }
 
     .botao-form {
-        margin: 20px auto; /* Centralizar os botões */
-        text-align: center; /* Garantir alinhamento */
+        margin: 20px auto; 
+        text-align: center; 
     }
     .bloco2-aviso{
         text-align: left;
@@ -421,9 +390,9 @@ input[type="text"], input[type="email"], select {
         align-items: center;
     }
     .botao-enviar-form{
-        width: 100%; /* Ocupam toda a largura do container */
-        margin-bottom: 10px; /* Espaçamento entre botões */
-    }
+        width: 100%; 
+        margin-bottom: 10px; 
+        }
     .opcoes-form .doenca2-forms {
         display: flex
     ;
@@ -438,7 +407,7 @@ input[type="text"], input[type="email"], select {
     .botao-voltar-form {
         padding: 10px 165px;
         margin: 0;
-        margin-top: 10px; /* Espaçamento entre botões */
+        margin-top: 10px; 
     }
     
 }

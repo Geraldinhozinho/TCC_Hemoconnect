@@ -198,7 +198,6 @@
 }
 /* Fim do bloco frase do meio */
 
-
 /* Estilos para a seção de impactos */
 .bloco2-inicial {
     max-width: 1200px;
@@ -261,7 +260,6 @@
 }
 /* Fim do bloco de impactos */
 
-
 /* Estilos para a seção de campanhas em destaque */
 .bloco3-inicial {
     max-width: 1200px;
@@ -288,9 +286,9 @@
     
 }
 .campanha-inicial img {
-    width: 200px; /* Largura fixa */
-    height: 300px; /* Altura fixa para manter a proporção */
-    object-fit: cover; /* Garante que a imagem preencha o espaço mantendo a proporção */
+    width: 200px; 
+    height: 300px;
+    object-fit: cover; 
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -318,10 +316,9 @@
         flex-direction: row;
         gap: 10px; 
     }
-
     .campanha-inicial img {
-        width: 130px; /* Largura fixa */
-        height: 200px; /* Altura fixa para manter a proporção */
+        width: 130px; 
+        height: 200px; 
         object-fit: cover; 
     }
 
@@ -329,12 +326,10 @@
         width: 100%; 
         justify-content: center; 
     }
-
     .botao-ver-mais {
         padding: 12px 20px; 
         font-size: 18px; 
     }
 }
-
 /* Fim do bloco Campanhas em Destaque */
 

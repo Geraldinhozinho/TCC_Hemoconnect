@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Poppins:wght@600&family=Rammetto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ledger&family=Lemon&family=Poppins:wght@600;700&family=Rammetto+One&display=swap');
+
 /* Paleta de Cores */
 .x {
     color: #FFD3D3, #CE2A2A, #6A0303, #FFFFFF, #000000;
@@ -30,8 +33,9 @@ body {
     font-size: 30px;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
     font-family: "Rammetto One", sans-serif;
-    font-weight: 900;
+    font-weight: 400;
     text-decoration: none;
 }
 
@@ -48,8 +52,9 @@ body {
 }
 
 .itens-base li a {
-    font-family: "Rammetto One", sans-serif;
-    font-weight: 200;
+    font-weight: bold;
+    font-family: "Poppins";
+    font-weight: 900;
     color: white;
     text-decoration: none;
     font-size: 14px;
@@ -109,18 +114,6 @@ body {
     margin-right: 15px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* Responsividade - Ajuste no Rodapé */
 @media (max-width: 768px) {
     .footer {
@@ -132,12 +125,12 @@ body {
     }
 
     .footer-base, .footer2-base {
-        margin: 10px 0; /* Espaçamento entre seções */
+        margin: 10px 0; 
     }
 
     .logoif-base {
-        margin: 0 auto 15px; /* Centralizar e adicionar margem inferior */
-        max-width: 80px; /* Ajustar tamanho da logo */
+        margin: 0 auto 15px; 
+        max-width: 80px; 
         max-height: 45px;
     }
 
@@ -149,7 +142,7 @@ body {
 
     .logo2-base {
         font-size: 18px;
-        margin-bottom: 8px; /* Espaçamento entre o título e os textos */
+        margin-bottom: 8px; 
     }
 
     .footer p {
@@ -198,27 +191,27 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative; /* Mantém a posição relativa para o controle do menu */
+    position: relative; 
     top: 0;
     width: 100%;
     background-color: #CE2A2A;
-    z-index: 1000; /* Garante que a barra de navegação fique sobre outros elementos */
+    z-index: 1000; 
     border-bottom: 2px solid #000;
 }
 
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
     .itens-base {
-        display: none; /* Esconde o menu inicialmente */
+        display: none;
         flex-direction: column;
-        background-color: #CE2A2A; /* Fundo para o menu */
-        position: absolute; /* Posiciona o menu sobre os outros itens */
-        top: 60px; /* Ajuste a distância do topo conforme necessário */
+        background-color: #CE2A2A; 
+        position: absolute; 
+        top: 60px; 
         right: 0;
         width: 100%;
         text-align: right;
         border-top: 2px solid #000;
-        z-index: 999; /* Garante que o menu fique acima de outros elementos da página */
+        z-index: 999;
     }
 
     .itens-base li {
@@ -231,15 +224,15 @@ body {
     }
 
     .hamburguer {
-        display: block; /* Mostra o botão de hambúrguer */
+        display: block; 
     }
 
     .bloco-base {
         justify-content: space-between;
-        position: relative; /* Permanece no fluxo de layout */
+        position: relative; 
     }
 
     .itens-base.active {
-        display: flex; /* Exibe o menu quando a classe 'active' é adicionada */
+        display: flex; 
     }
 }

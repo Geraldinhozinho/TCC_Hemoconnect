@@ -1,8 +1,38 @@
-{% extends 'hospital/base.html' %}  
-{% load static %}  
-{% block parte_central %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-<!-- Seção de Conteúdo Principal -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemoconnect</title>
+    <link rel="icon" href="{% static 'image/icon.jpeg' %}" type="image/x-icon">
+    
+    
+    <link href="{% static 'css/tela_criadores.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- BARRA DE NAVEGAÇÃO -->
+    <header>
+        <nav class="bloco-criador">
+            <div class="logo-criador"><a href="{% url 'tela_criadores' %}">HEM<span>❤️</span>CONNECT</a></div>
+            <button class="hamburguer" aria-label="Abrir menu">
+                &#9776;
+            </button>
+            <ul class="itens-criador">
+                <li><a href="{% url 'tela_inicial' %}">Menu</a></li>
+                <li><a href="{% url 'tela_doador' %}">Seja um doador</a></li>
+                <li><a href="{% url 'campanhas' %}">Campanhas</a></li>
+                <li><a href="{% url 'tela_contatos' %}">Contatos</a></li>
+                <li>
+                    <a href="{% url 'tela_perfil' %}">
+                        <img src="{% if user.foto_perfil %}{{ user.foto_perfil.url }}{% else %}{% static 'image/perfil.png' %}{% endif %}" alt="Perfil" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
 
     <h1 class='criadores'>
         {% if pagina.number == 1 %}
@@ -50,4 +80,39 @@
     </nav>
     </main>
 
-    {% endblock %}
+    <!-- FOOTER -->    
+    <footer class="footer">
+        <img src="{% static 'image/logo_if.png' %}" alt="Logo do IFRN" class="logoif-criador">
+        <div class="footer-criador">
+            <p>&copy; 2024 Hemoconnect. Todos os direitos reservados.</p>
+            <p>Desenvolvido por Geraldo Júnior e Alana Keury </p>
+        </div>
+        <div class="footer2-criador">
+            <div class="logo2-criador">HEM<span>❤️</span>CONNECT</div>
+            <p>Orientadora: Mary Holanda</p>
+            <p>Coorientador: Kaio Fontes </p>
+        </div>
+    </footer> 
+
+    <script src="{% static 'js/tela_criadores.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

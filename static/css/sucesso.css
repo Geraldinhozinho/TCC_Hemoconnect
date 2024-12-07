@@ -49,19 +49,18 @@ body{
 }
 
 .bonequinha-sucesso p {
-    margin-left: 20px; /* Remove a margem padrão do parágrafo */
-    font-size: 16px; /* Ajuste o tamanho do texto conforme necessário */
+    margin-left: 20px; 
+    font-size: 16px; 
     color: #6A0303;
     font-family: "Poppins";
     font-weight: 900;
 }
-
 /*botões*/
 
 .barra {
-    display: flex; /* Flexbox para organizar os botões */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    gap: 80px; /* Espaço entre os botões */
+    display: flex; 
+    justify-content: center; 
+    gap: 80px; 
     font-family: "Poppins";
     font-weight: 900;
     background-color: #f8f8f8;
@@ -69,12 +68,12 @@ body{
 }
  
 .botao-voltar-form {
-    padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
+    padding: 10px 20px; 
     text-align: center;
-    background-color: #6A0303; /* Exemplo de cor de fundo */
-    color: white; /* Cor do texto */
-    border-radius: 5px; /* Borda arredondada */
-    text-decoration: none; /* Remove o sublinhado do link */
+    background-color: #6A0303; 
+    color: white; 
+    border-radius: 5px; 
+    text-decoration: none; 
     border: 1px solid #000;
 }
 
@@ -91,10 +90,10 @@ body{
     padding: 5px 0;
     border-top: 1px #000 solid;
     display: flex;
-    position: fixed;  /* Fixa o rodapé na parte inferior */
-    bottom: 0;        /* Coloca o rodapé na parte inferior da página */
-    width: 100%;      /* Garante que o rodapé ocupe toda a largura da tela */
-    z-index: 10;      /* Garante que o rodapé fique acima de outros elementos */
+    position: fixed;  
+    bottom: 0;       
+    width: 100%;      
+    z-index: 10;    
 }
 
 .footer-sucesso {
@@ -132,8 +131,50 @@ body{
     font-style: normal;
     margin-right: 15px;
 }
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .bloco1-sucesso {
+        padding: 15px;
+    }
 
+    .bonequinha-sucesso img {
+        width: 60px; 
+    }
 
+    .bonequinha-sucesso p {
+        font-size: 14px; 
+    }
+
+    .barra {
+        gap: 10px;
+    }
+
+    .botao-voltar-form {
+        padding: 8px 15px; 
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .bonequinha-sucesso {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .bonequinha-sucesso img {
+        margin: 0 auto; 
+        margin-bottom: 10px;
+    }
+
+    .barra {
+        flex-direction: column; 
+    }
+
+    .botao-voltar-form {
+        width: 90%; 
+        margin-bottom: 10px;
+    }
+}
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
@@ -142,121 +183,43 @@ body{
     }
 
     .bonequinha-sucesso img {
-        width: 60px; /* Reduz o tamanho da imagem */
+        width: 60px; 
     }
 
     .bonequinha-sucesso p {
-        font-size: 14px; /* Ajusta o tamanho da fonte */
+        font-size: 14px; 
     }
 
     .barra {
-        gap: 10px; /* Reduz ainda mais o espaçamento entre os botões */
+        gap: 10px;
     }
 
     .botao-voltar-form {
-        padding: 8px 15px; /* Ajusta o padding dos botões */
-        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 8px 15px; 
+        font-size: 14px; 
     }
 }
 
 @media (max-width: 480px) {
     .bonequinha-sucesso {
-        flex-direction: column; /* Empilha a imagem e o texto */
+        flex-direction: column;
         text-align: center;
     }
 
     .bonequinha-sucesso img {
-        margin: 0 auto; /* Centraliza a imagem */
+        margin: 0 auto; 
         margin-bottom: 10px;
     }
 
     .barra {
-        flex-direction: column; /* Empilha os botões */
+        flex-direction: column; 
     }
 
     .botao-voltar-form {
-        width: 90%; /* Botões ocupam a largura total */
+        width: 90%; 
         margin-bottom: 10px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .bloco1-sucesso {
-        padding: 15px;
-    }
-
-    .bonequinha-sucesso img {
-        width: 60px; /* Reduz o tamanho da imagem */
-    }
-
-    .bonequinha-sucesso p {
-        font-size: 14px; /* Ajusta o tamanho da fonte */
-    }
-
-    .barra {
-        gap: 10px; /* Reduz ainda mais o espaçamento entre os botões */
-    }
-
-    .botao-voltar-form {
-        padding: 8px 15px; /* Ajusta o padding dos botões */
-        font-size: 14px; /* Reduz o tamanho da fonte */
-    }
-}
-
-@media (max-width: 480px) {
-    .bonequinha-sucesso {
-        flex-direction: column; /* Empilha a imagem e o texto */
-        text-align: center;
-    }
-
-    .bonequinha-sucesso img {
-        margin: 0 auto; /* Centraliza a imagem */
-        margin-bottom: 10px;
-    }
-
-    .barra {
-        flex-direction: column; /* Empilha os botões */
-    }
-
-    .botao-voltar-form {
-        width: 90%; /* Botões ocupam a largura total */
-        margin-bottom: 10px;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Responsividade - Ajuste no Rodapé */
 @media (max-width: 768px) {
@@ -269,12 +232,12 @@ body{
     }
 
     .footer-sucesso, .footer2-sucesso {
-        margin: 10px 0; /* Espaçamento entre seções */
+        margin: 10px 0;
     }
 
     .logoif-sucesso {
-        margin: 0 auto 15px; /* Centralizar e adicionar margem inferior */
-        max-width: 80px; /* Ajustar tamanho da logo */
+        margin: 0 auto 15px; 
+        max-width: 80px; 
         max-height: 45px;
     }
 
@@ -286,7 +249,7 @@ body{
 
     .logo2-sucesso {
         font-size: 18px;
-        margin-bottom: 8px; /* Espaçamento entre o título e os textos */
+        margin-bottom: 8px; 
     }
 
     .footer1 p {

@@ -4,12 +4,10 @@
 .x {
     color: #FFD3D3, #CE2A2A, #6A0303, #FFFFFF, #000000;
 }
-
 .body1 {
     background-color: #FFFFFF;
     padding-bottom: 50px;
 }
-
 .perfil {
     font-size: 30px;
     color: #6A0303;
@@ -18,14 +16,12 @@
     margin-left: 300px;
     padding-top: 50px;
 }
-
 .img-perfil {
     margin-left: 240px;
     display: flex;
-    flex-direction: column; /* Coloca o botão abaixo da imagem */
+    flex-direction: column; 
     align-items: center;
 }
-
 .nome-user-perfil {
     font-size: 40px;
     font-family: "Poppins", sans-serif;
@@ -33,7 +29,6 @@
     color: #6A0303;
     margin: 0;
 }
-
 .nome-user-perfil2 {
     font-family: "Lato";
     font-weight: 500;
@@ -46,37 +41,30 @@
     color: #6A0303;
     margin: 5px 0 0 0;
 }
-
-
 .delete {
     margin-top: 10px;
     margin-left: 0;
 }
-
-/* Alinha os ícones de editar e deletar abaixo da imagem de perfil */
 .action-buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px; /* Espaço acima dos ícones */
+    margin-top: 30px; 
 }
-
 /* Estilo para os ícones */
 .edite img, .delete img {
-    width: 50px; /* Tamanho dos ícones */
+    width: 50px; 
     height: 50px;
-    margin-bottom: 10px; /* Espaço entre os ícones */
+    margin-bottom: 10px;
 }
-
 /* Ajuste na posição do ícone de editar */
 .edite {
     margin-bottom: 5px;
 }
-
 /* Ajuste para o botão de salvar/editar aparecer abaixo da imagem */
 #submit-button {
-    margin-top: 20px; /* Alinha o botão logo abaixo da imagem de perfil */
+    margin-top: 20px; 
     padding: 10px 20px;
     background-color: #6A0303;
     color: white;
@@ -84,30 +72,24 @@
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    width: 100%; /* Garante que o botão ocupe toda a largura disponível */
+    width: 100%; 
 }
-
 /* Garantir que o botão de salvar/editar só apareça quando necessário */
 #submit-button {
-    display: none; /* Inicialmente oculto */
+    display: none;
 }
-
 #submit-button.show {
-    display: block; /* Exibe quando o botão for necessário */
+    display: block; 
 }
-
 .action-buttons {
-    /* display: flex; */
     flex-direction: column;
     justify-content: left;
     align-items:start;
     margin-top: 30px;
 }
-
 .delete{
     margin-left: 5px;
 }
-
 .botao-sair-perfil{
     background-color: #6A0303;
     color: #FFF;
@@ -120,8 +102,6 @@
     background-color: #ffffff;
     color: #000000;
 }
-
-
 .if-perfil{
     color: #6A0303;
     text-align: left;
@@ -132,40 +112,9 @@
     max-width: 50%;
     padding: 35px ;
     margin-top: 30px;
-    
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Estilos para o título "Minhas Doações" */
-
 .titulo-doacao-perfil {
     font-size: 30px;
     color: #6A0303;
@@ -177,30 +126,24 @@
     color: #000000;
     padding-left: 240px;
 }
-
 .titulo2-doacao-perfil {
-    font-size: 30px; /* Tamanho da fonte */
-    color: #6A0303; /* Cor do texto */
-    font-family: "Poppins"; /* Fonte usada */
-    font-weight: 900; /* Peso da fonte */
-    background-color: #FFF; /* Cor de fundo do título */
+    font-size: 30px; 
+    color: #6A0303; 
+    font-family: "Poppins"; 
+    font-weight: 900; 
+    background-color: #FFF; 
     border-radius: 10px;
     margin-left: 100px;
-    
 }
-
-
 /* Estilos para o bloco de informações */
 .bloco1-carteira {
     display: flex;
     align-items: flex-start;
-    
     background-color: #FFD3D3;
     padding: 10px 30px;
     border-radius: 10px;
     margin-left: 13%;
 }
-
 /* Estilos para as informações da carteira */
 .info-carteira {
     background-color: #CE2A2A;
@@ -208,7 +151,6 @@
     width: 35%;
     border-radius: 10px;
 }
-
 .info-carteira .ano-doacao,
 .info-carteira .data1-doacao {
     background-color: #f4f0f0;
@@ -219,13 +161,11 @@
     border-radius: 10px;
     margin-bottom: 15px;
 }
-
 /* Estilos para o título 2 e o botão de detalhamento */
 .titulo2-e-botao {
     width: 35%;
     text-align: center;
 }
-
 .titulo2-doacao-perfil {
     font-size: 30px;
     color: #6A0303;
@@ -233,7 +173,6 @@
     font-weight: 900;
     margin-bottom: 40px;
 }
-
 .botao-detalhar-perfil {
     background-color: #6A0303;
     color: #FFF;
@@ -244,7 +183,6 @@
     display: block;
     margin-left: 180px ;
 }
-
 .botao-detalhar-perfil:hover {
     background-color: #ffffff;
     color: #000000;
@@ -255,28 +193,21 @@
 
  
 /*Popup*/
-
-/* Estilos para o popup (aparece sobre a página) */
-/* Estilo para o botão de fechar */
-/* Estilo para o botão de fechar */
 .fechar-popup {
-    font-size: 200px; /* Tamanho maior para o 'X' */
+    font-size: 200px; 
     font-weight: bold;
     font-family: "Poppins";
     color: #000000;
     cursor: pointer;
     position: absolute;
-    top: 5px; /* Menos distância do topo */
-    right: 30px; /* Menos distância da direita */
+    top: 5px; 
+    right: 30px; 
     border: 2px solid #000000;
-    padding: 5px 15px; /* Ajustar o padding para mais espaço ao redor do 'X' */
-    
+    padding: 5px 15px;
 }
-
 .fechar-popup:hover {
     background-color: #FFD3D3;
 }
-
 /* Estilo do popup */
 #popup {
     position: fixed;
@@ -290,149 +221,170 @@
     align-items: center;
     z-index: 1000;
 }
-
 #popup-conteudo {
     background-color: white;
-    padding: 30px; /* Aumentar o padding para dar mais espaço dentro do popup */
-    border-radius: 10px; /* Bordas mais arredondadas */
-    width: 60%; /* Aumenta a largura do conteúdo do popup */
-    max-height: 60%; /* Ajuste para permitir mais altura */
+    padding: 30px; 
+    border-radius: 10px; 
+    width: 60%;
+    max-height: 60%; 
     overflow-y: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
 }
-
-
-
-
-
 /* Estilos para o botão de fechar o popup */
 #popup span {
-    font-size: 16px; /* Tamanho da fonte */
-    font-weight: bold; /* Peso da fonte */
-    cursor: pointer; /* Aparece como mãozinha ao passar o mouse */
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer;
 }
-
 /* Estilos para a tabela de doações */
 #doacoes-detalhes table {
-    width: 100%; /* Largura total da tabela */
-    border-collapse: collapse; /* Remove o espaço entre as células */
-    margin-top: 20px; /* Espaçamento superior */
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
 }
-
 /* Estilos para as células de cabeçalho e dados da tabela */
 #doacoes-detalhes th,
 #doacoes-detalhes td {
-    padding: 10px; /* Espaçamento interno */
-    text-align: left; /* Alinha o texto à esquerda */
-    border-bottom: 1px solid #ddd; /* Linha separadora abaixo da célula */
+    padding: 10px; 
+    text-align: left; 
+    border-bottom: 1px solid #ddd; 
 }
-
 /* Estilos para o cabeçalho da tabela */
 #doacoes-detalhes th {
-    background-color: #6A0303; /* Cor de fundo do cabeçalho */
-    color: white; /* Cor do texto */
+    background-color: #6A0303; 
+    color: white; 
 }
-
 /* Estilos para as linhas da tabela quando o mouse passa por cima */
 #doacoes-detalhes tr:hover {
-    background-color: #f1f1f1; /* Cor de fundo ao passar o mouse */
+    background-color: #f1f1f1; 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Responsividade para telas menores (Celulares e tablets) */
 @media (max-width: 768px) {
     .body1 {
         margin: 20px;
     }
-
-    /* Ajusta as imagens e o layout de perfil */
     .img-perfil {
         width: 150px;
         height: 150px;
     }
-
     .nome-user-perfil {
         font-size: 1.25rem;
         text-align: center;
     }
-
     .titulo-doacao-perfil,
     .titulo2-doacao-perfil {
         font-size: 1rem;
     }
-
     .titulo2-e-botao {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-top: 20px;
     }
-
-    /* Ajuste no botão de sair */
     .botao-sair-perfil {
         width: 100%;
         margin-top: 15px;
     }
-
     .action-buttons {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
     }
-
-    /* Ajuste no texto do perfil */
     .nome-user-perfil2 {
         font-size: 1rem;
     }
 }
-
 @media (max-width: 480px) {
-    /* Ajuste para telas muito pequenas */
     .perfil {
-        font-size: 1.5rem;
+        font-size: 30px;
+        color: #6A0303;
+        font-family: "Poppins";
+        font-weight: 900;
+        margin-left: 100px;
+        padding-top: 50px;
     }
-
+    .body1 section div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
     .img-perfil {
-        width: 120px;
-        height: 120px;
+        width: 200px;
+        height: 200px;
+        margin-left: 40px;
+        display: flex;
+        position: relative; 
     }
-
-    .nome-user-perfil {
-        font-size: 1.125rem;
-        text-align: center;
+    .delete img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 50px;
+    } 
+    .edite img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 124px;
     }
-
+    .action-buttons {
+        flex-direction: row; 
+        position: absolute; 
+        top: 50%; 
+        left: 370px; 
+        transform: translateY(-50%); 
+    }
+    .body1 section div > div:last-child {
+        padding-left: 0;
+        margin-top: 20px; 
+    }
+    .botao-sair-perfil {
+        margin-top: 20px;
+    }
     .titulo-doacao-perfil,
     .titulo2-doacao-perfil {
         font-size: 1rem;
-        text-align: center;
     }
-
+    .titulo-doacao-perfil {
+        font-size: 30px;
+        color: #6A0303;
+        font-family: "Poppins";
+        font-weight: 900;
+        background-color: #FFF;
+        padding: 5px 10px;
+        text-align: left;
+        color: #000000;
+        padding-left: 100px;
+    }
+    .bloco1-carteira {
+        display: flex;
+        align-items: flex-start;
+        background-color: #FFD3D3;
+        padding: 10px 30px;
+        border-radius: 10px;
+        margin-left: 1px
+    }
+    .titulo2-doacao-perfil {
+        font-size: 16px;
+        color: #6A0303;
+        font-family: "Poppins";
+        font-weight: 900;
+        background-color: #FFF;
+        border-radius: 10px;
+        margin-left: 10px;
+        padding-right: 20px ;
+        padding-left: 20px ;
+        margin-left: 20px;
+    }
+    .botao-detalhar-perfil {
+        background-color: #6A0303;
+        color: #FFF;
+        padding: 10px 30px;
+        width: auto;
+        border-radius: 10px;
+        cursor: pointer;
+        display: block;
+        margin-left: 30px;
+    }
     .botao-sair-perfil {
         width: 100%;
         margin-top: 10px;
@@ -446,7 +398,7 @@
     }
 
     .info-carteira {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
 
@@ -462,9 +414,17 @@
         margin: 0 auto;
     }
 
-    /* Ajustes nos botões */
-    .botao-detalhar-perfil {
-        width: 100%;
-        text-align: center;
+    #popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
     }
+
 }

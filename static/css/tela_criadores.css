@@ -1,8 +1,214 @@
+
+/*FONTES*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ledger&family=Lemon&family=Poppins:wght@600&family=Rammetto+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Ledger&family=Lemon&family=Poppins:wght@600;700&family=Rammetto+One&display=swap');
 
+/* Paleta de Cores */
+.x {
+    color: #FFD3D3, #CE2A2A, #6A0303, #FFFFFF, #000000;
+}
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Barra de Navegação */
+.bloco-criador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 20px;
+    background-color: #CE2A2A;
+    border-bottom: 2px solid #000;
+    height: 60px;
+}
+.logo-criador a {
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-family: "Rammetto One", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    display: flex; 
+    align-items: center; 
+    height: 100%; 
+}
+/* Menu */
+.itens-criador  {
+    list-style-type: none;
+    display: flex;
+    align-items: center; 
+    margin-right: 15px;
+    margin-bottom: 0;
+}
+.itens-criador  li {
+    margin-left: 20px;
+}
+.itens-criador  li a {
+    font-weight: bold;
+    font-family: "Poppins";
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; 
+}
+.itens-criador  li a:hover {
+    background-color: #575757;
+    border-radius: 10px;
+}
+/* Rodapé */
+.footer {
+    background-color: #CE2A2A;
+    color: white;
+    padding: 5px 0;
+    border-top: 1px  #000 solid;
+    display: flex;
+}
+.footer-criador {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer2-criador {
+    margin: 0;
+}
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #b0acac;
+}
+.logoif-criador {
+    max-width: 90px;
+    max-height: 50px;
+    display: flex;
+    margin-left: 40px;
+    margin-top: 12px;
+}
+.logo2-criador {
+    font-size: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: "Rammetto One", sans-serif;
+    font-weight: 400;
+    margin-right: 15px;
+}
+/* Responsividade - Ajuste no Rodapé */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+    }
+    .footer-criador  .footer2-criador {
+        margin: 10px 0; 
+    }
+    .logoif-criador {
+        margin: 0 auto 15px; 
+        max-width: 80px; 
+        max-height: 45px;
+    }
+    .footer2-criador {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo2-criador {
+        font-size: 18px;
+        margin-bottom: 8px; 
+    }
+    .footer p {
+        font-size: 12px;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer {
+        padding: 15px;
+        justify-content: space-between;
+    }
+    .footer-criador  .footer2-criador {
+        margin: 0 15px;
+        text-align: left;
+    }
+    .logoif-criador {
+        max-width: 85px;
+        max-height: 50px;
+        margin-left: 10px;
+    }
+    .logo2-criador {
+        font-size: 20px;
+    }
+    .footer p {
+        font-size: 13px;
+    }
+}
+/* Estilo inicial do botão de hambúrguer (oculto em telas grandes) */
+.hamburguer {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+/* Barra de navegação fixa no topo */
+.bloco-criador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    width: 100%;
+    background-color: #CE2A2A;
+    z-index: 1000; 
+    border-bottom: 2px solid #000;
+}
 
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+    .itens-criador  {
+        display: none;
+        flex-direction: column;
+        background-color: #CE2A2A; 
+        position: absolute; 
+        top: 60px; 
+        right: 0;
+        width: 100%;
+        text-align: right;
+        border-top: 2px solid #000;
+        z-index: 999; 
+    }
+    .itens-criador  li {
+        margin: 10px 0;
+    }
+    .itens-criador  li a {
+        font-size: 16px;
+        padding: 1px 0;
+    }
+    .hamburguer {
+        display: block; 
+    }
+    .bloco-criador {
+        justify-content: space-between;
+        position: relative;
+    }
+    .itens-criador .active {
+        display: flex; 
+    }
+}
+/*HEADER E RODAPÉ JA INCLUIDO A RESPONSIVIDADE ACIMA*/
 
+/*TEMPLATE*/
 .criadores{
     text-align: center;
     font-size: 50px;
@@ -12,8 +218,6 @@
     color: #6A0303;
     margin: 20px 0;
 }
-
-
 .bloco1-criadores {
     display: flex;
     flex-direction: column; 
@@ -22,7 +226,6 @@
     margin: 20px auto;
     max-width: 80%; 
 }
-
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
     .bloco1-criadores {
@@ -47,7 +250,6 @@
         font-size: 35px; 
     }
 }
-
 /* Para telas entre 769px e 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .bloco1-criadores {
@@ -69,7 +271,6 @@
         font-size: 45px;
     }
 }
-
 /* Ajustes para as imagens e texto */
 .bloco2-Criadores {
     display: flex;
@@ -82,7 +283,6 @@
     max-width: 900px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 /* Responsividade para o conteúdo principal */
 @media (max-width: 768px) {
     .bloco2-Criadores {
@@ -102,7 +302,6 @@
         font-size: 14px;
     }
 }
-
 /* Ajustes finais para o bloco de criadores */
 @media (min-width: 769px) and (max-width: 1024px) {
     .bloco2-Criadores {
@@ -126,7 +325,6 @@
     margin-right: 20px; 
     border: 1px solid #000000;
 }
-
 .info-criador {
     flex: 1; 
     text-align: left; 
@@ -135,7 +333,6 @@
     font-weight: 300;
     font-style:normal;
 }
-
 .info-criador h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 900;
@@ -147,7 +344,6 @@
     margin: 5px 0;
     color: #000000;
 }
-
 /* Paginação */
 .pagination {
     position: fixed; 
@@ -163,7 +359,6 @@
     flex-direction: column; 
     gap: 10px; 
 }
-
 /* Para telas menores que 768px */
 @media (max-width: 768px) {
     .pagination {
@@ -184,7 +379,6 @@
         padding: 6px 12px;
     }
 }
-
 /* Para telas entre 769px e 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .pagination {
@@ -199,7 +393,6 @@
         padding: 8px 16px; 
     }
 }
-
 /* Estilo normal dos botões */
 .pagination .page-item.active .page-link {
     background-color: #CE2A2A;
@@ -212,7 +405,6 @@
     pointer-events: none;
     border-color: #ddd;
 }
-
 .pagination .page-link {
     color: #6A0303;
     border: 1px solid #6A0303;

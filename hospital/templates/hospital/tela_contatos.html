@@ -3,6 +3,8 @@
 {% load static %}
 {% block parte_central %}
 <main>
+    
+
     <h1 class="titulo-cont">Contatos</h1>
     
     <!-- Bloco de contatos principais -->
@@ -15,7 +17,7 @@
             <div class="sub-subbloco2-contatos">
                 <h2 class="subtitulo-contatos">E-mail</h2>
                 <p class="textop1-contatos">Tem alguma dúvida?</p>
-                <p class="textop2-contatos">Hemo@hotmail.com</p>
+                <p class="textop2-contatos">hemo@hotmail.com</p>
             </div>
         </article>
 
@@ -76,35 +78,35 @@
 
             <!-- Botão de chat -->
             <div class="botao-contatos">
-                <button class="chat-contatos" onclick="togglePopup()">CHAT</button>
+                <button class="chat-contatos" onclick="togglePopup()">CHATBOT</button>
             </div>
         </div>
-        <!-- Overlay e Popup -->
-        <div id="chat-popup-overlay" class="chat-popup-overlay"></div>
+        <div id="chat-popup-overlay" class="chat-popup-overlay" onclick="togglePopup()"></div>
         <div id="chat-popup" class="chat-popup">
             <div class="popup-header">
-                <h3>HEMOCONNECT - Perguntas Frequentes</h3>
+                <h3>HEMOCONNECT - Chat de Ajuda</h3>
                 <button class="close-btn" onclick="togglePopup()">&times;</button>
             </div>
             <div class="popup-body">
-                {% if lista %}
-                    <ul>
-                        {% for pergunta in lista %}
-                        <li class="faq-item">
-                            <button class="faq-question" onclick="toggleAnswer(this)">
-                                {{ pergunta.pergunta }}
-                            </button>
-                            <div class="faq-answer">
-                                <p>{{ pergunta.resposta }}</p>
-                            </div>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                {% else %}
-                    <p>Não há perguntas cadastradas.</p>
-                {% endif %}
+                <!-- Área de mensagens -->
+                <div id="chat-messages" class="chat-messages">
+                    <!-- Mensagens serão adicionadas dinamicamente via JavaScript -->
+                </div>
+        
+                <!-- Área do input -->
+                <div class="chat-footer">
+                    <input 
+                        id="user-input" 
+                        type="text" 
+                        class="chat-input" 
+                        placeholder="Digite sua pergunta aqui..." 
+                        onkeypress="checkEnter(event)"
+                    />
+                    <button class="send-btn" onclick="processQuestion()">Enviar</button>
+                </div>
             </div>
-        </div> 
+        </div>
+        
     </section>
 </main>
 

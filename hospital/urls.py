@@ -1,5 +1,5 @@
 from django.urls import path
-from hospital.views import cadastrar, login_view, inicio, doador, campanhas,  detalhe,  contatos, perfil, logout_view, deletar_foto, questionario , questionario_sus, editar,criadores
+from hospital.views import cadastrar, login_view, inicio, doador, campanhas,  detalhe,  contatos, perfil, logout_view, deletar_foto, questionario , questionario_sus, editar,criadores, get_faq
 urlpatterns = [
     
     #TELAS DE LOGIN E CADASTRO
@@ -20,7 +20,7 @@ urlpatterns = [
     path('quest', questionario, name='tela_form'), #TELA DO QUESTIONARIO
     path('sucesso/', questionario_sus, name='sucesso'), #TELA APÓS O QUESTIONÁRIO SER RESPONDIDO
     path('questionario/editar/<int:id>/', editar, name='editar_questionario'), #TELA APÓS O QUESTIONÁRIO SER RESPONDIDO E QUISER EDITAR
-   
+    path('api/faqs/', get_faq, name='get_faq'),
    #TELA DOS COLABORADORES
     path('Criadores/', criadores, name='tela_criadores'),
 ]

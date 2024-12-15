@@ -134,10 +134,12 @@ def doador(request):
 #TELA DE CONTATOS
 def contatos(request):
     listar = ChatFAQ.objects.all()
-    contexto ={
-        'lista': listar
+
+    contexto = {
+        'lista': listar,
     }
-    return render(request, 'hospital/tela_contatos.html',contexto )
+    return render(request, 'hospital/tela_contatos.html', contexto)
+
 
 #TELA DE PERFIL
 @login_required
@@ -191,6 +193,13 @@ def criadores(request):
         'pagina': page_obj
         }
     return render(request, 'hospital/tela_criadores.html',contexto )
+
+
+
+
+def get_faq(request):
+    faqs = ChatFAQ.objects.all().values('pergunta', 'resposta')
+    return JsonResponse(list(faqs), safe=False)
 
 
 
